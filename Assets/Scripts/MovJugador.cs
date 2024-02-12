@@ -26,9 +26,7 @@ public class MovJugador : MonoBehaviour
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
-
-        bool isRunning = Mathf.Abs(horizontalInput) > 0;
-        animator.SetBool("IsRunning", isRunning);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
         RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 0.25f, Enviroment);
 
@@ -67,6 +65,15 @@ public class MovJugador : MonoBehaviour
         if (saltos < 0)
         {
             saltos = 0;
+        }
+
+        if (grounded == true || isWallSliding == true)
+        {
+            animator.SetBool("IsGrounded", true);
+        }
+        if (grounded == false || isWallSliding == false)
+        {
+            animator.SetBool("IsGrounded", false);
         }
     }
 

@@ -12,7 +12,7 @@ public class Rebote : MonoBehaviour
     {
         if (collision.CompareTag("Transp"))
         {
-            transform.position = new Vector3(565f, -190, 0);
+            transform.position = new Vector3(565f, -188.58f, 0);
             rb.velocity = new Vector2(0, 0);
         }
     }
