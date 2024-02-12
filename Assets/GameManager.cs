@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    void Start()
+    {
+        
+    }
+    void Update()
+    {
+        if (vidaCount.lifesValue == 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+}

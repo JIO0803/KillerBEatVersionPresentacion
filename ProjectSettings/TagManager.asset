@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bola
+  - beat
+  - enemy
+  - pared
+  - Score
+  - bala
+  - kunai
+  - ground
+  - UI
+  - UIPistola
+  - UIKunai
+  - UIKatana
+  - vida
+  - GM
+  - Juego
+  - CamaraDes
+  - explosivo
+  - Rotador
+  - kunaiNumber
+  - soldado
+  - enemRod
+  - volador
+  - misilTeled
+  - BolaActivadora
+  - Transp
+  - laser
+  - unlockKunai
+  - PosCam
+  - soldCol
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Ground
+  - deadEnemy
+  - Enviroment
+  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
