@@ -47,11 +47,11 @@ public class MovJugador : MonoBehaviour
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && saltos > 0)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
         {
             if (isWallSliding)
             {
-                rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * Velocidad, salto);
+                rb.velocity = new Vector2(25 * -horizontalInput, 25);
             }
             else
             {
