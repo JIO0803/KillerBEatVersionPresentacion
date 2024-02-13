@@ -38,6 +38,14 @@ public class MovJugador : MonoBehaviour
         {
             transform.localScale = new Vector2(-1, transform.localScale.y);
         }
+        if (Input.GetKey(KeyCode.D) && isWallSliding && !grounded)
+        {
+            transform.localScale = new Vector2(-1, transform.localScale.y);
+        }
+        if (Input.GetKey(KeyCode.A) && isWallSliding && !grounded)
+        {
+            transform.localScale = new Vector2(1, transform.localScale.y);
+        }
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && saltos > 0)
         {

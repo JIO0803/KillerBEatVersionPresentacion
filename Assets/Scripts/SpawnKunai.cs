@@ -57,7 +57,7 @@ public class SpawnKunai : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        GameObject kunaiInst = Instantiate(KunaiPrefab, transform.position, Quaternion.identity);
+        GameObject kunaiInst = Instantiate(KunaiPrefab, transform.position, rotation);
         kunaiInst.GetComponent<Rigidbody2D>().velocity = direction * KunaiVelocity;
 
         kunaiList.Add(kunaiInst);
