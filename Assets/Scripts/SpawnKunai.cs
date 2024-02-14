@@ -65,7 +65,7 @@ public class SpawnKunai : MonoBehaviour
         kunaiCount -= 1;
     }
 
-    private void Minato()
+    public void Minato()
     {
         if (kunaiList.Count == 0)
             return;

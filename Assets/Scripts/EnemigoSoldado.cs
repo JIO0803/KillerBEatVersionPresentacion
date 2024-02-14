@@ -31,7 +31,7 @@ public class EnemigoSoldado : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
         rb2D = projectile.GetComponent<Rigidbody2D>();
         ia = gameObject.GetComponent<EnemigoSoldado>();
-        lifes = 1;
+        lifes = 2;
         spkn = player.GetComponent<SpawnKunai>();
         nmdk = kunaiText.GetComponent<NumeroDeKunais>();
     }
