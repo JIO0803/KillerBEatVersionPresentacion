@@ -19,6 +19,7 @@ public class MovJugador : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        isWallSliding = false;
         //gameObject.GetComponent<MovJugador>().enabled = false;
     }
 

@@ -37,6 +37,7 @@ public class BotonStay : MonoBehaviour
         {
             plat1.enabled = true;
             plat2.enabled = false;
+            boolDeSeguridad = true;
         }
         else if (boolDeSeguridad == false)
         {

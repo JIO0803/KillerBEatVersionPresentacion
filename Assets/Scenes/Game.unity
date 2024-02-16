@@ -350,7 +350,6 @@ GameObject:
   - component: {fileID: 16200448}
   - component: {fileID: 16200446}
   - component: {fileID: 16200450}
-  - component: {fileID: 16200451}
   m_Layer: 0
   m_Name: Circle (1)
   m_TagString: pared
@@ -483,27 +482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Muro: {fileID: 1679610489}
---- !u!95 &16200451
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16200445}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 99d9ba9008094744f884ce71cba86383, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &31555335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,7 +2943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cmara: {fileID: 1903133917}
-  Sala: {fileID: 0}
 --- !u!212 &429170522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7371,7 +7348,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8892,7 +8869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cmara: {fileID: 1903133917}
-  Sala: {fileID: 0}
 --- !u!212 &1432614251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10318,7 +10294,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11237,7 +11213,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 71.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11608,7 +11584,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11989,6 +11965,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &1903133926
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903133917}
+  m_Enabled: 1
 --- !u!1001 &1963137593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13367,6 +13351,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3284007969796310536, guid: 60b14993b30fea64487cafc722a1cea0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1903133925}
+    - targetCorrespondingSourceObject: {fileID: 3284007969796310536, guid: 60b14993b30fea64487cafc722a1cea0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1903133926}
   m_SourcePrefab: {fileID: 100100000, guid: 60b14993b30fea64487cafc722a1cea0, type: 3}
 --- !u!1001 &2350017769371370772
 PrefabInstance:
