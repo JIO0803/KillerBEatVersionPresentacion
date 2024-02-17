@@ -20,15 +20,15 @@ public class SceneControl : MonoBehaviour
 
     private void Awake()
     {
-        PauseButton.SetActive(false);
+        PauseButton.SetActive(true);
         audSor1 = Music1.GetComponent<AudioSource>();
         audSor2 = Music2.GetComponent<AudioSource>();
         audSor3 = Music3.GetComponent<AudioSource>();
         MusicCount = 1;
 
-        audSor1.volume = 0.2f;
-        audSor2.volume = 0.2f;
-        audSor3.volume = 0.2f;
+        audSor1.volume = 0.03f;
+        audSor2.volume = 0.03f;
+        audSor3.volume = 0.03f;
     }
 
     private void Update()
@@ -69,16 +69,16 @@ public class SceneControl : MonoBehaviour
 
     public void VolumeUp()
     {
-        audSor1.volume += 0.05f;
-        audSor2.volume += 0.05f;
-        audSor3.volume += 0.05f;
+        audSor1.volume += 0.02f;
+        audSor2.volume += 0.02f;
+        audSor3.volume += 0.02f;
     }
 
     public void VolumeDown()
     {
-        audSor1.volume -= 0.05f;
-        audSor2.volume -= 0.05f;
-        audSor3.volume -= 0.05f;
+        audSor1.volume -= 0.02f;
+        audSor2.volume -= 0.02f;
+        audSor3.volume -= 0.02f;
     }
     public void PlayGame()
     {
