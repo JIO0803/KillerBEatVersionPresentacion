@@ -63,6 +63,7 @@ public class SpawnKunai : MonoBehaviour
         kunaiList.Add(kunaiInst);
 
         kunaiCount -= 1;
+        nmdk.kunaiCounts -= 1;
     }
 
     public void Minato()

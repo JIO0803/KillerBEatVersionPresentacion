@@ -9,12 +9,13 @@ public class KunaiConstraint : MonoBehaviour
     public float destroyDelay = 8f;
     public bool collided = false;
     Rigidbody2D rb2D;
-
+    NumeroDeKunais nmdk;
     SpawnKunai kunsp;
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();
+        nmdk = GameObject.FindGameObjectWithTag("kunaiNumber").GetComponent<NumeroDeKunais>();
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -51,7 +52,7 @@ public class KunaiConstraint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && collided == true || collision.gameObject.CompareTag("bala") || collision.gameObject.CompareTag("misilTeled") || collision.gameObject.CompareTag("laser") 
             || collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy"))
         {
-            kunsp.kunaiCount += 1;
+            AddKunai();
             Destroy(gameObject);
         }
     }
@@ -67,6 +68,6 @@ public class KunaiConstraint : MonoBehaviour
     public void AddKunai()
     {
         kunsp.kunaiCount += 1;
-        GameObject.FindGameObjectWithTag("kunaiNumber").GetComponent<NumeroDeKunais>().kunaiCounts += 1;
+        nmdk.kunaiCounts += 1;
     }
 }
