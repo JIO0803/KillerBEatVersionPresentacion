@@ -2082,7 +2082,7 @@ GameObject:
   - component: {fileID: 299121072}
   - component: {fileID: 299121074}
   - component: {fileID: 299121073}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (32)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -3594,7 +3594,7 @@ GameObject:
   - component: {fileID: 548148808}
   - component: {fileID: 548148807}
   - component: {fileID: 548148806}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (12)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -4587,7 +4587,7 @@ GameObject:
   - component: {fileID: 759268875}
   - component: {fileID: 759268877}
   - component: {fileID: 759268876}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (23)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -5117,7 +5117,7 @@ GameObject:
   - component: {fileID: 852018749}
   - component: {fileID: 852018751}
   - component: {fileID: 852018750}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (35)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -5596,7 +5596,7 @@ GameObject:
   - component: {fileID: 955502241}
   - component: {fileID: 955502243}
   - component: {fileID: 955502242}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (17)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -7409,7 +7409,7 @@ GameObject:
   - component: {fileID: 1280021209}
   - component: {fileID: 1280021211}
   - component: {fileID: 1280021210}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (34)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -8230,9 +8230,9 @@ GameObject:
   - component: {fileID: 1378858121}
   - component: {fileID: 1378858120}
   - component: {fileID: 1378858119}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (4)
-  m_TagString: pared
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8360,7 +8360,7 @@ GameObject:
   - component: {fileID: 1380900394}
   - component: {fileID: 1380900393}
   - component: {fileID: 1380900392}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (19)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -10075,7 +10075,7 @@ GameObject:
   - component: {fileID: 1605313852}
   - component: {fileID: 1605313854}
   - component: {fileID: 1605313853}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (26)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -12398,7 +12398,7 @@ GameObject:
   - component: {fileID: 2066733233}
   - component: {fileID: 2066733235}
   - component: {fileID: 2066733234}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (31)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -12631,7 +12631,7 @@ GameObject:
   - component: {fileID: 2080634343}
   - component: {fileID: 2080634345}
   - component: {fileID: 2080634344}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (46)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -13021,7 +13021,7 @@ GameObject:
   - component: {fileID: 2116416817}
   - component: {fileID: 2116416819}
   - component: {fileID: 2116416818}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: w (24)
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -13507,6 +13507,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7437188122298737190, guid: 2b78aa960dc933a4f8f607e5c419b845, type: 3}
   m_PrefabInstance: {fileID: 9080094745749695165}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8287646016428015352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723240969133346362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190c26cd65ff96047b56d3cd9f01f8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pared:
+    serializedVersion: 2
+    m_Bits: 1024
+  raycastDistance: 0.44
 --- !u!1001 &9080094745749695165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13592,6 +13608,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8146063420329236862, guid: 2b78aa960dc933a4f8f607e5c419b845, type: 3}
+      propertyPath: velocidad
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146063420329236862, guid: 2b78aa960dc933a4f8f607e5c419b845, type: 3}
       propertyPath: wallCheck
       value: 
       objectReference: {fileID: 1460814768}
@@ -13637,5 +13657,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7437188122298737190, guid: 2b78aa960dc933a4f8f607e5c419b845, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1460814768}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 364459103299304334, guid: 2b78aa960dc933a4f8f607e5c419b845, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8287646016428015352}
   m_SourcePrefab: {fileID: 100100000, guid: 2b78aa960dc933a4f8f607e5c419b845, type: 3}
