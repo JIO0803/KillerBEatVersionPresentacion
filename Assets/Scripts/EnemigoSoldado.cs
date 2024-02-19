@@ -19,9 +19,9 @@ public class EnemigoSoldado : MonoBehaviour
     [SerializeField] LayerMask Enviroment;
     public GameObject kunaiText;
     public float DefaultGravityScale = 10f;
-    public Rigidbody2D rb2D;
-    public SpawnKunai spkn;
-    public NumeroDeKunais nmdk;
+    Rigidbody2D rb2D;
+    SpawnKunai spkn;
+    NumeroDeKunais nmdk;
 
     // Start is called before the first frame update
     void Start()

@@ -7,17 +7,12 @@ using UnityEngine.UI;
 public class NumeroDeKunais : MonoBehaviour
 {
     public int kunaiCounts = 3;
-    TMP_Text kunais;
-    // Start is called before the first frame update
-    void Start()
-    {
-        kunais = GetComponent<TMP_Text>();
-    }
+    public GameObject kunaiCharge1;
+    public GameObject kunaiCharge2;
+    public GameObject kunaiCharge3;
 
-    // Update is called once per frame
     void Update()
     {
-        kunais.text = "" + kunaiCounts;
         if (kunaiCounts > 3)
         {
             kunaiCounts = 3;
@@ -26,6 +21,32 @@ public class NumeroDeKunais : MonoBehaviour
         if (kunaiCounts < 0)
         {
             kunaiCounts = 0;
+        }
+        if (kunaiCounts == 0)
+        {
+            kunaiCharge1.SetActive(false);
+            kunaiCharge2.SetActive(false);
+            kunaiCharge3.SetActive(false);
+        }
+        if (kunaiCounts == 1)
+        {
+            kunaiCharge1.SetActive(true);
+            kunaiCharge2.SetActive(false);
+            kunaiCharge3.SetActive(false);
+        }       
+        
+        if (kunaiCounts == 2)
+        {
+            kunaiCharge1.SetActive(true);
+            kunaiCharge2.SetActive(true);
+            kunaiCharge3.SetActive(false);
+        }        
+        
+        if (kunaiCounts == 3)
+        {
+            kunaiCharge1.SetActive(true);
+            kunaiCharge2.SetActive(true);
+            kunaiCharge3.SetActive(true);
         }
     }
 }

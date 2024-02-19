@@ -15,7 +15,7 @@ public class KunaiConstraint : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();
-        nmdk = GameObject.FindGameObjectWithTag("kunaiNumber").GetComponent<NumeroDeKunais>();
+        nmdk = GameObject.FindGameObjectWithTag("lifeBar").GetComponent<NumeroDeKunais>();
     }
 
     void OnTriggerStay2D(Collider2D collision)

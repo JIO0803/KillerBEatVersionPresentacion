@@ -34,6 +34,7 @@ TagManager:
   - PosCam
   - soldCol
   - headShot
+  - lifeBar
   layers:
   - Default
   - TransparentFX
