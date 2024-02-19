@@ -14,6 +14,7 @@ public class SpawnKunai : MonoBehaviour
     public int kunaiCount;
     SpawnKunai spwnk;
     NumeroDeKunais nmdk;
+    public float kunaiTpSpeed;
 
     private void Start()
     {
@@ -92,7 +93,9 @@ public class SpawnKunai : MonoBehaviour
             PlayerLocation.transform.position = closestKunai.transform.position;
             Destroy(closestKunai);
             kunaiList.Remove(closestKunai);
-            rb2D.velocity = new Vector2(rb2D.velocity.x, DropSpeed);
+
+            rb2D.velocity = closestKunai.GetComponent<Rigidbody2D>().velocity * kunaiTpSpeed;
+
             OnKunaiDestroyed();
         }
     }

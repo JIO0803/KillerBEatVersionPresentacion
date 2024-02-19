@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5689761950164148057
 SpriteRenderer:
@@ -105,8 +105,13 @@ MonoBehaviour:
   retreatDistance: 16
   startTimeBtwShots: 2
   detectDist: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
   missilePrefab: {fileID: 6461900974859927665, guid: 6e054a42ac6ff284786f9fb1b864af7e, type: 3}
   player: {fileID: 0}
+  kunaiText: {fileID: 0}
+  canShoot: 0
   lifes: 1
 --- !u!58 &5940905059432793574
 CircleCollider2D:
@@ -140,9 +145,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: 0.15}
+  m_Offset: {x: 0.02, y: 0.0980072}
   serializedVersion: 2
-  m_Radius: 0.83
+  m_Radius: 0.3477249
 --- !u!50 &1357073048028346285
 Rigidbody2D:
   serializedVersion: 4

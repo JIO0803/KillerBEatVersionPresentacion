@@ -1,3 +1,4 @@
+using Pathfinding.Util;
 using UnityEngine;
 
 public class MovJugador : MonoBehaviour
@@ -28,12 +29,27 @@ public class MovJugador : MonoBehaviour
 
     void Update()
     {
+        Movimiento();
+        if (grounded == true || isWallSliding == true)
+        {
+            animator.SetBool("IsGrounded", true);
+        }
+        if (grounded == false || isWallSliding == false)
+        {
+            animator.SetBool("IsGrounded", false);
+        }
+    }
+
+    public void Movimiento()
+    {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-
         RaycastHit2D raycastSuelo = Physics2D.Linecast(transform.position, transform.position + Vector3.down * 0.25f, capaPared);
-
+        if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.A))
+        {
+            rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
+            Debug.Log("Move");
+        }
         if (Input.GetKey(KeyCode.D))
         {
             transform.localScale = new Vector2(1, transform.localScale.y);
@@ -87,15 +103,6 @@ public class MovJugador : MonoBehaviour
         if (saltos < 0)
         {
             saltos = 0;
-        }
-
-        if (grounded == true || isWallSliding == true)
-        {
-            animator.SetBool("IsGrounded", true);
-        }
-        if (grounded == false || isWallSliding == false)
-        {
-            animator.SetBool("IsGrounded", false);
         }
     }
 

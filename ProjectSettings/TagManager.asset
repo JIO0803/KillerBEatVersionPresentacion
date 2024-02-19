@@ -33,6 +33,7 @@ TagManager:
   - unlockKunai
   - PosCam
   - soldCol
+  - headShot
   layers:
   - Default
   - TransparentFX

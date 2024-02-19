@@ -6,34 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    public GameObject Camera;
+    //Music
     public GameObject PauseButton;
     public GameObject ResumeButton;
     public GameObject Music1;
     public GameObject Music2;
     public GameObject Music3;
-    public GameObject Rain;
-    public GameObject credits;
-    public GameObject bigCredits;
-    public GameObject Camera;
     public GameObject Track1;
     public GameObject Track2;
     public GameObject Track3;
-    public GameObject hamsterReviver;
+    public GameObject Rain;
     AudioSource audSor1;
     AudioSource audSor2;
     AudioSource audSor3;
     public int MusicCount;
     public int MusicSet;
     public int Raining;
-    Volume vol;
-
-
-    reviveHamster rvhm;
-
     private float music1PlaybackTime;
     private float music2PlaybackTime;
     private float music3PlaybackTime;
     private bool isMusicPaused = false;
+    //Buttons
+    public GameObject credits;
+    public GameObject bigCredits;
+    public GameObject playButton;
+    public GameObject optionButton;
+    public GameObject turnOffButton;
+    public GameObject newsButton;
+    //Hamster
+    public GameObject hamsterReviver;
+    reviveHamster rvhm;
+    //Other
+    Volume vol;
+    //Menus
+    public GameObject optionsWindow;
 
     void Start()
     {
@@ -56,9 +63,9 @@ public class SceneControl : MonoBehaviour
         audSor2.time = music2PlaybackTime;
         audSor3.time = music3PlaybackTime;
 
-        audSor1.volume = 0.03f;
-        audSor2.volume = 0.03f;
-        audSor3.volume = 0.03f;
+        audSor1.volume = 0.1f;
+        audSor2.volume = 0.1f;
+        audSor3.volume = 0.1f;
 
         bigCredits.SetActive(false);
 
@@ -165,6 +172,12 @@ public class SceneControl : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }    
+    
+    public void fullScreen(bool is_fullscene)
+    {
+        Screen.fullScreen = is_fullscene;
+        Debug.Log("isFullScreen" + is_fullscene);
     }
 
     public void StopMusic()
@@ -211,6 +224,20 @@ public class SceneControl : MonoBehaviour
     {
         bigCredits.SetActive(false);
         credits.SetActive(true);
+    }   
+    public void OpenOptions()
+    {
+        playButton.SetActive(false);
+        optionButton.SetActive(false);
+        turnOffButton.SetActive(false);
+        newsButton.SetActive(false);
+    }    
+    public void CloseOptions()
+    {
+        playButton.SetActive(true);
+        optionButton.SetActive(true);
+        turnOffButton.SetActive(true);
+        newsButton.SetActive(true);
     }
     public void PauseMusic()
     {

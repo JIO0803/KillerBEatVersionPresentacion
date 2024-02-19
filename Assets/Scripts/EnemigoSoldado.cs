@@ -17,12 +17,11 @@ public class EnemigoSoldado : MonoBehaviour
     public GameObject projectile;
     public Transform player;
     [SerializeField] LayerMask Enviroment;
-    private EnemigoSoldado ia;
     public GameObject kunaiText;
-    [SerializeField] private const float DefaultGravityScale = 10f;
-    Rigidbody2D rb2D;
-    SpawnKunai spkn;
-    NumeroDeKunais nmdk;
+    public float DefaultGravityScale = 10f;
+    public Rigidbody2D rb2D;
+    public SpawnKunai spkn;
+    public NumeroDeKunais nmdk;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +29,6 @@ public class EnemigoSoldado : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb2D = projectile.GetComponent<Rigidbody2D>();
-        ia = gameObject.GetComponent<EnemigoSoldado>();
         lifes = 2;
         spkn = player.GetComponent<SpawnKunai>();
         nmdk = kunaiText.GetComponent<NumeroDeKunais>();
@@ -103,7 +101,7 @@ public class EnemigoSoldado : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
     }
 
-    void DealDamage()
+    public void DealDamage()
     {
         if (canDealDamage)
         {
