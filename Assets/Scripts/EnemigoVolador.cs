@@ -76,7 +76,6 @@ public class EnemigoVolador : MonoBehaviour
 
         if (timeBtwShots <= 0 && canShoot ==true)
         {
-            Debug.Log("Disparo");
             DisparoDeBala();
         }
         else
@@ -137,9 +136,10 @@ public class EnemigoVolador : MonoBehaviour
 
     private void receiveDamage2()
     {
+        Debug.Log("F");
         rb2D.gravityScale = DefaultGravityScale;
-        Puntuacion.scoreValue += 10; // ¿Falta algo aquí?
-        vidaCount.lifesValue += 10; // ¿Falta algo aquí?
+        Puntuacion.scoreValue += 10; 
+        vidaCount.lifesValue += 10; 
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");

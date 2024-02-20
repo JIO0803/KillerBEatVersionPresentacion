@@ -94,7 +94,6 @@ public class EnemigoRodante : MonoBehaviour
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
         spkn.kunaiCount += 1;
-        Destroy(gameObject);
     }
 
     public void TakeExplosionDamage()

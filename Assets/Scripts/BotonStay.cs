@@ -17,32 +17,25 @@ public class BotonStay : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("kunai") || other.CompareTag("BolaActivadora"))
+        if (other.CompareTag("kunai") || other.CompareTag("BolaActivadora") || other.CompareTag("Player"))
         {
             plat1.enabled = true;
             plat2.enabled = false;
-            boolDeSeguridad = true;
         }
         else
         {
             plat1.enabled = false;
             plat2.enabled = true;
-            boolDeSeguridad = false;
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == ("Player"))
+        if (collision.gameObject.tag == ("Player") || collision.gameObject.tag == ("BolaActivadora"))
         {
             plat1.enabled = true;
             plat2.enabled = false;
-            boolDeSeguridad = true;
-        }
-        else if (boolDeSeguridad == false)
-        {
-            plat1.enabled = false;
-            plat2.enabled = true;
+            Muro.layer = LayerMask.NameToLayer("Pared");
         }
     }
 }

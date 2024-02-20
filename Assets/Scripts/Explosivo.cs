@@ -10,11 +10,18 @@ public class Explosivo : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("kunai") || collision.CompareTag("explosivo") || collision.CompareTag("bala") || collision.CompareTag("misilTeled"))
+        if (collision.CompareTag("explosivo") || collision.CompareTag("bala") || collision.CompareTag("misilTeled"))
         {
             Explode();
             Destroy(gameObject);
             Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("kunai"))
+        {
+            Explode();
+            collision.GetComponent<Rigidbody2D>().gravityScale = 10;
+            Destroy(gameObject);
         }
     }
 
