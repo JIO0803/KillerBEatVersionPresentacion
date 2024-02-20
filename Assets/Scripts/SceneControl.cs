@@ -20,7 +20,10 @@ public class SceneControl : MonoBehaviour
     public GameObject bigCredits;
     public GameObject credits;
     public GameObject optionsWindow;
-    public GameObject mainMenu;
+    public GameObject play;
+    public GameObject optionsButton;
+    public GameObject turnOff;
+    public GameObject news;
     public GameObject toggle;
     public GameObject english;
     public GameObject inglés;
@@ -139,12 +142,12 @@ public class SceneControl : MonoBehaviour
 
         if (languageCounter < 0)
         {
-            languageCounter = 0;
+            languageCounter = 2;
         }        
         
         if (languageCounter > 2)
         {
-            languageCounter = 2;
+            languageCounter = 0;
         }        
         
         if (qualityCounter == 0)
@@ -170,12 +173,12 @@ public class SceneControl : MonoBehaviour
 
         if (qualityCounter < 0)
         {
-            qualityCounter = 0;
+            qualityCounter = 2;
         }        
         
         if (qualityCounter > 2)
         {
-            qualityCounter = 2;
+            qualityCounter = 0;
         }
     }
 
@@ -279,13 +282,19 @@ public class SceneControl : MonoBehaviour
     public void OpenOptions()
     {
         optionsWindow.SetActive(true);
-        mainMenu.SetActive(false);
+        play.SetActive(false);
+        optionsButton.SetActive(false);
+        turnOff.SetActive(false);
+        news.SetActive(false);
     }
 
     public void CloseOptions()
-    {
-        mainMenu.SetActive(true);   
+    {   
         optionsWindow.SetActive(false);
+        play.SetActive(true);
+        optionsButton.SetActive(true);
+        turnOff.SetActive(true);
+        news.SetActive(true);
     }
 
     public void PauseMusic()

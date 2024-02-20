@@ -134,6 +134,6 @@ public class EnemigoSoldado : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
         spkn.kunaiCount += 1;
         nmdk.kunaiCounts += 1;
-        Destroy(gameObject);
+        transform.Rotate(0, 0, 90);
     }
 }

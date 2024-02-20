@@ -45,11 +45,11 @@ public class MovJugador : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         RaycastHit2D raycastSuelo = Physics2D.Linecast(transform.position, transform.position + Vector3.down * 0.25f, capaPared);
-        if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
-            Debug.Log("Move");
         }
+
         if (Input.GetKey(KeyCode.D))
         {
             transform.localScale = new Vector2(1, transform.localScale.y);
@@ -111,6 +111,7 @@ public class MovJugador : MonoBehaviour
         if (!collision.isTrigger && collision.CompareTag("ground"))
         {
             grounded = true;
+            rb.velocity = new Vector2 (0, rb.velocity.y);
         }
 
         if (collision.CompareTag("PosCam"))
@@ -124,6 +125,7 @@ public class MovJugador : MonoBehaviour
         if (!collision.isTrigger && collision.CompareTag("ground"))
         {
             grounded = true;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
         if (collision.CompareTag("PosCam"))
         {

@@ -36,7 +36,7 @@ public class MisilDirigido : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("pared") || other.CompareTag("ground") || other.CompareTag("kunai") || other.CompareTag("explosivo"))
+        if (other.CompareTag("pared") || other.CompareTag("ground") || other.CompareTag("kunai") || other.CompareTag("explosivo") || other.CompareTag("laser"))
         {
             if (volador != null)
             {

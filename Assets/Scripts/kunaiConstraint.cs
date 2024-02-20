@@ -9,10 +9,12 @@ public class KunaiConstraint : MonoBehaviour
     public float destroyDelay = 8f;
     public bool collided = false;
     Rigidbody2D rb2D;
+    Collider2D cl2d;
     NumeroDeKunais nmdk;
     SpawnKunai kunsp;
     void Start()
     {
+        cl2d = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();
         nmdk = GameObject.FindGameObjectWithTag("lifeBar").GetComponent<NumeroDeKunais>();
@@ -20,25 +22,14 @@ public class KunaiConstraint : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("pared") || collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("explosivo"))
+        if (collision.gameObject.CompareTag("pared") || collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("explosivo") || 
+            (collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy")))
         {
-            transform.SetParent(collision.transform);
-            rb2D.velocity = Vector2.zero;
-            collided = true;
-            if (collision == null)
+            if (collision.GetComponent<Rigidbody2D>() != null)
             {
-                rb2D.gravityScale = 5;
-            }
-        }
-
-        if (collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy"))
-        {
-            transform.SetParent(collision.transform);
-            rb2D.velocity = Vector2.zero;
-            collided = true;
-            if (collision == null)
-            {
-                rb2D.gravityScale = 5;
+                transform.SetParent(collision.transform);
+                rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
+                collided = true;
             }
         }
     }

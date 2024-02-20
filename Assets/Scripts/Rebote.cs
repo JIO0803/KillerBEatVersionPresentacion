@@ -3,6 +3,7 @@ using UnityEngine;
 public class Rebote : MonoBehaviour
 {
     Rigidbody2D rb;
+    public GameObject dispensador;
     // Update is called once per frame
     private void Start()
     {
@@ -12,7 +13,7 @@ public class Rebote : MonoBehaviour
     {
         if (collision.CompareTag("Transp"))
         {
-            transform.position = new Vector3(565f, -188.58f, 0);
+            transform.position = dispensador.transform.position;
             rb.velocity = new Vector2(0, 0);
         }
     }

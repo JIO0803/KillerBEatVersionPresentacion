@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPoint: {fileID: 2529531464095401938}
   explosionRange: 15.1
-  empuje: 70
+  empuje: 10
 --- !u!50 &3595095713112151340
 Rigidbody2D:
   serializedVersion: 4

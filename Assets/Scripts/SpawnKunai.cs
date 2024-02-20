@@ -9,7 +9,7 @@ public class SpawnKunai : MonoBehaviour
     public GameObject kunaiText;
     public GameObject PlayerLocation;
     public float DropSpeed = 2;
-    private Rigidbody2D rb2D;
+    Rigidbody2D rb2D;
     private List<GameObject> kunaiList = new List<GameObject>();
     public int kunaiCount;
     SpawnKunai spwnk;
@@ -18,10 +18,11 @@ public class SpawnKunai : MonoBehaviour
 
     private void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
         kunaiCount = 3;
         spwnk = PlayerLocation.GetComponent<SpawnKunai>();
         nmdk = kunaiText.GetComponent <NumeroDeKunais>();
+
         //spwnk.enabled = false;
     }
 
@@ -84,6 +85,7 @@ public class SpawnKunai : MonoBehaviour
                 {
                     closestDistance = distance;
                     closestKunai = kunai;
+                    rb2D.velocity = new Vector2(closestKunai.GetComponent<Rigidbody2D>().velocity.x, closestKunai.GetComponent<Rigidbody2D>().velocity.y);
                 }
             }
         }
@@ -93,7 +95,7 @@ public class SpawnKunai : MonoBehaviour
             PlayerLocation.transform.position = closestKunai.transform.position;
             Destroy(closestKunai);
             kunaiList.Remove(closestKunai);
-
+            
             rb2D.velocity = closestKunai.GetComponent<Rigidbody2D>().velocity * kunaiTpSpeed;
 
             OnKunaiDestroyed();
