@@ -6,12 +6,12 @@ public class MisilDirigido : MonoBehaviour
     private Transform player;
 
     Rigidbody2D rb2D;
-    public float changingSpeed;
-    public bool Stop;
-    public bool canCollide = false;
+    [SerializeField] private float changingSpeed;
+    [SerializeField] private bool Stop;
+    [SerializeField] private bool canCollide = false;
 
     public float startTimeBtwShots;
-    GameObject volador;
+    public GameObject volador;
 
     void Start()
     {
@@ -68,7 +68,6 @@ public class MisilDirigido : MonoBehaviour
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
             }
-                
         }
 
         if (other.CompareTag("soldado") && canCollide == true)
@@ -78,8 +77,7 @@ public class MisilDirigido : MonoBehaviour
                 other.GetComponent<EnemigoSoldado>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
-            }
-                
+            }             
         }
     }
 

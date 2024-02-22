@@ -7,8 +7,8 @@ public class Tiempo : MonoBehaviour
 {
     public GameObject cameraObject;
     public Volume cameraVolume;
-    public float SlowTime;
-    public float timeSpeed;
+    [SerializeField] private float SlowTime;
+    [SerializeField] private float timeSpeed;
     public GameObject player;
     MovJugador movJug;
 

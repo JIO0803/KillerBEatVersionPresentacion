@@ -4,17 +4,17 @@ using UnityEngine;
 public class MovJugador : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float Velocidad = 5f;
-    public float salto;
-    public int saltos = 1;
-    public int wallJumpForce = 10;
+    [SerializeField] private float Velocidad = 5f;
+    [SerializeField] private float salto;
+    [SerializeField] private int saltos = 1;
+    //[SerializeField] private int wallJumpForce = 10;
     public LayerMask capaPared;
 
     private Animator animator;
     public bool isWallSliding;
     public bool grounded;
 
-    public float wallSlidingSpeed = 0.5f;
+    [SerializeField] private float wallSlidingSpeed = 0.5f;
 
     private wallDetect wallDetection;
 

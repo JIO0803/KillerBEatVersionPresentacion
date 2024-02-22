@@ -41,10 +41,10 @@ public class SceneControl : MonoBehaviour
     private Volume vol;
     private reviveHamster rvhm;
     private bool isMusicPaused = false;
-    public int MusicCount;
-    public float music1PlaybackTime;
-    public float music2PlaybackTime;
-    public float music3PlaybackTime;
+    [SerializeField] private int MusicCount;
+    [SerializeField] private float music1PlaybackTime;
+    [SerializeField] private float music2PlaybackTime;
+    [SerializeField] private float music3PlaybackTime;
     private float languageCounter;
     private float qualityCounter;
 

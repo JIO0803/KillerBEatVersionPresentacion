@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7265787802969697945}
   - component: {fileID: 1156973148366239769}
   - component: {fileID: 7512326971537444676}
-  - component: {fileID: -2490892352237668647}
+  - component: {fileID: -7792058451643034119}
   m_Layer: 8
   m_Name: w (40)
   m_TagString: ground
@@ -165,7 +165,7 @@ MonoBehaviour:
   - {fileID: 0}
   _speed: 2
   _chechDistance: 0.05
---- !u!50 &-2490892352237668647
+--- !u!50 &-7792058451643034119
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -187,8 +187,8 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1344
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7

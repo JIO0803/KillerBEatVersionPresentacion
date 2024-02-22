@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class KunaiConstraint : MonoBehaviour
 {
-    public float stuckDuration = 0f;
-    public float waitingTime = 0f;
-    public float destroyDelay = 8f;
-    public bool collided = false;
+    [SerializeField] private float stuckDuration = 0f;
+    [SerializeField] private float waitingTime = 0f;
+    [SerializeField] private float destroyDelay = 8f;
+    [SerializeField] private bool collided = false;
+    [SerializeField] private float kunaiMass;
     Rigidbody2D rb2D;
     NumeroDeKunais nmdk;
     SpawnKunai kunsp;
@@ -28,7 +29,7 @@ public class KunaiConstraint : MonoBehaviour
                 transform.SetParent(collision.transform);
                 rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
                 collided = true;
-                this.gameObject.layer = collision.gameObject.layer;
+                //this.gameObject.layer = collision.gameObject.layer;
             }
         }
     }
@@ -36,12 +37,28 @@ public class KunaiConstraint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") ||
-           collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado"))    
+           collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
         {
             StartCoroutine(Stuck(stuckDuration));
         }   
         if (collision.CompareTag("Player") && collided == true || collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
         {
+            AddKunai();
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("explosivo"))
+        {
+            rb2D.mass = kunaiMass;
+            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && collided == true || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
+        {
+            Debug.Log("loloo");
             AddKunai();
             Destroy(gameObject);
         }

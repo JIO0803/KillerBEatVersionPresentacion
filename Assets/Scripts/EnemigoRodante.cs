@@ -4,10 +4,10 @@ using UnityEngine.Rendering;
 public class EnemigoRodante : MonoBehaviour
 {
     public GameObject player;
-    public float speed;
-    public float rotationSpeed;
-    public float distanceBetween;
-    public float ReformedSpeed;
+    [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float distanceBetween;
+    [SerializeField] private float ReformedSpeed;
     private float distance;
     private Rigidbody2D rb2D;
     private bool canDealDamage;
@@ -93,7 +93,6 @@ public class EnemigoRodante : MonoBehaviour
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
-        spkn.kunaiCount += 1;
     }
 
     public void TakeExplosionDamage()

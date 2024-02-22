@@ -7,23 +7,27 @@ public class Explosivo : MonoBehaviour
     public Transform explosionPoint;
     [SerializeField] private float explosionRange;
     [SerializeField] private float empuje;
+    [SerializeField] private float suavizado;
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("explosivo") || collision.CompareTag("bala") || collision.CompareTag("misilTeled"))
         {
             Explode();
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("kunai"))
         {
             Explode();
-            collision.GetComponent<Rigidbody2D>().gravityScale = 10;
-            Destroy(gameObject);
+            collision.GetComponent<Rigidbody2D>().gravityScale = 5;
+            collision.GetComponent<Rigidbody2D>().mass = 20;
+            //Destroy(gameObject);
         }
     }
+
 
     void Explode()
     {
@@ -39,7 +43,7 @@ public class Explosivo : MonoBehaviour
 
                 if (distance > 0)
                 {
-                    float force = explosionRange / distance * empuje;
+                    float force = empuje / (distance * distance) * suavizado;
                     rb2D.AddForce(direction.normalized * force, ForceMode2D.Impulse);
                 }
             }
@@ -51,6 +55,7 @@ public class Explosivo : MonoBehaviour
             }
         }
     }
+
 
     void OnDrawGizmosSelected()
     {

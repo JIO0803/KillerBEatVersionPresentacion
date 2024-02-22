@@ -166,3 +166,4 @@ MonoBehaviour:
   Stop: 0
   canCollide: 0
   startTimeBtwShots: 0.75
+  volador: {fileID: 2315493022700947474, guid: 14c4486f4b7d9474e8d9aa0dc152078c, type: 3}

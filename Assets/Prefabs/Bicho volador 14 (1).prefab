@@ -111,7 +111,7 @@ MonoBehaviour:
   missilePrefab: {fileID: 6461900974859927665, guid: 6e054a42ac6ff284786f9fb1b864af7e, type: 3}
   player: {fileID: 0}
   kunaiText: {fileID: 0}
-  canShoot: 0
+  canShoot: 1
   lifes: 1
 --- !u!58 &5940905059432793574
 CircleCollider2D:

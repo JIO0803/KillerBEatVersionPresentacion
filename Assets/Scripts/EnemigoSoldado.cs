@@ -3,22 +3,23 @@ using UnityEngine;
 
 public class EnemigoSoldado : MonoBehaviour
 {
-    public float speed;
-    public float stoppingDistance;
-    public float retreatDistance;
+    [SerializeField] private float speed;
+    [SerializeField] private float stoppingDistance;
+    [SerializeField] private float retreatDistance;
 
     private float timeBtwShots;
-    public float startTimeBtwShots;
+    [SerializeField] private float startTimeBtwShots;
     [SerializeField] private float charSpeed;
     [SerializeField] private float detectDist;
     public int lifes;
 
     public bool canDealDamage;
+    [SerializeField] LayerMask Enviroment;
+    [SerializeField] private float DefaultGravityScale = 10f;
     public GameObject projectile;
     public Transform player;
-    [SerializeField] LayerMask Enviroment;
     public GameObject kunaiText;
-    public float DefaultGravityScale = 10f;
+
     Rigidbody2D rb2D;
     SpawnKunai spkn;
     NumeroDeKunais nmdk;
@@ -132,8 +133,6 @@ public class EnemigoSoldado : MonoBehaviour
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
-        spkn.kunaiCount += 1;
-        nmdk.kunaiCounts += 1;
         transform.Rotate(0, 0, 90);
     }
 }

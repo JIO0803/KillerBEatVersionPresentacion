@@ -176,6 +176,7 @@ MonoBehaviour:
   waitingTime: 0
   destroyDelay: 6
   collided: 0
+  kunaiMass: 2
 --- !u!95 &-2096129257655734207
 Animator:
   serializedVersion: 5

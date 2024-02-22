@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class SpawnKunai : MonoBehaviour
 {
-    public float KunaiVelocity;
+    [SerializeField] private float KunaiVelocity;
     public GameObject KunaiPrefab;
     public GameObject kunaiText;
     public GameObject PlayerLocation;
-    public float DropSpeed = 2;
     Rigidbody2D rb2D;
     private List<GameObject> kunaiList = new List<GameObject>();
     public int kunaiCount;
     SpawnKunai spwnk;
     NumeroDeKunais nmdk;
-    public float kunaiTpSpeed;
+    [SerializeField] private float kunaiTpSpeed;
 
     private void Start()
     {
