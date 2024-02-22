@@ -1,3 +1,4 @@
+// Script SpawnKunai
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class SpawnKunai : MonoBehaviour
     Rigidbody2D rb2D;
     private List<GameObject> kunaiList = new List<GameObject>();
     public int kunaiCount;
+
     SpawnKunai spwnk;
     NumeroDeKunais nmdk;
     [SerializeField] private float kunaiTpSpeed;
@@ -18,11 +20,9 @@ public class SpawnKunai : MonoBehaviour
     private void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        kunaiCount = 3;
+        kunaiCount = SceneControl.kunaiMax;
         spwnk = PlayerLocation.GetComponent<SpawnKunai>();
-        nmdk = kunaiText.GetComponent <NumeroDeKunais>();
-
-        //spwnk.enabled = false;
+        nmdk = kunaiText.GetComponent<NumeroDeKunais>();
     }
 
     private void Update()
@@ -31,9 +31,9 @@ public class SpawnKunai : MonoBehaviour
         {
             kunaiCount = 0;
         }
-        if (kunaiCount > 3)
+        if (kunaiCount > SceneControl.kunaiMax) 
         {
-            kunaiCount = 3;
+            kunaiCount = SceneControl.kunaiMax;
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -94,7 +94,7 @@ public class SpawnKunai : MonoBehaviour
             PlayerLocation.transform.position = closestKunai.transform.position;
             Destroy(closestKunai);
             kunaiList.Remove(closestKunai);
-            
+
             rb2D.velocity = closestKunai.GetComponent<Rigidbody2D>().velocity * kunaiTpSpeed;
 
             OnKunaiDestroyed();

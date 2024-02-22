@@ -22,7 +22,7 @@ public class Tiempo : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) 
-            || movJug.grounded == false && movJug.isWallSliding == false)
+            || movJug.grounded == false)
         {
             Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * timeSpeed);
             cameraVolume.weight = Mathf.Lerp(cameraVolume.weight, 0f, Time.deltaTime * timeSpeed);

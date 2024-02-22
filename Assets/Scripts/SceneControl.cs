@@ -1,3 +1,4 @@
+// Script SceneControl
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,9 +25,14 @@ public class SceneControl : MonoBehaviour
     public GameObject kunaiUpgradesWindow;
     public GameObject unckeckedToggle;
     public GameObject ckeckedToggle;
-    public GameObject english;
-    public GameObject inglés;
-    public GameObject englisch;
+    //Languages
+    public GameObject ingles;
+    public GameObject español;
+    public GameObject aleman;
+    public GameObject italiano;
+    public GameObject frances;
+    public GameObject portugues;
+    //Quality
     public GameObject wow;
     public GameObject boff;
     public GameObject nah;
@@ -36,6 +42,9 @@ public class SceneControl : MonoBehaviour
     public GameObject kunailvl1;
     public GameObject kunailvl2;
     public GameObject kunailvl3;
+
+    public GameObject Player;
+
     public Image toggleImage;
 
     private AudioSource audSor1;
@@ -48,13 +57,14 @@ public class SceneControl : MonoBehaviour
     [SerializeField] private float music1PlaybackTime;
     [SerializeField] private float music2PlaybackTime;
     [SerializeField] private float music3PlaybackTime;
-    private float languageCounter;
-    private float qualityCounter;
-    private float kunaiCount;
+    private int languageCounter;
+    private int qualityCounter;
+    public int kunaiCount;
+    public static int kunaiMax;
 
     void Start()
     {
-        unckeckedToggle.SetActive(false);   
+        unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
         rvhm = FindObjectOfType<reviveHamster>();
         audSor1 = Music1.GetComponent<AudioSource>();
@@ -68,9 +78,10 @@ public class SceneControl : MonoBehaviour
         music1PlaybackTime = PlayerPrefs.GetFloat("Music1PlaybackTime", 0f);
         music2PlaybackTime = PlayerPrefs.GetFloat("Music2PlaybackTime", 0f);
         music3PlaybackTime = PlayerPrefs.GetFloat("Music3PlaybackTime", 0f);
-        languageCounter = PlayerPrefs.GetFloat("LanguageCounter", 0f);
-        qualityCounter = PlayerPrefs.GetFloat("QualityCounter", 0f);
-        kunaiCount = PlayerPrefs.GetFloat("kunaiCount", 0f);
+        languageCounter = PlayerPrefs.GetInt("LanguageCounter", 0);
+        qualityCounter = PlayerPrefs.GetInt("QualityCounter", 0);
+        kunaiCount = PlayerPrefs.GetInt("kunaiCount", kunaiCount);
+        kunaiMax = PlayerPrefs.GetInt("kunaiMax", kunaiMax);
 
         audSor1.time = music1PlaybackTime;
         audSor2.time = music2PlaybackTime;
@@ -88,6 +99,7 @@ public class SceneControl : MonoBehaviour
 
     void Update()
     {
+        kunaiMax = kunaiCount;
         if (Input.GetKeyDown(KeyCode.Y))
         {
             rvhm.ResetCounter();
@@ -128,57 +140,96 @@ public class SceneControl : MonoBehaviour
 
         if (languageCounter == 0)
         {
-            english.SetActive(true);
-            englisch.SetActive(false);
-            inglés.SetActive(false);
-        }        
-        
+            ingles.SetActive(true);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(false);
+        }
+
         if (languageCounter == 1)
         {
-            english.SetActive(false);
-            englisch.SetActive(true);
-            inglés.SetActive(false);
-        }        
-        
+            ingles.SetActive(false);
+            aleman.SetActive(true);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(false);
+        }
+
         if (languageCounter == 2)
         {
-            english.SetActive(false);
-            englisch.SetActive(false);
-            inglés.SetActive(true);
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(true);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(false);
+        }
+
+        if (languageCounter == 3)
+        {
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(true);
+            frances.SetActive(false);
+            portugues.SetActive(false);
+        }
+
+        if (languageCounter == 4)
+        {
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(true);
+            portugues.SetActive(false);
+        }
+
+        if (languageCounter == 5)
+        {
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(true);
         }
 
         if (languageCounter < 0)
         {
-            languageCounter = 2;
-        }        
-        
-        if (languageCounter > 2)
+            languageCounter = 5;
+        }
+
+        if (languageCounter > 5)
         {
             languageCounter = 0;
-        }        
-        
+        }
+
         if (qualityCounter == 0)
         {
             wow.SetActive(true);
             boff.SetActive(false);
             nah.SetActive(false);
-        }        
-        
+        }
+
         if (qualityCounter == 1)
         {
             wow.SetActive(false);
             boff.SetActive(true);
             nah.SetActive(false);
-        }        
-        
+        }
+
         if (qualityCounter == 2)
         {
             wow.SetActive(false);
             boff.SetActive(false);
             nah.SetActive(true);
-        }       
-        
-        if (kunaiCount == 0)
+        }
+
+        if (kunaiCount == 1)
         {
             kunaiUp1.SetActive(true);
             kunaiUp2.SetActive(false);
@@ -186,9 +237,9 @@ public class SceneControl : MonoBehaviour
             kunailvl1.SetActive(true);
             kunailvl2.SetActive(false);
             kunailvl3.SetActive(false);
-        }        
-        
-        if (kunaiCount == 1)
+        }
+
+        if (kunaiCount == 2)
         {
             kunaiUp1.SetActive(false);
             kunaiUp2.SetActive(true);
@@ -196,37 +247,38 @@ public class SceneControl : MonoBehaviour
             kunailvl1.SetActive(false);
             kunailvl2.SetActive(true);
             kunailvl3.SetActive(false);
-        }        
-        
-        if (kunaiCount == 2)
+        }
+
+        if (kunaiCount == 3)
         {
             kunaiUp1.SetActive(false);
             kunaiUp2.SetActive(false);
             kunaiUp3.SetActive(true);
             kunailvl1.SetActive(false);
-            kunailvl2.SetActive(true);
-            kunailvl3.SetActive(false);
+            kunailvl2.SetActive(false);
+            kunailvl3.SetActive(true);
         }
+
 
         if (qualityCounter < 0)
         {
             qualityCounter = 2;
-        }        
-        
+        }
+
         if (qualityCounter > 2)
         {
             qualityCounter = 0;
+        }       
+        if (kunaiCount < 1)
+        {
+            kunaiCount = 1;
         }
 
-        if (kunaiCount < 0)
+        if (kunaiCount > 3)
         {
-            kunaiCount = 0;
+            kunaiCount = 3;
         }
 
-        if (kunaiCount > 2)
-        {
-            kunaiCount = 2;
-        }
     }
 
     void OnDestroy()
@@ -235,6 +287,9 @@ public class SceneControl : MonoBehaviour
         PlayerPrefs.SetFloat("Music1PlaybackTime", audSor1.time);
         PlayerPrefs.SetFloat("Music2PlaybackTime", audSor2.time);
         PlayerPrefs.SetFloat("Music3PlaybackTime", audSor3.time);
+        PlayerPrefs.GetInt("kunaiMax", kunaiMax);
+        PlayerPrefs.GetInt("kunaiCount", kunaiCount);
+        PlayerPrefs.Save();
     }
 
     void SetMusicTrack()
@@ -292,20 +347,12 @@ public class SceneControl : MonoBehaviour
         Screen.fullScreen = true;
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
-        Debug.Log("Si");
-    }       
+    }
     public void fullScreenOff()
     {
         Screen.fullScreen = false;
         unckeckedToggle.SetActive(true);
         ckeckedToggle.SetActive(false);
-        Debug.Log("No");
-    }    
-
-
-    public void StopMusic()
-    {
-        Debug.Log("Criteria");
     }
 
     public void NextSong()
@@ -317,13 +364,11 @@ public class SceneControl : MonoBehaviour
     public void ChangeLightDown()
     {
         vol.weight -= 0.1f;
-        Debug.Log("Down");
     }
 
     public void ChangeLightUp()
     {
         vol.weight += 0.1f;
-        Debug.Log("Up");
     }
 
     public void Credits()
@@ -355,7 +400,6 @@ public class SceneControl : MonoBehaviour
     {
         PauseButton.SetActive(false);
         ResumeButton.SetActive(true);
-        Debug.Log("Pause");
         audSor1.Pause();
         audSor2.Pause();
         audSor3.Pause();
@@ -366,7 +410,6 @@ public class SceneControl : MonoBehaviour
     {
         PauseButton.SetActive(true);
         ResumeButton.SetActive(false);
-        Debug.Log("Resume");
         if (!isMusicPaused)
         {
             return;
@@ -387,7 +430,6 @@ public class SceneControl : MonoBehaviour
     public void AddKunai()
     {
         kunaiCount++;
-        Debug.Log("awa");
     }
 
     public void MinusKunai()

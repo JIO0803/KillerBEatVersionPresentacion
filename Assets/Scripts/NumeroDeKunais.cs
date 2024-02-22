@@ -22,6 +22,10 @@ public class NumeroDeKunais : MonoBehaviour
         {
             kunaiCounts = 0;
         }
+        if (kunaiCounts > SceneControl.kunaiMax)
+        {
+            kunaiCounts = SceneControl.kunaiMax;
+        }
         if (kunaiCounts == 0)
         {
             kunaiCharge1.SetActive(false);

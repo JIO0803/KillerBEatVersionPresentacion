@@ -54,20 +54,12 @@ public class MisilDirigido : MonoBehaviour
         {
             if (volador != null)
             {
+
                 other.GetComponent<EnemigoRodante>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
             }
                 
-        }
-        if (other.CompareTag("volador") && canCollide == true)
-        {
-            if (volador != null)
-            {
-                other.GetComponent<EnemigoVolador>().lifes -= 1;
-                volador.GetComponent<EnemigoVolador>().canShoot = true;
-                DestroyProjectile();
-            }
         }
 
         if (other.CompareTag("soldado") && canCollide == true)

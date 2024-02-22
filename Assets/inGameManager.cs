@@ -16,9 +16,18 @@ public class inGameManager : MonoBehaviour
     public Sprite uncheckedToggle;
     public Image toggleImage;
     public GameObject musicManager;
+    public GameObject Player;
     AudioSource audioSource;
+    SpawnKunai sp;
+    MovJugador mj;
+    Tiempo tp;
+    wallDetect wl;
     void Start()
     {
+        tp = Player.GetComponent<Tiempo>();
+        wl = Player.GetComponent<wallDetect>();
+        mj = Player.GetComponent<MovJugador>();
+        sp = Player.GetComponent<SpawnKunai>(); 
         menuIsActive = false;
         menu.SetActive(false);
 
@@ -99,12 +108,18 @@ public class inGameManager : MonoBehaviour
         audioSource.volume = 0.005f;
         menuIsActive = true;
         menu.SetActive(true);
+        Time.timeScale = 0;
+        sp.enabled = false;
+        mj.enabled = false;
     }
 
     public void CloseMenu()
     {
+        Time.timeScale = 0.5f;
         audioSource.volume = 0.03f;
         menuIsActive = false;
         menu.SetActive(false);
+        sp.enabled = true;
+        mj.enabled = true;
     }
 }

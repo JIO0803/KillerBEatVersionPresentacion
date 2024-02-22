@@ -3,7 +3,6 @@ using UnityEngine;
 public class EnemigoVolador : MonoBehaviour
 {
     [SerializeField] private float charSpeed;
-    [SerializeField] private float speed;
     [SerializeField] private float stoppingDistance;
     [SerializeField] private float retreatDistance;
     [SerializeField] private float startTimeBtwShots;
@@ -13,7 +12,7 @@ public class EnemigoVolador : MonoBehaviour
     public Transform player;
     private Rigidbody2D rb2D;
     public GameObject kunaiText;
-    private const float DefaultGravityScale = 10f;
+    private const float DefaultGravityScale = 3f;
     private bool canDealDamage;
     public bool canShoot;
     private float timeBtwShots;
@@ -24,6 +23,7 @@ public class EnemigoVolador : MonoBehaviour
 
     private void Start()
     {
+        canShoot = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb2D = GetComponent<Rigidbody2D>();
@@ -99,9 +99,9 @@ public class EnemigoVolador : MonoBehaviour
 
         GameObject kunaiInst = Instantiate(missilePrefab, transform.position, Quaternion.identity);
 
-        kunaiInst.GetComponent<Rigidbody2D>().velocity = direction * speed;
+        kunaiInst.GetComponent<Rigidbody2D>().velocity = direction * charSpeed;
         timeBtwShots = startTimeBtwShots;
-        canShoot = false;
+        canShoot = true;
     }
 
     private void FlipSprite()
@@ -129,6 +129,7 @@ public class EnemigoVolador : MonoBehaviour
     {
         if ((collision.CompareTag("kunai") || collision.CompareTag("bala")))
         {
+            Debug.Log("mediste");
             lifes -= 1;
             receiveDamage2();
         }

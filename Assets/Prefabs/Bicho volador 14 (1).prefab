@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0186cd83073f65d4e8fc03509e50fd58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charSpeed: 7
+  charSpeed: 5
   speed: 5
-  stoppingDistance: 23
-  retreatDistance: 16
+  stoppingDistance: 15
+  retreatDistance: 10
   startTimeBtwShots: 2
   detectDist: 20
   obstacleLayer:

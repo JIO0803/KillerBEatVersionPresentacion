@@ -4,25 +4,20 @@ using UnityEngine;
 public class MovJugador : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private float Velocidad = 5f;
-    [SerializeField] private float salto;
-    [SerializeField] private int saltos = 1;
+    public float Velocidad = 5f;
+    public float salto;
+    public int saltos = 1;
     //[SerializeField] private int wallJumpForce = 10;
     public LayerMask capaPared;
 
-    private Animator animator;
+    public Animator animator;
     public bool isWallSliding;
     public bool grounded;
-
-    [SerializeField] private float wallSlidingSpeed = 0.5f;
-
-    private wallDetect wallDetection;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        wallDetection = GetComponent<wallDetect>();
         isWallSliding = false;
         //gameObject.GetComponent<MovJugador>().enabled = false;
     }
@@ -50,44 +45,13 @@ public class MovJugador : MonoBehaviour
             rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && !isWallSliding && !grounded)
         {
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !isWallSliding && !grounded)
         {
             transform.localScale = new Vector2(-1, transform.localScale.y);
-        }
-        if (Input.GetKey(KeyCode.D) && isWallSliding && !grounded)
-        {
-            transform.localScale = new Vector2(-1, transform.localScale.y);
-        }
-        if (Input.GetKey(KeyCode.A) && isWallSliding && !grounded)
-        {
-            transform.localScale = new Vector2(1, transform.localScale.y);
-        }
-
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && saltos > 0)
-        {
-            if (isWallSliding)
-            {
-                if (wallDetection.isWallOnRight)
-                {
-                    // Jump left and up
-                    rb.AddForce(new Vector2(-Velocidad * Mathf.Sqrt(2) / 2, salto * Mathf.Sqrt(2) / 2), ForceMode2D.Impulse);
-                }
-                else if (wallDetection.isWallOnLeft)
-                {
-                    // Jump right and up
-                    rb.AddForce(new Vector2(Velocidad + 1 * Mathf.Sqrt(2) / 2, salto * Mathf.Sqrt(2) / 2), ForceMode2D.Impulse);
-                }
-            }
-            else
-            {
-                // Jump straight up
-                rb.velocity = new Vector2(rb.velocity.x, salto);
-            }
-            saltos -= 1;
         }
 
         if (grounded)
@@ -132,28 +96,6 @@ public class MovJugador : MonoBehaviour
             gameObject.GetComponent<MovJugador>().enabled = true;
         }
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pared") && rb.velocity.y <= 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * wallSlidingSpeed);
-            isWallSliding = true;
-            saltos += 1;
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pared"))
-        {
-            isWallSliding = false;
-        }
-    }
-
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.isTrigger)
