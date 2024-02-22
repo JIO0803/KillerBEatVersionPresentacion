@@ -82,7 +82,6 @@ public class inGameManager : MonoBehaviour
     public void fullScreen(bool is_fullscene)
     {
         Screen.fullScreen = is_fullscene;
-        Debug.Log("isFullScreen" + is_fullscene);
         toggleImage.sprite = is_fullscene ? checkedToggle : uncheckedToggle;
     }
 
@@ -100,7 +99,6 @@ public class inGameManager : MonoBehaviour
         audioSource.volume = 0.005f;
         menuIsActive = true;
         menu.SetActive(true);
-        Debug.Log("Abro");
     }
 
     public void CloseMenu()
@@ -108,6 +106,5 @@ public class inGameManager : MonoBehaviour
         audioSource.volume = 0.03f;
         menuIsActive = false;
         menu.SetActive(false);
-        Debug.Log("Cierro");
     }
 }

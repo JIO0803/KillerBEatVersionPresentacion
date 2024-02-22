@@ -41,6 +41,14 @@ public class KunaiConstraint : MonoBehaviour
         {
             StartCoroutine(Stuck(stuckDuration));
         }   
+
+        if (collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))
+        {
+            transform.SetParent(collision.transform);
+            rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
+            collided = true;
+        }
+
         if (collision.CompareTag("Player") && collided == true || collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
         {
             AddKunai();
@@ -58,7 +66,6 @@ public class KunaiConstraint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && collided == true || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
         {
-            Debug.Log("loloo");
             AddKunai();
             Destroy(gameObject);
         }

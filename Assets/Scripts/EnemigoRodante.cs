@@ -13,13 +13,11 @@ public class EnemigoRodante : MonoBehaviour
     private bool canDealDamage;
     private const float DefaultGravityScale = 10f;
     public const float slow = 8f;
-    SpawnKunai spkn;
     public int lifes;
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         canDealDamage = true;
-        spkn = player.GetComponent<SpawnKunai>();
         lifes = 2;
     }
 

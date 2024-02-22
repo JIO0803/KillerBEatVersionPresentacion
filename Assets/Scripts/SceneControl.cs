@@ -20,19 +20,22 @@ public class SceneControl : MonoBehaviour
     public GameObject bigCredits;
     public GameObject credits;
     public GameObject optionsWindow;
-    public GameObject play;
-    public GameObject optionsButton;
-    public GameObject turnOff;
-    public GameObject news;
-    public GameObject toggle;
+    public GameObject mainMenu;
+    public GameObject kunaiUpgradesWindow;
+    public GameObject unckeckedToggle;
+    public GameObject ckeckedToggle;
     public GameObject english;
     public GameObject inglés;
     public GameObject englisch;
     public GameObject wow;
     public GameObject boff;
     public GameObject nah;
-    public Sprite checkedToggle;
-    public Sprite uncheckedToggle;
+    public GameObject kunaiUp3;
+    public GameObject kunaiUp2;
+    public GameObject kunaiUp1;
+    public GameObject kunailvl1;
+    public GameObject kunailvl2;
+    public GameObject kunailvl3;
     public Image toggleImage;
 
     private AudioSource audSor1;
@@ -47,9 +50,12 @@ public class SceneControl : MonoBehaviour
     [SerializeField] private float music3PlaybackTime;
     private float languageCounter;
     private float qualityCounter;
+    private float kunaiCount;
 
     void Start()
     {
+        unckeckedToggle.SetActive(false);   
+        ckeckedToggle.SetActive(true);
         rvhm = FindObjectOfType<reviveHamster>();
         audSor1 = Music1.GetComponent<AudioSource>();
         audSor2 = Music2.GetComponent<AudioSource>();
@@ -64,6 +70,7 @@ public class SceneControl : MonoBehaviour
         music3PlaybackTime = PlayerPrefs.GetFloat("Music3PlaybackTime", 0f);
         languageCounter = PlayerPrefs.GetFloat("LanguageCounter", 0f);
         qualityCounter = PlayerPrefs.GetFloat("QualityCounter", 0f);
+        kunaiCount = PlayerPrefs.GetFloat("kunaiCount", 0f);
 
         audSor1.time = music1PlaybackTime;
         audSor2.time = music2PlaybackTime;
@@ -169,6 +176,36 @@ public class SceneControl : MonoBehaviour
             wow.SetActive(false);
             boff.SetActive(false);
             nah.SetActive(true);
+        }       
+        
+        if (kunaiCount == 0)
+        {
+            kunaiUp1.SetActive(true);
+            kunaiUp2.SetActive(false);
+            kunaiUp3.SetActive(false);
+            kunailvl1.SetActive(true);
+            kunailvl2.SetActive(false);
+            kunailvl3.SetActive(false);
+        }        
+        
+        if (kunaiCount == 1)
+        {
+            kunaiUp1.SetActive(false);
+            kunaiUp2.SetActive(true);
+            kunaiUp3.SetActive(false);
+            kunailvl1.SetActive(false);
+            kunailvl2.SetActive(true);
+            kunailvl3.SetActive(false);
+        }        
+        
+        if (kunaiCount == 2)
+        {
+            kunaiUp1.SetActive(false);
+            kunaiUp2.SetActive(false);
+            kunaiUp3.SetActive(true);
+            kunailvl1.SetActive(false);
+            kunailvl2.SetActive(true);
+            kunailvl3.SetActive(false);
         }
 
         if (qualityCounter < 0)
@@ -179,6 +216,16 @@ public class SceneControl : MonoBehaviour
         if (qualityCounter > 2)
         {
             qualityCounter = 0;
+        }
+
+        if (kunaiCount < 0)
+        {
+            kunaiCount = 0;
+        }
+
+        if (kunaiCount > 2)
+        {
+            kunaiCount = 2;
         }
     }
 
@@ -195,19 +242,22 @@ public class SceneControl : MonoBehaviour
         Track1.SetActive(MusicCount == 1);
         Track2.SetActive(MusicCount == 2);
         Track3.SetActive(MusicCount == 3);
-    }    
+    }
     public void languageRightArrow()
     {
         languageCounter++;
-    }    
+    }
+
     public void languageLeftArrow()
     {
         languageCounter--;
-    }    
+    }
+
     public void qualityRightArrow()
     {
         qualityCounter++;
-    }    
+    }
+
     public void qualityLeftArrow()
     {
         qualityCounter--;
@@ -237,12 +287,21 @@ public class SceneControl : MonoBehaviour
         Application.Quit();
     }
 
-    public void fullScreen(bool is_fullscene)
+    public void fullScreenOn()
     {
-        Screen.fullScreen = is_fullscene;
-        Debug.Log("isFullScreen" + is_fullscene);
-        toggleImage.sprite = is_fullscene ? checkedToggle : uncheckedToggle;
-    }
+        Screen.fullScreen = true;
+        unckeckedToggle.SetActive(false);
+        ckeckedToggle.SetActive(true);
+        Debug.Log("Si");
+    }       
+    public void fullScreenOff()
+    {
+        Screen.fullScreen = false;
+        unckeckedToggle.SetActive(true);
+        ckeckedToggle.SetActive(false);
+        Debug.Log("No");
+    }    
+
 
     public void StopMusic()
     {
@@ -282,19 +341,14 @@ public class SceneControl : MonoBehaviour
     public void OpenOptions()
     {
         optionsWindow.SetActive(true);
-        play.SetActive(false);
-        optionsButton.SetActive(false);
-        turnOff.SetActive(false);
-        news.SetActive(false);
+        mainMenu.SetActive(false);
     }
 
     public void CloseOptions()
-    {   
+    {
         optionsWindow.SetActive(false);
-        play.SetActive(true);
-        optionsButton.SetActive(true);
-        turnOff.SetActive(true);
-        news.SetActive(true);
+        kunaiUpgradesWindow.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
     public void PauseMusic()
@@ -321,5 +375,23 @@ public class SceneControl : MonoBehaviour
         audSor2.Play();
         audSor3.Play();
         isMusicPaused = false;
+    }
+
+    public void KunaiUpgrades()
+    {
+        mainMenu.SetActive(false);
+        optionsWindow.SetActive(false);
+        kunaiUpgradesWindow.SetActive(true);
+    }
+
+    public void AddKunai()
+    {
+        kunaiCount++;
+        Debug.Log("awa");
+    }
+
+    public void MinusKunai()
+    {
+        kunaiCount--;
     }
 }

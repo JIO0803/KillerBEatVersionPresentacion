@@ -57,7 +57,6 @@ public class HamsterInteraction : MonoBehaviour
 
         if (lifeCounter <= 0)
         {
-            Debug.Log("Me morí");
             alive = false;
         }
     }
