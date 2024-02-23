@@ -6,12 +6,21 @@ using UnityEngine;
 public class headShots : MonoBehaviour
 {
     EnemigoSoldado enemigoSoldado;
+    public GameObject enemy;
+    public Vector3 loli;
+    public float headShotxOffset = 0.21f;
+    public float headShotyOffset = 0.85f;
     // Start is called before the first frame update
     void Start()
     {
-        enemigoSoldado = GetComponentInParent<EnemigoSoldado>();
+        enemigoSoldado = enemy.GetComponent<EnemigoSoldado>();
     }
 
+    private void Update()
+    {
+        transform.position = loli;
+        loli = new Vector3(enemy.transform.position.x - headShotxOffset, enemy.transform.position.y + headShotyOffset, 0);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

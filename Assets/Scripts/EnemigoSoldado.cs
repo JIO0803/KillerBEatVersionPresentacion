@@ -12,27 +12,29 @@ public class EnemigoSoldado : MonoBehaviour
     [SerializeField] private float charSpeed;
     [SerializeField] private float detectDist;
     public int lifes;
+    public float newheadShotxOffset;
+    public float newheadShotyOffset;
 
     public bool canDealDamage;
     [SerializeField] LayerMask Enviroment;
     [SerializeField] private float DefaultGravityScale = 10f;
     public GameObject projectile;
+    public GameObject headShot;
+    headShots hs;
     public Transform player;
-    public GameObject kunaiText;
 
+    Rigidbody2D headshotrb;
     Rigidbody2D rb2D;
-    SpawnKunai spkn;
-    NumeroDeKunais nmdk;
 
     // Start is called before the first frame update
     void Start()
     {
+        hs = headShot.GetComponent<headShots>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb2D = projectile.GetComponent<Rigidbody2D>();
         lifes = 2;
-        spkn = player.GetComponent<SpawnKunai>();
-        nmdk = kunaiText.GetComponent<NumeroDeKunais>();
+        headshotrb = headShot.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class EnemigoSoldado : MonoBehaviour
         }
         FlipSprite();
 
-        if (lifes == 0)
+        if (lifes <= 0)
         {
             receiveDamage();
         }
@@ -81,10 +83,7 @@ public class EnemigoSoldado : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
-    private void FlipSprite()
-    {
-        transform.localScale = new Vector3(player.position.x >= transform.position.x ? 1f : -1f, 1f, 1f);
-    }
+
     void DisparoDeBala()
     {
         Vector3 obj = player.transform.position;
@@ -100,6 +99,11 @@ public class EnemigoSoldado : MonoBehaviour
             bala.GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
         timeBtwShots = startTimeBtwShots;
+    }
+
+    private void FlipSprite()
+    {
+        transform.localScale = new Vector3(player.position.x >= transform.position.x ? 1f : -1f, 1f, 1f);
     }
 
     public void DealDamage()
@@ -134,5 +138,8 @@ public class EnemigoSoldado : MonoBehaviour
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
         transform.Rotate(0, 0, 90);
+        headShot.transform.Rotate(0, 0, 90);
+        hs.headShotxOffset = newheadShotxOffset;
+        hs.headShotyOffset = newheadShotyOffset;
     }
 }

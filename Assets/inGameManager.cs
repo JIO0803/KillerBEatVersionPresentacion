@@ -8,20 +8,32 @@ public class inGameManager : MonoBehaviour
 {
     public GameObject menu;
     public float languageCounter;
-    public GameObject english;
-    public GameObject inglés;
-    public GameObject englisch;
     private bool menuIsActive;
     public Sprite checkedToggle;
     public Sprite uncheckedToggle;
     public Image toggleImage;
     public GameObject musicManager;
     public GameObject Player;
+    public GameObject unckeckedToggle;
+    public GameObject ckeckedToggle;
     AudioSource audioSource;
     SpawnKunai sp;
     MovJugador mj;
     Tiempo tp;
     wallDetect wl;
+    private int qualityCounter;
+
+    public GameObject wow;
+    public GameObject boff;
+    public GameObject nah;
+
+    //Languages
+    public GameObject ingles;
+    public GameObject español;
+    public GameObject aleman;
+    public GameObject italiano;
+    public GameObject frances;
+    public GameObject portugues;
     void Start()
     {
         tp = Player.GetComponent<Tiempo>();
@@ -32,6 +44,7 @@ public class inGameManager : MonoBehaviour
         menu.SetActive(false);
 
         languageCounter = PlayerPrefs.GetFloat("LanguageCounter", 0f);
+        qualityCounter = PlayerPrefs.GetInt("QualityCounter", 0);
         languageCounter = 0;
         audioSource = musicManager.GetComponent<AudioSource>();
     }
@@ -50,33 +63,111 @@ public class inGameManager : MonoBehaviour
             }
         }
 
+        if (qualityCounter < 0)
+        {
+            qualityCounter = 2;
+        }
+
+        if (qualityCounter > 2)
+        {
+            qualityCounter = 0;
+        }
+
         if (languageCounter == 0)
         {
-            english.SetActive(true);
-            englisch.SetActive(false);
-            inglés.SetActive(false);
+            ingles.SetActive(true);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(false);
         }
 
         if (languageCounter == 1)
         {
-            english.SetActive(false);
-            englisch.SetActive(true);
-            inglés.SetActive(false);
+            ingles.SetActive(false);
+            aleman.SetActive(true);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(false);
         }
 
         if (languageCounter == 2)
         {
-            english.SetActive(false);
-            englisch.SetActive(false);
-            inglés.SetActive(true);
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(true);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(false);
         }
 
-        languageCounter = Mathf.Clamp(languageCounter, 0f, 2f);
+        if (languageCounter == 3)
+        {
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(true);
+            frances.SetActive(false);
+            portugues.SetActive(false);
+        }
+
+        if (languageCounter == 4)
+        {
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(true);
+            portugues.SetActive(false);
+        }
+
+        if (languageCounter == 5)
+        {
+            ingles.SetActive(false);
+            aleman.SetActive(false);
+            español.SetActive(false);
+            italiano.SetActive(false);
+            frances.SetActive(false);
+            portugues.SetActive(true);
+        }
+
+        if (languageCounter < 0)
+        {
+            languageCounter = 5;
+        }
+
+        if (languageCounter > 5)
+        {
+            languageCounter = 0;
+        }
 
         if (Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene("Game");
-        }        
+        }
+
+        if (qualityCounter == 0)
+        {
+            wow.SetActive(true);
+            boff.SetActive(false);
+            nah.SetActive(false);
+        }
+
+        if (qualityCounter == 1)
+        {
+            wow.SetActive(false);
+            boff.SetActive(true);
+            nah.SetActive(false);
+        }
+
+        if (qualityCounter == 2)
+        {
+            wow.SetActive(false);
+            boff.SetActive(false);
+            nah.SetActive(true);
+        }
     }
 
     public void ReloadLevel()
@@ -88,10 +179,27 @@ public class inGameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void fullScreen(bool is_fullscene)
+    public void qualityRightArrow()
     {
-        Screen.fullScreen = is_fullscene;
-        toggleImage.sprite = is_fullscene ? checkedToggle : uncheckedToggle;
+        qualityCounter++;
+    }
+
+    public void qualityLeftArrow()
+    {
+        qualityCounter--;
+    }
+
+    public void fullScreenOn()
+    {
+        Screen.fullScreen = true;
+        unckeckedToggle.SetActive(false);
+        ckeckedToggle.SetActive(true);
+    }
+    public void fullScreenOff()
+    {
+        Screen.fullScreen = false;
+        unckeckedToggle.SetActive(true);
+        ckeckedToggle.SetActive(false);
     }
 
     public void RightArrow()

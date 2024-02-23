@@ -5,7 +5,8 @@ public class BotonStay : MonoBehaviour
     public GameObject Muro;
     Plataformas plat1;
     Plataformas2 plat2;
-
+    private bool act;
+    private bool act1;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,17 +14,25 @@ public class BotonStay : MonoBehaviour
         plat2 = Muro.GetComponent<Plataformas2>();
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    private void Update()
     {
-        if (other.CompareTag("kunai") || other.CompareTag("BolaActivadora") || other.CompareTag("Player"))
+        if (act || act1)
         {
+            Debug.Log("kunai");
             plat1.enabled = true;
             plat2.enabled = false;
         }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("kunai"))
+        {
+            act = true;
+        }
         else
         {
-            plat1.enabled = false;
-            plat2.enabled = true;
+            act = false;
         }
     }
 
@@ -31,8 +40,11 @@ public class BotonStay : MonoBehaviour
     {
         if (collision.gameObject.tag == ("Player") || collision.gameObject.tag == ("BolaActivadora"))
         {
-            plat1.enabled = true;
-            plat2.enabled = false;
+            act1 = true;
+        }
+        else
+        {
+            act1 = false;
         }
     }
 }

@@ -15,21 +15,20 @@ public class KunaiConstraint : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();
+        kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();  
         nmdk = GameObject.FindGameObjectWithTag("lifeBar").GetComponent<NumeroDeKunais>();
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") ||
-            collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy")))
+            collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
         {
             if (collision.GetComponent<Rigidbody2D>() != null)
             {
                 transform.SetParent(collision.transform);
                 rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
                 collided = true;
-                //this.gameObject.layer = collision.gameObject.layer;
             }
         }
     }
@@ -49,25 +48,20 @@ public class KunaiConstraint : MonoBehaviour
             collided = true;
         }
 
-        if (collision.CompareTag("Player") && collided == true || collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
+        if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
         {
             AddKunai();
             Destroy(gameObject);
-        }
-
-        if (collision.CompareTag("explosivo"))
-        {
-            rb2D.mass = kunaiMass;
-            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collided == true || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
         {
             AddKunai();
             Destroy(gameObject);
+            collided = true;
         }
     }
 
@@ -76,6 +70,7 @@ public class KunaiConstraint : MonoBehaviour
         yield return new WaitForSeconds(waitingTime);
         Invoke("AddKunai", destroyDelay);
         Destroy(gameObject, destroyDelay);
+        collided = true;
     }
 
     public void AddKunai()

@@ -41,9 +41,10 @@ public class SceneControl : MonoBehaviour
     public GameObject kunaiUp1;
     public GameObject kunailvl1;
     public GameObject kunailvl2;
-    public GameObject kunailvl3;
-
-    public GameObject Player;
+    public GameObject kunailvl3;    
+    public GameObject kr1;
+    public GameObject kr2;
+    public GameObject kr3;
 
     public Image toggleImage;
 
@@ -236,7 +237,10 @@ public class SceneControl : MonoBehaviour
             kunaiUp3.SetActive(false);
             kunailvl1.SetActive(true);
             kunailvl2.SetActive(false);
-            kunailvl3.SetActive(false);
+            kunailvl3.SetActive(false);           
+            kr1.SetActive(true);
+            kr2.SetActive(false);
+            kr3.SetActive(false);
         }
 
         if (kunaiCount == 2)
@@ -247,6 +251,9 @@ public class SceneControl : MonoBehaviour
             kunailvl1.SetActive(false);
             kunailvl2.SetActive(true);
             kunailvl3.SetActive(false);
+            kr1.SetActive(false);
+            kr2.SetActive(true);
+            kr3.SetActive(false);
         }
 
         if (kunaiCount == 3)
@@ -257,8 +264,10 @@ public class SceneControl : MonoBehaviour
             kunailvl1.SetActive(false);
             kunailvl2.SetActive(false);
             kunailvl3.SetActive(true);
+            kr1.SetActive(false);
+            kr2.SetActive(false);
+            kr3.SetActive(true);
         }
-
 
         if (qualityCounter < 0)
         {

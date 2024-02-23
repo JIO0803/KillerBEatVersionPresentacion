@@ -44,7 +44,7 @@ public class DisparosShooter : MonoBehaviour
 
         if (other.CompareTag("enemRod") && canCollide == true)
         {
-            other.GetComponent<EnemigoSoldado>().lifes -= 1;
+            other.GetComponent<EnemigoRodante>().lifes -= 1;
             DestroyProjectile();
         }
 

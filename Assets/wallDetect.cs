@@ -28,13 +28,13 @@ public class wallDetect : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.left * raycastDistance, isWallOnLeft ? Color.red : Color.green);
         Debug.DrawRay(transform.position, Vector2.right * raycastDistance, isWallOnRight ? Color.red : Color.green);
 
-        if (isWallOnLeft)
+        if (isWallOnLeft && !mj.grounded)
         {
             mj.isWallSliding = true;
             transform.localScale = new Vector2(1, transform.localScale.y);
         }       
         
-        if (isWallOnRight)
+        if (isWallOnRight && !mj.grounded)
         {
             mj.isWallSliding = true;
             transform.localScale = new Vector2(-1, transform.localScale.y);
@@ -73,15 +73,5 @@ public class wallDetect : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-        else
-        {
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            mj.animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-            RaycastHit2D raycastSuelo = Physics2D.Linecast(transform.position, transform.position + Vector3.down * 0.25f, mj.capaPared);
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-            {
-                rb.velocity = new Vector2(horizontalInput * mj.Velocidad, rb.velocity.y);
-            }
-        }
     }
 }

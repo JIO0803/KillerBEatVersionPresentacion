@@ -45,11 +45,11 @@ public class MovJugador : MonoBehaviour
             rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
         }
 
-        if (Input.GetKey(KeyCode.D) && !isWallSliding && !grounded)
+        if (Input.GetKey(KeyCode.D) && !isWallSliding)
         {
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
-        if (Input.GetKey(KeyCode.A) && !isWallSliding && !grounded)
+        if (Input.GetKey(KeyCode.A) && !isWallSliding)
         {
             transform.localScale = new Vector2(-1, transform.localScale.y);
         }
@@ -72,7 +72,7 @@ public class MovJugador : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("ground"))
+        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared"))
         {
             grounded = true;
             rb.velocity = new Vector2 (0, rb.velocity.y);
@@ -86,7 +86,7 @@ public class MovJugador : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("ground"))
+        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared"))
         {
             grounded = true;
             rb.velocity = new Vector2(0, rb.velocity.y);
