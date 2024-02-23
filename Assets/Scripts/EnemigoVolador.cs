@@ -1,3 +1,4 @@
+using System.Net;
 using UnityEngine;
 
 public class EnemigoVolador : MonoBehaviour
@@ -20,9 +21,11 @@ public class EnemigoVolador : MonoBehaviour
     SpawnKunai spkn;
     public int lifes;
     NumeroDeKunais nmdk;
+    pointManager pm;
 
     private void Start()
     {
+        pm = FindObjectOfType<pointManager>();
         canShoot = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
@@ -140,7 +143,8 @@ public class EnemigoVolador : MonoBehaviour
         Debug.Log("F");
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10; 
-        vidaCount.lifesValue += 10; 
+        vidaCount.lifesValue += 10;
+        pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");

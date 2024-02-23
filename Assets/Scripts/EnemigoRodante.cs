@@ -14,8 +14,11 @@ public class EnemigoRodante : MonoBehaviour
     private const float DefaultGravityScale = 10f;
     public const float slow = 8f;
     public int lifes;
+    pointManager pm;
+
     void Start()
     {
+        pm = FindObjectOfType<pointManager>();
         rb2D = GetComponent<Rigidbody2D>();
         canDealDamage = true;
         lifes = 2;
@@ -88,13 +91,9 @@ public class EnemigoRodante : MonoBehaviour
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10;
         vidaCount.lifesValue += 10;
+        pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
-    }
-
-    public void TakeExplosionDamage()
-    {
-        lifes = 0;
     }
 }

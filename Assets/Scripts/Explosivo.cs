@@ -49,10 +49,6 @@ public class Explosivo : MonoBehaviour
             }
 
             EnemigoRodante enemyScript = collider.GetComponent<EnemigoRodante>();
-            if (enemyScript != null)
-            {
-                enemyScript.TakeExplosionDamage();
-            }
         }
     }
 

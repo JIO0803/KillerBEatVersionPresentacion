@@ -22,19 +22,18 @@ public class EnemigoSoldado : MonoBehaviour
     public GameObject headShot;
     headShots hs;
     public Transform player;
-
-    Rigidbody2D headshotrb;
+    pointManager pm;
     Rigidbody2D rb2D;
 
     // Start is called before the first frame update
     void Start()
     {
+        pm = FindObjectOfType<pointManager>();
         hs = headShot.GetComponent<headShots>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb2D = projectile.GetComponent<Rigidbody2D>();
         lifes = 2;
-        headshotrb = headShot.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -134,6 +133,7 @@ public class EnemigoSoldado : MonoBehaviour
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10;
         vidaCount.lifesValue += 10;
+        pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
