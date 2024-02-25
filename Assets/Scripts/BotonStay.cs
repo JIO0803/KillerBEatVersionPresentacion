@@ -18,7 +18,6 @@ public class BotonStay : MonoBehaviour
     {
         if (act || act1)
         {
-            Debug.Log("kunai");
             plat1.enabled = true;
             plat2.enabled = false;
         }

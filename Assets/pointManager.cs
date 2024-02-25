@@ -1,39 +1,50 @@
-using System;
-using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class pointManager : MonoBehaviour
 {
-    public int moneyToAdd = 10;
-    private int intmoney;
-    public int realMoney;
-    [SerializeField] private int currentMoney;
+    private int addGained = 10;
+    [SerializeField] private int totalPointsGame;
+    [HideInInspector] public float currentMoney; // Ocultar en el Inspector
+
+    public TextMeshProUGUI pointsText;
+    public float displayDuration = 2f;
+
+    private float displayTimer = 0f;
+
+    private void Awake()
+    {
+        pointsText.gameObject.SetActive(false);
+        totalPointsGame = PlayerPrefs.GetInt("TotalPointsGame", 0);
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("TotalPointsGame", totalPointsGame);
+        PlayerPrefs.Save();
+    }
+
     private void Update()
     {
-        realMoney = intmoney;
+        if (displayTimer > 0f)
+        {
+            displayTimer -= Time.deltaTime;
+            if (displayTimer <= 0f)
+            {
+                pointsText.gameObject.SetActive(false);
+            }
+        }
     }
+
     public void AddPoints()
     {
-        int currentMoney = PlayerPrefs.GetInt("Money", 0);
-        currentMoney += moneyToAdd;
-        PlayerPrefs.SetInt("Money", currentMoney);
-        intmoney = currentMoney;
-    }
+        totalPointsGame += addGained;
 
-    public void AddMoney(int amount)
-    {
-        currentMoney += amount;
-    }
+        pointsText.text = totalPointsGame.ToString() + "$";
 
-    // Método para restar dinero
-    public void SubtractMoney(int amount)
-    {
-        currentMoney -= amount;
-    }
-
-    // Método para obtener el dinero actual
-    public int GetCurrentMoney()
-    {
-        return currentMoney;
+        pointsText.gameObject.SetActive(true);
+        displayTimer = displayDuration;
+        currentMoney = totalPointsGame;
     }
 }

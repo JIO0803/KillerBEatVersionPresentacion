@@ -45,6 +45,8 @@ public class SceneControl : MonoBehaviour
     public GameObject kr1;
     public GameObject kr2;
     public GameObject kr3;
+    public GameObject LeftArrow;
+    public GameObject RightArrow;
 
     public Image toggleImage;
 
@@ -65,6 +67,7 @@ public class SceneControl : MonoBehaviour
 
     void Start()
     {
+        Screen.fullScreen = true;
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
         rvhm = FindObjectOfType<reviveHamster>();
@@ -241,6 +244,8 @@ public class SceneControl : MonoBehaviour
             kr1.SetActive(true);
             kr2.SetActive(false);
             kr3.SetActive(false);
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(true);
         }
 
         if (kunaiCount == 2)
@@ -254,6 +259,8 @@ public class SceneControl : MonoBehaviour
             kr1.SetActive(false);
             kr2.SetActive(true);
             kr3.SetActive(false);
+            LeftArrow.SetActive(true);
+            RightArrow.SetActive(true);
         }
 
         if (kunaiCount == 3)
@@ -267,6 +274,8 @@ public class SceneControl : MonoBehaviour
             kr1.SetActive(false);
             kr2.SetActive(false);
             kr3.SetActive(true);
+            LeftArrow.SetActive(true);
+            RightArrow.SetActive(false);
         }
 
         if (qualityCounter < 0)

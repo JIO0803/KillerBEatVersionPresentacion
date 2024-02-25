@@ -17,8 +17,11 @@ public class SpawnKunai : MonoBehaviour
     NumeroDeKunais nmdk;
     [SerializeField] private float kunaiTpSpeed;
 
+    UpgradeMenu um;
+
     private void Start()
     {
+        //um = FindObjectOfType<UpgradeMenu>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         kunaiCount = SceneControl.kunaiMax;
         spwnk = PlayerLocation.GetComponent<SpawnKunai>();
@@ -43,6 +46,12 @@ public class SpawnKunai : MonoBehaviour
         {
             ThrowKunai();
         }
+        /*
+        if (!um.kunaiOwnedd && um != null)
+        {
+            spwnk.enabled = false;
+        }       
+        */
     }
 
     public void KunaiThrown()

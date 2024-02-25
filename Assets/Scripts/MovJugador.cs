@@ -1,4 +1,3 @@
-using Pathfinding.Util;
 using UnityEngine;
 
 public class MovJugador : MonoBehaviour
