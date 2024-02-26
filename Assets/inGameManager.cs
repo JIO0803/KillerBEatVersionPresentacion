@@ -192,15 +192,11 @@ public class inGameManager : MonoBehaviour
 
     public void fullScreenOn1()
     {
-        Screen.fullScreen = true;
-        unckeckedToggle.SetActive(false);
-        ckeckedToggle.SetActive(true);
+        StartCoroutine(fullScreenOn());
     }
     public void fullScreenOff1()
     {
-        Screen.fullScreen = false;
-        unckeckedToggle.SetActive(true);
-        ckeckedToggle.SetActive(false);
+        StartCoroutine(fullScreenOff());
     }
 
     public void RightArrow()
@@ -236,5 +232,25 @@ public class inGameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PlayerPrefs.Save();
+    }
+
+    private IEnumerator fullScreenOn()
+    {
+        yield return new WaitForSecondsRealtime(0.01f);
+        {
+            Screen.fullScreen = true;
+            unckeckedToggle.SetActive(false);
+            ckeckedToggle.SetActive(true);
+        }
+    }    
+    
+    private IEnumerator fullScreenOff()
+    {
+        yield return new WaitForSecondsRealtime(0.01f);
+        {
+            Screen.fullScreen = false;
+            unckeckedToggle.SetActive(true);
+            ckeckedToggle.SetActive(false);
+        }
     }
 }

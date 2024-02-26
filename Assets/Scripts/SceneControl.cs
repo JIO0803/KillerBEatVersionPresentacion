@@ -49,12 +49,13 @@ public class SceneControl : MonoBehaviour
     public GameObject LeftArrow;
     public GameObject RightArrow;
 
-
     public Image toggleImage;
 
     Image brillo;
     public Image panelDeBrillo;
     private float Opacity;
+    public bool activado;
+    public bool canPlay;
 
     private AudioSource audSor1;
     private AudioSource audSor2;
@@ -75,10 +76,11 @@ public class SceneControl : MonoBehaviour
     {
         Opacity = PlayerPrefs.GetFloat("Brillo", 1f);
         brillo = panelDeBrillo.GetComponent<Image>();
-        brillo.color = new Color(brillo.color.r, brillo.color.g, brillo.color.b, Opacity);
     }
     void Start()
     {
+        activado = true;
+        canPlay = true;
         Opacity = 0f;
         Screen.fullScreen = true;
         unckeckedToggle.SetActive(false);
@@ -126,23 +128,29 @@ public class SceneControl : MonoBehaviour
             rvhm.ResetCounter();
         }
 
-        if (MusicCount == 1)
+        if (MusicCount == 1 && canPlay)
         {
             Track1.SetActive(true);
             Track2.SetActive(false);
             Track3.SetActive(false);
         }
-        else if (MusicCount == 2)
+        else if (MusicCount == 2 && canPlay)
         {
             Track1.SetActive(false);
             Track2.SetActive(true);
             Track3.SetActive(false);
         }
-        else if (MusicCount == 3)
+        else if (MusicCount == 3 && canPlay)
         {
             Track1.SetActive(false);
             Track2.SetActive(false);
             Track3.SetActive(true);
+        }
+        if (!canPlay)
+        {
+            Track1.SetActive(false);
+            Track2.SetActive(false);
+            Track3.SetActive(false);
         }
 
         if (audSor1.volume >= 0.8f || audSor2.volume >= 0.8f || audSor3.volume >= 0.8f)
@@ -315,6 +323,15 @@ public class SceneControl : MonoBehaviour
         }
 
     }
+    public void KunaiUpgrades()
+    {
+        if (activado)
+        {
+            mainMenu.SetActive(false);
+            optionsWindow.SetActive(false);
+            kunaiUpgradesWindow.SetActive(true);
+        }
+    }
 
     void OnDestroy()
     {
@@ -462,12 +479,6 @@ public class SceneControl : MonoBehaviour
         isMusicPaused = false;
     }
 
-    public void KunaiUpgrades()
-    {
-        mainMenu.SetActive(false);
-        optionsWindow.SetActive(false);
-        kunaiUpgradesWindow.SetActive(true);
-    }
 
     public void AddKunai()
     {

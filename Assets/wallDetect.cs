@@ -44,11 +44,11 @@ public class wallDetect : MonoBehaviour
         {
             if (mj.isWallSliding && isWallOnRight)
             {
-                rb.AddForce(new Vector2(-mj.Velocidad * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(-10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
             }
             if (mj.isWallSliding && isWallOnLeft)
             {
-                rb.AddForce(new Vector2(mj.Velocidad * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
             }
             else
             {

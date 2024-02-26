@@ -5,8 +5,8 @@ public class BotonStay : MonoBehaviour
     public GameObject Muro;
     Plataformas plat1;
     Plataformas2 plat2;
-    private bool act;
-    private bool act1;
+    public bool act;
+    public bool act1;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +16,16 @@ public class BotonStay : MonoBehaviour
 
     private void Update()
     {
-        if (act || act1)
+        if (act)
         {
             plat1.enabled = true;
             plat2.enabled = false;
         }
+        if (!act) 
+        {
+            plat1.enabled = false;
+            plat2.enabled = true;
+        }    
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -29,21 +34,28 @@ public class BotonStay : MonoBehaviour
         {
             act = true;
         }
-        else
-        {
-            act = false;
-        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == ("Player") || collision.gameObject.tag == ("BolaActivadora"))
         {
-            act1 = true;
+            act = true;
         }
-        else
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("kunai"))
         {
-            act1 = false;
+            act = false;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == ("Player") || collision.gameObject.tag == ("BolaActivadora"))
+        {
+            act = false;
         }
     }
 }
