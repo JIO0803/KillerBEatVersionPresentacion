@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class SceneControl : MonoBehaviour
@@ -48,7 +49,12 @@ public class SceneControl : MonoBehaviour
     public GameObject LeftArrow;
     public GameObject RightArrow;
 
+
     public Image toggleImage;
+
+    Image brillo;
+    public Image panelDeBrillo;
+    private float Opacity;
 
     private AudioSource audSor1;
     private AudioSource audSor2;
@@ -65,8 +71,15 @@ public class SceneControl : MonoBehaviour
     public int kunaiCount;
     public static int kunaiMax;
 
+    private void Awake()
+    {
+        Opacity = PlayerPrefs.GetFloat("Brillo", 1f);
+        brillo = panelDeBrillo.GetComponent<Image>();
+        brillo.color = new Color(brillo.color.r, brillo.color.g, brillo.color.b, Opacity);
+    }
     void Start()
     {
+        Opacity = 0f;
         Screen.fullScreen = true;
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
@@ -103,6 +116,10 @@ public class SceneControl : MonoBehaviour
 
     void Update()
     {
+        if (Opacity > 0.8f)
+        {
+            Opacity = 0.8f;
+        }
         kunaiMax = kunaiCount;
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -381,13 +398,20 @@ public class SceneControl : MonoBehaviour
 
     public void ChangeLightDown()
     {
-        vol.weight -= 0.1f;
+        Opacity -= 0.1f;
+        if (Opacity < 0f) Opacity = 0f;
+        brillo.color = new Color(brillo.color.r, brillo.color.g, brillo.color.b, Opacity);
+        PlayerPrefs.SetFloat("Brillo", Opacity); 
     }
 
     public void ChangeLightUp()
     {
-        vol.weight += 0.1f;
+        Opacity += 0.1f;
+        if (Opacity > 0.8f) Opacity = 0.8f;
+        brillo.color = new Color(brillo.color.r, brillo.color.g, brillo.color.b, Opacity);
+        PlayerPrefs.SetFloat("Brillo", Opacity); 
     }
+
 
     public void Credits()
     {

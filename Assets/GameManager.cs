@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    void Start()
+    vidaCount vc;
+
+    private void Start()
     {
-        
+        vc = FindObjectOfType<vidaCount>();
+
     }
     void Update()
     {
-        if (vidaCount.lifesValue == 0)
+        if (vc.lifesValue == 0)
         {
             SceneManager.LoadScene(0);
         }

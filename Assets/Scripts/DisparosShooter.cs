@@ -16,9 +16,11 @@ public class DisparosShooter : MonoBehaviour
     public float changingSpeed;
     public bool Stop;
     public bool canCollide = false;
+    vidaCount vc;
 
-    void Start()
+    private void Start()
     {
+        vc = FindAnyObjectByType<vidaCount>();
         rb2D = GetComponent<Rigidbody2D>();
         canCollide = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -76,6 +78,6 @@ public class DisparosShooter : MonoBehaviour
 
     void DealDamage()
     {
-        vidaCount.lifesValue -= 20;
+        vc.lifesValue -= 0.2f;
     }
 }

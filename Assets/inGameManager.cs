@@ -19,8 +19,6 @@ public class inGameManager : MonoBehaviour
     AudioSource audioSource;
     SpawnKunai sp;
     MovJugador mj;
-    Tiempo tp;
-    wallDetect wl;
     private int qualityCounter;
 
     public GameObject wow;
@@ -36,8 +34,8 @@ public class inGameManager : MonoBehaviour
     public GameObject portugues;
     void Start()
     {
-        tp = Player.GetComponent<Tiempo>();
-        wl = Player.GetComponent<wallDetect>();
+        unckeckedToggle.SetActive(false);
+        ckeckedToggle.SetActive(true);
         mj = Player.GetComponent<MovJugador>();
         sp = Player.GetComponent<SpawnKunai>(); 
         menuIsActive = false;
@@ -47,6 +45,9 @@ public class inGameManager : MonoBehaviour
         qualityCounter = PlayerPrefs.GetInt("QualityCounter", 0);
         languageCounter = 0;
         audioSource = musicManager.GetComponent<AudioSource>();
+        PlayerPrefs.GetInt("TotalPointsGame", 0);
+        PlayerPrefs.GetInt("KunaiUnlocked", 0);
+        PlayerPrefs.GetInt("TPUnlocked", 0);
     }
 
     void Update()
@@ -189,13 +190,13 @@ public class inGameManager : MonoBehaviour
         qualityCounter--;
     }
 
-    public void fullScreenOn()
+    public void fullScreenOn1()
     {
         Screen.fullScreen = true;
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
     }
-    public void fullScreenOff()
+    public void fullScreenOff1()
     {
         Screen.fullScreen = false;
         unckeckedToggle.SetActive(true);
@@ -229,5 +230,11 @@ public class inGameManager : MonoBehaviour
         menu.SetActive(false);
         sp.enabled = true;
         mj.enabled = true;
+    }
+
+    private void OnDestroy()
+    {
+        Time.timeScale = 1;
+        PlayerPrefs.Save();
     }
 }

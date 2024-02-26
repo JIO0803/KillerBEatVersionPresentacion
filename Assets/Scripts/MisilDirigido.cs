@@ -12,9 +12,11 @@ public class MisilDirigido : MonoBehaviour
 
     public float startTimeBtwShots;
     public GameObject volador;
+    vidaCount vc;
 
-    void Start()
+    private void Start()
     {
+        vc = FindObjectOfType<vidaCount>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb2D = GetComponent<Rigidbody2D>();
         canCollide = false;
@@ -89,7 +91,6 @@ public class MisilDirigido : MonoBehaviour
 
     void DealDamage()
     {
-        Debug.Log("lavidaaaa");
-        vidaCount.lifesValue -= 20;
+        vc.lifesValue -= 0.2f;
     }
 }

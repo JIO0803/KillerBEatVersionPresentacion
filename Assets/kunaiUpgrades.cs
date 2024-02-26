@@ -1,39 +1,49 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    public int upgradeCost = 10;
-    public int unlockCost = 20;
-    public int TPCost = 40;
+    public int upgradeCost = 30;
+    public int unlockCost = 10;
+    public int TPCost = 20;
     [SerializeField] private int totalPointsMenu;
     public GameObject kunaiOwned;
-    public bool kunaiOwnedd;
+    public static bool kunaiOwnedd;
     public GameObject tpOwned;
-    public bool tpOwnedd;
+    public static bool tpOwnedd;
+    public GameObject blockedTP;
+    public GameObject availabelTP;
     SceneControl sc;
     public TextMeshProUGUI pointsText;
 
     private void Start()
     {
         sc = GetComponent<SceneControl>();
+        LoadPlayerPrefs();
+        UpdateUI();
     }
-    private void Awake()
+
+    private void LoadPlayerPrefs()
     {
         totalPointsMenu = PlayerPrefs.GetInt("TotalPointsGame", 0);
-        if (tpOwnedd == false)
-        {
-            tpOwned.SetActive(false);
-        }      
-        if (kunaiOwnedd == false)
-        {
-            kunaiOwned.SetActive(false);
-        }
+        kunaiOwnedd = PlayerPrefs.GetInt("KunaiUnlocked", 0) == 1;
+        tpOwnedd = PlayerPrefs.GetInt("TPUnlocked", 0) == 1;
+
+        blockedTP.SetActive(!kunaiOwnedd);
+        availabelTP.SetActive(kunaiOwnedd && !tpOwnedd);
     }
 
     private void OnDestroy()
     {
+        SavePlayerPrefs();
+    }
+
+    private void SavePlayerPrefs()
+    {
         PlayerPrefs.SetInt("TotalPointsGame", totalPointsMenu);
+        PlayerPrefs.SetInt("KunaiUnlocked", kunaiOwnedd ? 1 : 0);
+        PlayerPrefs.SetInt("TPUnlocked", tpOwnedd ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -44,12 +54,12 @@ public class UpgradeMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             totalPointsMenu += 50;
-        }        
-        
+        }
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             totalPointsMenu -= 50;
-        }       
+        }
         if (Input.GetKeyDown(KeyCode.H))
         {
             ResetAllUpgrades();
@@ -58,31 +68,42 @@ public class UpgradeMenu : MonoBehaviour
 
     public void AddKunai()
     {
-        totalPointsMenu -= upgradeCost;
+        if (totalPointsMenu >= upgradeCost)
+        {
+            totalPointsMenu -= upgradeCost;
+            UpdateUI();
+        }
     }
 
     public void SubstractKunai()
     {
         totalPointsMenu += upgradeCost;
-    }    
-    
+        UpdateUI();
+    }
+
     public void UnlockKunai()
     {
-        if (kunaiOwnedd == false)
+        if (!kunaiOwnedd && totalPointsMenu >= unlockCost)
         {
-
             kunaiOwnedd = true;
             totalPointsMenu -= unlockCost;
             kunaiOwned.SetActive(true);
+            UpdateUI();
+            SavePlayerPrefs();
+            blockedTP.SetActive(false);
+            availabelTP.SetActive(true);
         }
-    }   
+    }
+
     public void UnlockTP()
     {
-        if (tpOwnedd == false)
+        if (kunaiOwnedd && !tpOwnedd && totalPointsMenu >= TPCost)
         {
             tpOwnedd = true;
             totalPointsMenu -= TPCost;
             tpOwned.SetActive(true);
+            UpdateUI();
+            SavePlayerPrefs();
         }
     }
 
@@ -95,5 +116,16 @@ public class UpgradeMenu : MonoBehaviour
         kunaiOwned.SetActive(false);
         SceneControl.kunaiMax = 1;
         sc.kunaiCount = 1;
+        UpdateUI();
+        SavePlayerPrefs();
+    }
+
+    private void UpdateUI()
+    {
+        kunaiOwned.SetActive(kunaiOwnedd);
+        tpOwned.SetActive(tpOwnedd);
+
+        blockedTP.SetActive(!kunaiOwnedd);
+        availabelTP.SetActive(kunaiOwnedd && !tpOwnedd);
     }
 }

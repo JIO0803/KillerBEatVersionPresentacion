@@ -15,9 +15,11 @@ public class EnemigoRodante : MonoBehaviour
     public const float slow = 8f;
     public int lifes;
     pointManager pm;
+    vidaCount vc;
 
-    void Start()
+    private void Start()
     {
+        vc = FindObjectOfType<vidaCount>();
         pm = FindObjectOfType<pointManager>();
         rb2D = GetComponent<Rigidbody2D>();
         canDealDamage = true;
@@ -66,7 +68,7 @@ public class EnemigoRodante : MonoBehaviour
     {
         if (canDealDamage)
         {
-            vidaCount.lifesValue -= 20;
+            vc.lifesValue -= 0.2f;
         }
     }
 
@@ -90,7 +92,6 @@ public class EnemigoRodante : MonoBehaviour
     {
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10;
-        vidaCount.lifesValue += 10;
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;

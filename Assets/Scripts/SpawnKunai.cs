@@ -1,5 +1,3 @@
-// Script SpawnKunai
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,18 +11,13 @@ public class SpawnKunai : MonoBehaviour
     private List<GameObject> kunaiList = new List<GameObject>();
     public int kunaiCount;
 
-    SpawnKunai spwnk;
     NumeroDeKunais nmdk;
     [SerializeField] private float kunaiTpSpeed;
 
-    UpgradeMenu um;
-
     private void Start()
     {
-        //um = FindObjectOfType<UpgradeMenu>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         kunaiCount = SceneControl.kunaiMax;
-        spwnk = PlayerLocation.GetComponent<SpawnKunai>();
         nmdk = kunaiText.GetComponent<NumeroDeKunais>();
     }
 
@@ -34,7 +27,7 @@ public class SpawnKunai : MonoBehaviour
         {
             kunaiCount = 0;
         }
-        if (kunaiCount > SceneControl.kunaiMax) 
+        if (kunaiCount > SceneControl.kunaiMax)
         {
             kunaiCount = SceneControl.kunaiMax;
         }
@@ -46,12 +39,15 @@ public class SpawnKunai : MonoBehaviour
         {
             ThrowKunai();
         }
-        /*
-        if (!um.kunaiOwnedd && um != null)
+
+        if (UpgradeMenu.kunaiOwnedd)
         {
-            spwnk.enabled = false;
-        }       
-        */
+            enabled = true;
+        }
+        else
+        {
+            enabled = false;
+        }
     }
 
     public void KunaiThrown()
@@ -120,7 +116,7 @@ public class SpawnKunai : MonoBehaviour
     {
         if (collision.CompareTag("unlockKunai"))
         {
-            spwnk.enabled = true;
+            enabled = true;
             Destroy(collision.gameObject);
         }
     }

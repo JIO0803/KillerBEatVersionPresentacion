@@ -1,18 +1,20 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class vidaCount : MonoBehaviour
 {
-    public static int lifesValue = 100;
+    public float lifesValue = 1;
     TMP_Text vida;
     public bool canDie;
+    public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         vida = GetComponent<TMP_Text>();
         canDie = true;
-        lifesValue = 100;
     }
 
     // Update is called once per frame
@@ -37,11 +39,10 @@ public class vidaCount : MonoBehaviour
             lifesValue = 0;
         }
 
-        vida.text = "Life" + lifesValue;
-
-        if (lifesValue == 0 && canDie == true)
+        if (lifesValue <= 0.1f && canDie == true)
         {
             SceneManager.LoadScene("Menu");
         }
+        healthBar.fillAmount = lifesValue;  
     }
 }

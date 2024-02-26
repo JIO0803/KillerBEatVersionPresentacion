@@ -24,10 +24,11 @@ public class EnemigoSoldado : MonoBehaviour
     public Transform player;
     pointManager pm;
     Rigidbody2D rb2D;
+    vidaCount vc;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        vc = FindObjectOfType<vidaCount>();
         pm = FindObjectOfType<pointManager>();
         hs = headShot.GetComponent<headShots>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -109,7 +110,7 @@ public class EnemigoSoldado : MonoBehaviour
     {
         if (canDealDamage)
         {
-            vidaCount.lifesValue -= 20;
+            vc.lifesValue -= 0.2f;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -132,7 +133,6 @@ public class EnemigoSoldado : MonoBehaviour
     {
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10;
-        vidaCount.lifesValue += 10;
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;

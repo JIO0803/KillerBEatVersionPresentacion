@@ -73,13 +73,14 @@ GameObject:
   - component: {fileID: 7924203675969104593}
   - component: {fileID: 3942673724426585078}
   - component: {fileID: 6999100236126695297}
+  - component: {fileID: 2096577839777584544}
+  - component: {fileID: 3050365799189548039}
   - component: {fileID: 2531956299944479311}
   - component: {fileID: 2252831502777390664}
   - component: {fileID: 7527077691085547065}
   - component: {fileID: 6504504593130643516}
   - component: {fileID: 6754220603756848664}
   - component: {fileID: 1142132252499639038}
-  - component: {fileID: 3050365799189548039}
   m_Layer: 0
   m_Name: Jugador (1) 1
   m_TagString: Player
@@ -171,13 +172,45 @@ MonoBehaviour:
   Velocidad: 15
   salto: 22
   saltos: 1
-  wallJumpForce: 10
   capaPared:
     serializedVersion: 2
     m_Bits: 0
+  animator: {fileID: 0}
   isWallSliding: 1
   grounded: 0
-  wallSlidingSpeed: 0.9
+--- !u!114 &2096577839777584544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163523819726079939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad3407094e850a48a0ed7d9334f8b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDie: 0
+--- !u!114 &3050365799189548039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163523819726079939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190c26cd65ff96047b56d3cd9f01f8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pared:
+    serializedVersion: 2
+    m_Bits: 1024
+  raycastDistance: 0.44
+  wallSlidingSpeed: 0.5
+  wallJumpForce: 0
+  forceSumm: 0
+  newSaltoImpr: 0
 --- !u!114 &2531956299944479311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +227,8 @@ MonoBehaviour:
   KunaiPrefab: {fileID: 2237902251485454029, guid: 4ccaf6820ba5a7441b44338fceb14ec7, type: 3}
   kunaiText: {fileID: 0}
   PlayerLocation: {fileID: 4163523819726079939}
-  DropSpeed: 2
   kunaiCount: 3
+  kunaiTpSpeed: 0
 --- !u!114 &2252831502777390664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,19 +364,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3050365799189548039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4163523819726079939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190c26cd65ff96047b56d3cd9f01f8f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pared:
-    serializedVersion: 2
-    m_Bits: 1024
-  raycastDistance: 0.44

@@ -22,9 +22,11 @@ public class EnemigoVolador : MonoBehaviour
     public int lifes;
     NumeroDeKunais nmdk;
     pointManager pm;
+    vidaCount vc;
 
     private void Start()
     {
+        vc = FindObjectOfType<vidaCount>();
         pm = FindObjectOfType<pointManager>();
         canShoot = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -116,7 +118,7 @@ public class EnemigoVolador : MonoBehaviour
     {
         if (canDealDamage)
         {
-            vidaCount.lifesValue -= 20; 
+            vc.lifesValue -= 0.2f;
         }
     }
 
@@ -132,7 +134,6 @@ public class EnemigoVolador : MonoBehaviour
     {
         if ((collision.CompareTag("kunai") || collision.CompareTag("bala")))
         {
-            Debug.Log("mediste");
             lifes -= 1;
             receiveDamage2();
         }
@@ -140,15 +141,11 @@ public class EnemigoVolador : MonoBehaviour
 
     private void receiveDamage2()
     {
-        Debug.Log("F");
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10; 
-        vidaCount.lifesValue += 10;
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
-        spkn.kunaiCount += 1;
-        nmdk.kunaiCounts += 1;
     }
 }

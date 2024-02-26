@@ -13,10 +13,13 @@ public class VidaPers1 : MonoBehaviour
     public int damageDealt = 10;
     SpawnKunai kunaiSpawn;
     Volume vols;
-    void Start()
+    vidaCount vc;
+
+    private void Start()
     {
+        vc = GetComponent<vidaCount>();
         currentHealth = maxHealth;
-        vidaCount.lifesValue = 100;
+        vc.lifesValue = 100;
         Camera.GetComponent<Volume>().weight = 0.3f;
         kunaiSpawn = gameObject.GetComponent<SpawnKunai>();
         vols = Camera.GetComponent<Volume>();
@@ -49,7 +52,7 @@ public class VidaPers1 : MonoBehaviour
         if (doing == true && Good == false)
         {
             currentHealth -= damageDealt;
-            vidaCount.lifesValue -= 5;
+            vc.lifesValue -= 5;
             doing = false;
             Good = true;
         }
@@ -58,6 +61,6 @@ public class VidaPers1 : MonoBehaviour
     void damage1()
     {
         currentHealth -= 10;
-        vidaCount.lifesValue -= 10;
+        vc.lifesValue -= 10;
     }
 }
