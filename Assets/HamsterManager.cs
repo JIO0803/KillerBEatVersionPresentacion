@@ -11,7 +11,7 @@ public class HamsterInteraction : MonoBehaviour
     public GameObject lightPrompt;
     public GameObject heartImage;
     public GameObject RIP;
-
+    public AudioSource hamsterNoises;
     public static int lifeCounter = 5;
     public static int currentLifes;
     private bool actionTaken;
@@ -96,6 +96,7 @@ public class HamsterInteraction : MonoBehaviour
                 case "Comida":
                     if (foodPrompt.activeSelf)
                     {
+                        hamsterNoises.Play();
                         foodPrompt.SetActive(false);
                         foodFill.SetActive(true);
                         heartImage.SetActive(true);
@@ -106,6 +107,7 @@ public class HamsterInteraction : MonoBehaviour
                 case "Agua":
                     if (waterPrompt.activeSelf)
                     {
+                        hamsterNoises.Play();
                         waterPrompt.SetActive(false);
                         heartImage.SetActive(true);
                         waterFill.SetActive(true);
@@ -116,6 +118,7 @@ public class HamsterInteraction : MonoBehaviour
                 case "Luz":
                     if (lightPrompt.activeSelf)
                     {
+                        hamsterNoises.Play();
                         lightPrompt.SetActive(false);
                         heartImage.SetActive(true);
                         actionTaken = true;

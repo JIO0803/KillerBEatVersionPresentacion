@@ -62,7 +62,6 @@ public class SceneControl : MonoBehaviour
     public bool activado;
     public bool canPlay;
 
-
     private AudioSource audSor1;
     private AudioSource audSor2;
     private AudioSource audSor3;
@@ -433,16 +432,14 @@ public class SceneControl : MonoBehaviour
 
     public void ChangeLightDown()
     {
-        Opacity -= 0.1f;
-        if (Opacity < 0f) Opacity = 0f;
+        Opacity += 0.1f;
         brillo.color = new Color(brillo.color.r, brillo.color.g, brillo.color.b, Opacity);
         PlayerPrefs.SetFloat("Brillo", Opacity); 
     }
 
     public void ChangeLightUp()
     {
-        Opacity += 0.1f;
-        if (Opacity > 0.8f) Opacity = 0.8f;
+        Opacity -= 0.1f;
         brillo.color = new Color(brillo.color.r, brillo.color.g, brillo.color.b, Opacity);
         PlayerPrefs.SetFloat("Brillo", Opacity); 
     }

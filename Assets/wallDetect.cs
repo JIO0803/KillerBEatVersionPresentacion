@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class wallDetect : MonoBehaviour
 {
-    public LayerMask Pared; 
-    public float raycastDistance = 0.1f; 
-    public bool isWallOnLeft { get; private set; } 
+    public LayerMask Pared;
+    public float raycastDistance = 0.1f;
+    public bool isWallOnLeft { get; private set; }
     public bool isWallOnRight { get; private set; }
     public float wallSlidingSpeed = 0.5f;
     public float wallJumpForce;
@@ -12,6 +12,7 @@ public class wallDetect : MonoBehaviour
     public float newSaltoImpr;
     MovJugador mj;
     Rigidbody2D rb;
+
     private void Start()
     {
         mj = gameObject.GetComponent<MovJugador>();
@@ -25,9 +26,27 @@ public class wallDetect : MonoBehaviour
             Salto();
             mj.saltos -= 1;
         }
-        if (isWallOnLeft && rb.velocity.y <= 0 || isWallOnRight && rb.velocity.y <= 0)
+
+        WallSlider();
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, raycastDistance, Pared);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastDistance, Pared);
+
+        isWallOnLeft = hitLeft.collider != null;
+        isWallOnRight = hitRight.collider != null;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isWallOnLeft && rb.velocity.y <= 0 && !Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * wallSlidingSpeed);
+            rb.velocity = new Vector2(0, rb.velocity.y * wallSlidingSpeed);
+            mj.isWallSliding = true;
+            mj.saltos += 1;
+        }        
+        
+        if (isWallOnRight && rb.velocity.y <= 0 && !Input.GetKey(KeyCode.A))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y * wallSlidingSpeed);
             mj.isWallSliding = true;
             mj.saltos += 1;
         }
@@ -35,28 +54,6 @@ public class wallDetect : MonoBehaviour
         {
             mj.isWallSliding = false;
         }
-
-        if (mj.isWallSliding && !Input.GetKey(KeyCode.D) || mj.isWallSliding && !Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
-        }
-    }
-    private void FixedUpdate()
-    {
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, raycastDistance, Pared);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, raycastDistance, Pared);
-
-        isWallOnLeft = hitLeft.collider != null;
-        isWallOnRight = hitRight.collider != null;
-
-        Debug.DrawRay(transform.position, Vector2.left * raycastDistance, isWallOnLeft ? Color.red : Color.green);
-        Debug.DrawRay(transform.position, Vector2.right * raycastDistance, isWallOnRight ? Color.red : Color.green);
-
-        WallSlider();
     }
 
     private void Salto()
@@ -65,7 +62,7 @@ public class wallDetect : MonoBehaviour
         {
             rb.AddForce(new Vector2(-10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
         }
-        if (mj.isWallSliding && isWallOnLeft)
+        if  (mj.isWallSliding && isWallOnLeft)
         {
             rb.AddForce(new Vector2(10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
         }
@@ -82,8 +79,7 @@ public class wallDetect : MonoBehaviour
             mj.isWallSliding = true;
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
-
-        if (isWallOnRight && !mj.grounded)
+        else if (isWallOnRight && !mj.grounded)
         {
             mj.isWallSliding = true;
             transform.localScale = new Vector2(-1, transform.localScale.y);

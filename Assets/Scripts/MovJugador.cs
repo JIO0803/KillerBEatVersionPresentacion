@@ -53,7 +53,10 @@ public class MovJugador : MonoBehaviour
         {
             transform.localScale = new Vector2(-1, transform.localScale.y);
         }
+    }
 
+    public void FixedUpdate()
+    {
         if (grounded)
         {
             saltos = 1;
@@ -69,7 +72,6 @@ public class MovJugador : MonoBehaviour
             saltos = 0;
         }
     }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared"))
