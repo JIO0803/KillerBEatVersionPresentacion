@@ -51,11 +51,17 @@ public class SceneControl : MonoBehaviour
 
     public Image toggleImage;
 
+    //Alt+F4
+    public GameObject Alt;
+    public GameObject F4;
+    public bool canF4;
+
     Image brillo;
     public Image panelDeBrillo;
     private float Opacity;
     public bool activado;
     public bool canPlay;
+
 
     private AudioSource audSor1;
     private AudioSource audSor2;
@@ -79,6 +85,7 @@ public class SceneControl : MonoBehaviour
     }
     void Start()
     {
+        canF4 = false;
         activado = true;
         canPlay = true;
         Opacity = 0f;
@@ -322,6 +329,17 @@ public class SceneControl : MonoBehaviour
             kunaiCount = 3;
         }
 
+    }
+    public void AltButton()
+    {
+        canF4 = true;
+    }    
+    public void F4Button()
+    {
+        if (canF4)
+        {
+            Application.Quit();
+        }
     }
     public void KunaiUpgrades()
     {

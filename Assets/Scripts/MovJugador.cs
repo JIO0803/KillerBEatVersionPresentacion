@@ -24,7 +24,7 @@ public class MovJugador : MonoBehaviour
     void Update()
     {
         Movimiento();
-        if (grounded == true || isWallSliding == true)
+       /* if (grounded == true || isWallSliding == true)
         {
             animator.SetBool("IsGrounded", true);
         }
@@ -32,12 +32,13 @@ public class MovJugador : MonoBehaviour
         {
             animator.SetBool("IsGrounded", false);
         }
+       */
     }
 
     public void Movimiento()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        //animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         RaycastHit2D raycastSuelo = Physics2D.Linecast(transform.position, transform.position + Vector3.down * 0.25f, capaPared);
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
@@ -74,7 +75,7 @@ public class MovJugador : MonoBehaviour
         if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared"))
         {
             grounded = true;
-            rb.velocity = new Vector2 (0, rb.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
         if (collision.CompareTag("PosCam"))
