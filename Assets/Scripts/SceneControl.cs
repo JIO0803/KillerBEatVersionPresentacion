@@ -67,7 +67,7 @@ public class SceneControl : MonoBehaviour
     private AudioSource audSor3;
     private Volume vol;
     private reviveHamster rvhm;
-    private bool isMusicPaused = false;
+    public bool isMusicPaused = false;
     [SerializeField] private int MusicCount;
     [SerializeField] private float music1PlaybackTime;
     [SerializeField] private float music2PlaybackTime;
@@ -493,7 +493,6 @@ public class SceneControl : MonoBehaviour
         audSor3.Play();
         isMusicPaused = false;
     }
-
 
     public void AddKunai()
     {
