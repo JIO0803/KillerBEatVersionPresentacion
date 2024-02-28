@@ -37,14 +37,7 @@ public class wallDetect : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isWallOnLeft && rb.velocity.y <= 0 && !Input.GetKey(KeyCode.D))
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y * wallSlidingSpeed);
-            mj.isWallSliding = true;
-            mj.saltos += 1;
-        }        
-        
-        if (isWallOnRight && rb.velocity.y <= 0 && !Input.GetKey(KeyCode.A))
+        if (isWallOnLeft && rb.velocity.y <= 0 && !Input.GetKey(KeyCode.D) || isWallOnRight && rb.velocity.y <= 0 && !Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(0, rb.velocity.y * wallSlidingSpeed);
             mj.isWallSliding = true;
@@ -53,7 +46,7 @@ public class wallDetect : MonoBehaviour
         else
         {
             mj.isWallSliding = false;
-        }
+        }   
     }
 
     private void Salto()

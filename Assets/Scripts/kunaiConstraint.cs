@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class KunaiConstraint : MonoBehaviour
 {
-    [SerializeField] private float stuckDuration = 0f;
-    [SerializeField] private float waitingTime = 0f;
-    [SerializeField] private float destroyDelay = 8f;
+    //[SerializeField] private float stuckDuration = 0f;
+    //[SerializeField] private float waitingTime = 0f;
+    //[SerializeField] private float destroyDelay = 8f;
     [SerializeField] private bool collided = false;
     [SerializeField] private float kunaiMass;
     Rigidbody2D rb2D;
@@ -21,8 +21,8 @@ public class KunaiConstraint : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") ||
-            collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
+        if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
+        || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
         {
             if (collision.GetComponent<Rigidbody2D>() != null)
             {
@@ -35,10 +35,11 @@ public class KunaiConstraint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") ||
+        if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("botonAct") ||
            collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
         {
-            StartCoroutine(Stuck(stuckDuration));
+            //StartCoroutine(Stuck(stuckDuration));
+            Stuck();
         }   
 
         if (collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))
@@ -65,11 +66,16 @@ public class KunaiConstraint : MonoBehaviour
         }
     }
 
-    IEnumerator Stuck(float duration)
+    /*IEnumerator Stuck(float duration)
     {
         yield return new WaitForSeconds(waitingTime);
         Invoke("AddKunai", destroyDelay);
         Destroy(gameObject, destroyDelay);
+        collided = true;
+    }
+    */
+    private void Stuck()
+    {
         collided = true;
     }
 
