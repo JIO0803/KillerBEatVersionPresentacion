@@ -32,14 +32,6 @@ public class BotonStay : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            act = true;
-        }
-    }
-
     private void Update()
     {
         if (gameObject.GetComponentInChildren<KunaiConstraint>())

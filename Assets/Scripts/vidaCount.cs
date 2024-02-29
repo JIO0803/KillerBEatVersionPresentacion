@@ -43,6 +43,14 @@ public class vidaCount : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
-        healthBar.fillAmount = lifesValue;  
+        healthBar.fillAmount = lifesValue;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "tramp")
+        {
+            lifesValue = 0;
+        }
     }
 }

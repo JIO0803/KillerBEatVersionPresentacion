@@ -18,7 +18,6 @@ public class MovJugador : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         isWallSliding = false;
-        //gameObject.GetComponent<MovJugador>().enabled = false;
     }
 
     void Update()
@@ -74,28 +73,19 @@ public class MovJugador : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared"))
+        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared") || !collision.isTrigger && collision.CompareTag("botonAct"))
         {
             grounded = true;
             rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-
-        if (collision.CompareTag("PosCam"))
-        {
-            gameObject.GetComponent<MovJugador>().enabled = true;
         }
     }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared"))
+        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared") || !collision.isTrigger && collision.CompareTag("botonAct"))
         {
             grounded = true;
             rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-        if (collision.CompareTag("PosCam"))
-        {
-            gameObject.GetComponent<MovJugador>().enabled = true;
         }
     }
     public void OnTriggerExit2D(Collider2D collision)

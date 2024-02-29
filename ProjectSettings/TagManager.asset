@@ -36,6 +36,7 @@ TagManager:
   - headShot
   - lifeBar
   - botonAct
+  - tramp
   layers:
   - Default
   - TransparentFX

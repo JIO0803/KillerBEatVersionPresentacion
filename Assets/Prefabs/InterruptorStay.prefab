@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8087663855951825934}
   - component: {fileID: 954065698376534161}
   - component: {fileID: -6498876106736256919}
-  - component: {fileID: 7111144483229428823}
+  - component: {fileID: 8426130671987597814}
   m_Layer: 0
   m_Name: InterruptorStay
   m_TagString: pared
@@ -175,7 +175,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &7111144483229428823
+--- !u!61 &8426130671987597814
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,7 +207,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014953613, y: 0.006361723}
+  m_Offset: {x: -0.03894043, y: 0.004333496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -218,5 +218,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2045898, y: 1.3067346}
+  m_Size: {x: 1.8653564, y: 0.88739014}
   m_EdgeRadius: 0
