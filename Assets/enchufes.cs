@@ -30,18 +30,9 @@ public class enchufes : MonoBehaviour
     }   
     public void enchufar1()
     {
-        if (sc.isMusicPaused)
-        {
-            sc.PauseButton.SetActive(false);
-            sc.ResumeButton.SetActive(true);
-        }
-        if (!sc.isMusicPaused)
-        {
-            sc.PauseButton.SetActive(true);
-            sc.ResumeButton.SetActive(false);
-        }
         enchufe1Desconectado.SetActive(false);
         boton1.SetActive(true);
+        sc.canPlay = true;
     }    
     public void desenchufar2()
     {
@@ -58,5 +49,10 @@ public class enchufes : MonoBehaviour
         options.SetActive(false);
         sc.activado = true;
         boton2.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.Save();
     }
 }

@@ -43,9 +43,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -134,7 +134,4207 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tilemap 2_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 229
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00030430eb1be2749a92b71f77e6fbc1
+      internalID: -696924364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 229
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b16e96935b0cc048adfb96d376b0734
+      internalID: -1954664112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 229
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9388ecc999bf0bd45a3352bd7d7c960d
+      internalID: -1991629054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 229
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03439dd790b7df64da580cb85b136943
+      internalID: 532836573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 229
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4f742baceac034a9fb351c16d70616
+      internalID: -1862340085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50be12d2752b2134daf29b1b537b4659
+      internalID: -1734110942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2946eef3494b2c14693f1ee0b1e86f4b
+      internalID: 2023420843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 212
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487a0cf99b2f0d848b4da2476f9c67bc
+      internalID: 1503556651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_8
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c4d5d62cd93f245b03775a5acf03fc
+      internalID: 2104487147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_9
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e19f84ce271b8748837207ca7da1374
+      internalID: -1392682478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 195
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372684e3365472240a336be715ffb75e
+      internalID: 657021797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_11
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 195
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c83d06657fb524e8540e540cc42e17
+      internalID: -2099722551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_12
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 195
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95c6bb52777d61419ec4e2387946c80
+      internalID: -1531266434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_13
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 203
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610a1c1224dd5b34c95fee41742c0ea5
+      internalID: 891210807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_14
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 195
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a9b5b86f37e7f4bbed0d91190bb38a
+      internalID: -994588628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_15
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 178
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cae5d79f8731b44684beaa62a5b9706
+      internalID: 1466524500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 178
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55b529748c65614eb8b936160e24c68
+      internalID: -1281208579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_17
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 178
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e0f6236750ff341ae42e89e213cc7a
+      internalID: -1260242869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 178
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3827f571c4dea84495ddffdb4d58022
+      internalID: -109062360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 178
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887c07e43760f334fb0a9deeb39109ce
+      internalID: -224176293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 161
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb222b12fb6f074d9ec4747ac3a91d0
+      internalID: -642942540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_21
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 161
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f4c04428f9cb442b5bbabbe997b723
+      internalID: -612718308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_22
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 161
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd797744fb198cc46b3f9fc591a10bf5
+      internalID: 787331201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_23
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 161
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7a25fc1ff3bdc44b91582a459153f1
+      internalID: -2103072373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_24
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 161
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b490fff86cd73d458efefd00d4773c7
+      internalID: -1587634452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e31582b37c30e842b399a334695c0d2
+      internalID: 849604625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_26
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef3493f03ab16d4894abea4cd1634ea
+      internalID: 2078780179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_27
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf6a0000845123478d342f67cce06fb
+      internalID: 1237357307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_28
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889656e7524beb948b43452afcded796
+      internalID: 1627852882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f3e1e17620629429917713882f38f1
+      internalID: 316182245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_30
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 118
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd6d636d465f534b82b3dc6e7224c03
+      internalID: -1987251088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_31
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 118
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f45c9c00a59c92449adcf55d6dbc07e
+      internalID: 121419155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_32
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 118
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4929e8653d0ffb4d855decd0cb0ea3b
+      internalID: 1143412750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_33
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 118
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c840d41cd47f1344958f72c1ef2d8eb
+      internalID: 730105644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_34
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459484fd7522c58458bb689f579a3970
+      internalID: -705879745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_35
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734432348f0384e43a70d3e7d863a3f6
+      internalID: 964091689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_36
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ebdc9a7ad4d9e4ca5d9ca3d4fed9a5
+      internalID: -1853969650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_37
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046c2cd147d37574ab045d8944292d89
+      internalID: 598882498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_38
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad89bba9a5b85341bc0dff0e59c2874
+      internalID: 1088564225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_39
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64d23f27c45e0441992de40a2b02115
+      internalID: -1978332996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_40
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d98581bf140de448981b2ff3972bd41
+      internalID: -1045329402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_41
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bb3867aa75b204c9cc3e64daeb1d38
+      internalID: -21043007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_42
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41762b17b7ec0c34c863ea3a068ba4c7
+      internalID: 206967443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_43
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc5436bc5beca74d969fbcb19dd553b
+      internalID: -1147886563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_44
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a5fa9fd11fe3040882fc1aeddcc056
+      internalID: -545274891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_45
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf76494055a2a74f999d2d4969d7278
+      internalID: 1272508735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_46
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665cbc9905e98204b90adb913c0807d3
+      internalID: -578832230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_47
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a03dbd2b7434a94699f97ae39e82a45
+      internalID: -755833459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_48
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4da69bbbe5d3d418433e769732376c
+      internalID: 1223880287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_49
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 117
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2affcecfc2e5f4a8c003e513a56290
+      internalID: -400588950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_50
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 101
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b385ecda1a6189b429328afe35e9b759
+      internalID: 433546391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_51
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 101
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56e11a76c9a4e24885bada2abd10f96
+      internalID: 1060084818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_52
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 101
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85677a3ea9af26f4b94c80c472462e79
+      internalID: 1699911370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_53
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454fad298051ebd42810f757680e22f5
+      internalID: 501291584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_54
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83021fe220c7f0145a897cae400b47b9
+      internalID: 764463055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_55
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819b253ee8b39a244be3b94135931351
+      internalID: 1859080785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_56
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6d54a8465068d41bd5871bc2768a6c
+      internalID: 1878999176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_57
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055c88380560c4547a1d0c87b805b4b1
+      internalID: -1155863120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_58
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05eb28ed0bfb2b41b1816a5aaeb0c21
+      internalID: -1701201572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_59
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbe2c60ca7beec4a91eb073c2fbe962
+      internalID: 1792453944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_60
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 108
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71c065f5bf35ea4080914e77f604fa4
+      internalID: -322127000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_61
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 100
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6b03b42b14f5b4f9b1e7ad5a314d96
+      internalID: 494951869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_62
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758094a272311844eadacd619073e922
+      internalID: 1173846083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_63
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 108
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f4a09fd96c0de4a99524ec3e64ddfd
+      internalID: 1846515818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_64
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 100
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611fd2aa41cdd19429a0f4cac4371963
+      internalID: -1882794084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_65
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 101
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c991573cb7d924c8d32f1cfe86bea8
+      internalID: 1234819184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_66
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 101
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d0ea5d556b6554c8c88c838e2f8122
+      internalID: 904080731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_67
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d5d08200a97704fa2a1a8ab8814b21
+      internalID: 1541275190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_68
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08945ab6705a3334e852e7b9179ed287
+      internalID: 101694752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_69
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4218fca4b9659a8449c50334bb1ef1f2
+      internalID: -1604642288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_70
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29b73708f1110b41a02f5b8a57efb20
+      internalID: -557114997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_71
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 100
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30766ff17e0723a4dbba0cc287c788e4
+      internalID: -1386541791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_72
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 100
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61517bda2e5af3c498d2c5e22e46d295
+      internalID: -771848989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_73
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 100
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258a046e192dce0489fff20849967164
+      internalID: -1102503633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_74
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 100
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63b57bd1a2a6e94093e22b86f22f883
+      internalID: 1652997326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_75
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b40023e8e703ac49b34804095232ddf
+      internalID: 103643476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_76
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb105e3080c521846a6af2846517523e
+      internalID: -298073924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_77
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f36cd045f1d6324b907530c3e045cad
+      internalID: -1008412697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_78
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 84
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccec6055f3eabb41aa792047b26cb4e
+      internalID: 656201337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_79
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db72ceac57744249ab3cc23c0429c1f
+      internalID: -176368254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_80
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3daeb82b4b74e4c45b93bb336e811c07
+      internalID: -502971764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_81
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985e0d8197d421a40a42152db004a046
+      internalID: 1720849159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_82
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd9adefa8b6edb4fa68bc70ad5975eb
+      internalID: 2024445906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_83
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61402fc361ac0944b319aa6f0b40ada
+      internalID: 1601157482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_84
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9afc3db41058da64ebb7827ab3cc33b3
+      internalID: 1562815561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_85
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e5ea6f20db09045854f234c0e90b64
+      internalID: -1848724474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_86
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d68c9b853a7da642b38efc960cc003c
+      internalID: 602748593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_87
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5573ffe12460414c8f1a0d3b4a639af
+      internalID: -1940830779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_88
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 91
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d0556f4838cc24bb24bc164baa9670
+      internalID: -1689470009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_89
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3560553f4ddd40b4191898bbefbab18b
+      internalID: -1636674336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_90
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 83
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901c73903499a4a499c02885f6d6aa0b
+      internalID: 107660948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_91
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd820b271d7f1440bf9a0638ac379d5
+      internalID: 1614372195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_92
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 91
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74442cfe731bdda4d9c94cec804b9e23
+      internalID: 1762853029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_93
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcb6ef00bee00649b2eac36172d1415
+      internalID: 1805670507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_94
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 83
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd5a9f4297f0c54dacae941932a2f34
+      internalID: -223829073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_95
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579cbfd1777bdfa4995407d2410e30ea
+      internalID: 836323455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_96
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f023d715cb8a4a54fb2269b449239e95
+      internalID: 726025416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_97
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 83
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ba1eb0c445eef449f84b9d7bbadbce
+      internalID: -1769776162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_98
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 83
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7fe7fedd0e9ea45a783341bf3b334e
+      internalID: -536704733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_99
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 83
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7155c7e2de2eb7247a88528a919d2ba2
+      internalID: 1513652364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_100
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed410cac9ffef354994a9d7c0a5cb346
+      internalID: -1314839806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_101
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a41e343ac1ede4b8ac25783caa7055
+      internalID: -1215849338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_102
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe2f6805e302234196ead8350e056ed
+      internalID: -199497634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_103
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 75
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c38d7cff89965c4ea0f9572aad4fddc
+      internalID: 621845627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_104
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e8bbc19051d644d8b69bec24fcc1ac
+      internalID: -1209108407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_105
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b607b40df8ec80d43b3f44898dbd5053
+      internalID: -1578869905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_106
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d34821240dd8b46848bfe9bdaa61c0
+      internalID: -1521049358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_107
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0354be5e0683e34dbe08bfa9bfe9ebf
+      internalID: 676743956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_108
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15aee8dc15e9243448d45a64c5a325e5
+      internalID: 597522596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_109
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5736e3ab3bfbcdd4885958475983d60a
+      internalID: 1428272575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_110
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef262cf609ec80f46af45ce9bacc8d75
+      internalID: 69096659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_111
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9483100e8157434fbc24c0a9e012f2f
+      internalID: 163878759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_112
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d28c71e56766d428bba6e1f0760356
+      internalID: 1176671329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_113
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc0da86202834748899d16d0ce5e3ad
+      internalID: 842483224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_114
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45db3d1b489a5445bedc9247ddbbe11
+      internalID: -1009317670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_115
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d10ba4f0566054caeda1f9d6b51bf2
+      internalID: -256060061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_116
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0065ef580c0bb8f40897d0bbf7f0dd2b
+      internalID: 1004731967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_117
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c8c89479579304981679d5c6fc151f
+      internalID: 1660710758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_118
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 74
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbd2b093ab8ea245b8a4f0f998ddb10
+      internalID: -986106213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_119
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b4f0c41e6783e44b830a3c281012bf
+      internalID: -1392706526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_120
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d981e0d11035f8d46afdc520b52a94e9
+      internalID: 966258173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_121
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ff06769efa35e49ba465a64b156f15
+      internalID: -1395950100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_122
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ffb83de6a5cd440b70df24de428990
+      internalID: -1417553838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_123
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 74
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b4ea2942eb6fe4786c2c5296443fed
+      internalID: -1047357230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_124
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 66
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31861183fd5e96540a028b9df8a8c520
+      internalID: -308537209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_125
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5988ad7456f32b469af51f91e71334e
+      internalID: 406011762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_126
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 50
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc575768ca8aee4abaad38020163601
+      internalID: -1856100288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_127
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd01153f3a0ef64088bd0ddaf169ab1
+      internalID: -511822339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_128
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829c7484993e2294aacad5f54a489e29
+      internalID: -1285971921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_129
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 50
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5698064448ee5d439a964d5c0425880
+      internalID: 1966145043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_130
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8475dd724a7b54f90450cccaeec1b5
+      internalID: 1368676226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_131
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 49
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b12c99ecad30a43946792c4fa4402b
+      internalID: -1998925332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_132
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d783fe89232fa7f4c8b665dc55df7736
+      internalID: -201380526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_133
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8249c603e8436e45a75d76dac247a3d
+      internalID: 1828914708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_134
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 49
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b379c1986fc743c479843fc7a79e2cd3
+      internalID: -1674887936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_135
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839ac3d0a7c493248a298152acc306b7
+      internalID: 1386629792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_136
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a73b13a108316845bba552fe81ccbef
+      internalID: -1479986890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_137
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071a05cef047bb94eaceec980ee7092a
+      internalID: -2107497575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_138
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045a1ca3d4ec1794283980e712ccd6e2
+      internalID: 131892750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_139
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d640a2329fc7d147bf305637a3a6395
+      internalID: 179266765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_140
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 49
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408398da8be0302468a60a1d2fb37a44
+      internalID: 494120480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_141
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 49
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29239abeb5e8b6341bb7e5b4cd09b93c
+      internalID: -1354462464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_142
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32df0615d2ff6d499be44c2e3ef5f38
+      internalID: 568275794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_143
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 49
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8f8d0fe46a8354b880bfd4a6d4adcf
+      internalID: -52145657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_144
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 49
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c91c957279f8f04fae600031d62460a
+      internalID: 1271306999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_145
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 49
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f96cffd792d8a24392e60b8b8b41299
+      internalID: -1773173821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_146
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 49
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b64152a7230ef742ab5fc5be6b8b36d
+      internalID: -863543640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_147
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 49
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f65c72d5fa9c1d42937c9d125fcfe4f
+      internalID: -2038623928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_148
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 49
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4be5e23596a1c849b2fcaae99677c05
+      internalID: 2007517317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_149
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 49
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82278840bea98364fa08bb1ef209a428
+      internalID: -1285007705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_150
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5cf0533d533154b9ad5c9807f1b51a
+      internalID: -841752241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_151
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 33
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125969322eb95264f97c06aca6e6122a
+      internalID: 1711687302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_152
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 34
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1bd000a530ece44b020bef6dfad457
+      internalID: -2008897210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_153
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72aa298ed23b26c4594b97780eae17ee
+      internalID: 1041352239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_154
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 33
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066573e49d8ed984fb17d4fe88867051
+      internalID: 109549978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_155
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f476ae0d8fc34a54880595198907756f
+      internalID: -938070829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_156
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 32
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80ac753444dbfc45b0545a68e850fd8
+      internalID: 54121499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_157
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33686132e51f814f866495eff71295d
+      internalID: 345032256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_158
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb137a71d475a048b4f1beb191e60cc
+      internalID: 714209561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_159
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 32
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fea7424c1f03224bbc07d99b65f5110
+      internalID: 1361638192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_160
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9e2b9247f9c404a872b05050de0169
+      internalID: -1768424795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_161
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7338ac77bd37a0d45a5c6c8362e071bd
+      internalID: 1318041815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_162
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a89ea158f1eb34aac38d09aedbefa7
+      internalID: -1508677267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_163
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d061cb3c3d180fc449cb7a4c125548d2
+      internalID: -4719153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_164
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed99ce3c1cb43940bef5b6c8d780115
+      internalID: 1498043415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_165
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 32
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3204c81f8956b43be169edcb7894e3
+      internalID: 846867773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_166
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 32
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41661ecc711f9748b4e216547d1c8ed
+      internalID: 396319730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_167
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 33
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65148a13c10c0c4299da8ffdbab6ebc
+      internalID: 1987105131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_168
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85f1e6e68f72ea4d8cdadb7a448a88f
+      internalID: 1266775087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_169
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 32
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cc6b57f063bd947a57d434032b3625
+      internalID: -2134439685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_170
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 32
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc02ac1de4962a4c9d0038ab477c1a3
+      internalID: -210921208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_171
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 32
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c633910bf6f34f14eb9a04b385494f09
+      internalID: 1071696621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_172
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 33
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3323555d514d1144089ad4812ed1dcd8
+      internalID: -1460915664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_173
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8899e7bac9be5d241a9a7ff74f4be92f
+      internalID: 223215093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_174
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 32
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832287b64a2e5694dab33544da4cc8cf
+      internalID: 436772160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_175
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd5fdee7d86d3441895a9f1d218dd9c
+      internalID: -266093525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_176
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c45035c09c2a3a41abde6644725ebd2
+      internalID: -805364795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_177
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 16
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7638ea8b7e9b54b91f08b5b00418d5
+      internalID: 1621000907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_178
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 16
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1198ec8b5adfe6c468b9cffcf9fada35
+      internalID: -2032409575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_179
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e8866328c3fb76439eeac4a895ec128
+      internalID: -1739671060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_180
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9f19f4270227c4cba140dc2735b16e
+      internalID: -1289826755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_181
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd396cf6d25a614b907ec882529393e
+      internalID: 816335694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_182
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c694ac26bc9a0124bb5f51d207928155
+      internalID: 404519872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_183
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8fd5b13d85050848b94576fb7efafd8
+      internalID: 1130335840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_184
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4731e7febdcbe4582ba1612fd9a6ce
+      internalID: 452473364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_185
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57867c3d688ae0448a16a24629144aa3
+      internalID: -116803499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_186
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9afd1d56f412e742b82c4cfb41f34ee
+      internalID: -1601369301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_187
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a31e52e117303f4d8f72780daec97da
+      internalID: -2051451445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_188
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0072a7c9781ffd439406cba394535ae
+      internalID: -221132034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_189
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6e0e2036f838c419ab6d0149d697bf
+      internalID: -1250373262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_190
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1c3ebb865907c4b89ac4b66d66728d
+      internalID: 1685045227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_191
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1292aa3849682164581100585f608092
+      internalID: -659729643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_192
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 15
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fb250c3b303bf40a2d08dec517f2f4
+      internalID: -581046050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_193
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 15
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6ee1191975def41842a3a0fc3610d7
+      internalID: -1458876968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_194
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7339edb6d21554c48903ffc4f8bd4c79
+      internalID: 1537461937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_195
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f29f7eed052e05468cae0d563f59433
+      internalID: 1499706398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_196
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16f4c49f7f41e8459eb746622c04783
+      internalID: -184958120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_197
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 15
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30bb65bc33d0db4c976cbf394439141
+      internalID: -1285328065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_198
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 15
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e31775dd5ec93c49b22769ee25f0907
+      internalID: 1698999480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap 2_199
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47eae2d8717cdcc458d6022af660eaf8
+      internalID: -1480187835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +4345,207 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tilemap 2_0: -696924364
+      tilemap 2_1: -1954664112
+      tilemap 2_10: 657021797
+      tilemap 2_100: -1314839806
+      tilemap 2_101: -1215849338
+      tilemap 2_102: -199497634
+      tilemap 2_103: 621845627
+      tilemap 2_104: -1209108407
+      tilemap 2_105: -1578869905
+      tilemap 2_106: -1521049358
+      tilemap 2_107: 676743956
+      tilemap 2_108: 597522596
+      tilemap 2_109: 1428272575
+      tilemap 2_11: -2099722551
+      tilemap 2_110: 69096659
+      tilemap 2_111: 163878759
+      tilemap 2_112: 1176671329
+      tilemap 2_113: 842483224
+      tilemap 2_114: -1009317670
+      tilemap 2_115: -256060061
+      tilemap 2_116: 1004731967
+      tilemap 2_117: 1660710758
+      tilemap 2_118: -986106213
+      tilemap 2_119: -1392706526
+      tilemap 2_12: -1531266434
+      tilemap 2_120: 966258173
+      tilemap 2_121: -1395950100
+      tilemap 2_122: -1417553838
+      tilemap 2_123: -1047357230
+      tilemap 2_124: -308537209
+      tilemap 2_125: 406011762
+      tilemap 2_126: -1856100288
+      tilemap 2_127: -511822339
+      tilemap 2_128: -1285971921
+      tilemap 2_129: 1966145043
+      tilemap 2_13: 891210807
+      tilemap 2_130: 1368676226
+      tilemap 2_131: -1998925332
+      tilemap 2_132: -201380526
+      tilemap 2_133: 1828914708
+      tilemap 2_134: -1674887936
+      tilemap 2_135: 1386629792
+      tilemap 2_136: -1479986890
+      tilemap 2_137: -2107497575
+      tilemap 2_138: 131892750
+      tilemap 2_139: 179266765
+      tilemap 2_14: -994588628
+      tilemap 2_140: 494120480
+      tilemap 2_141: -1354462464
+      tilemap 2_142: 568275794
+      tilemap 2_143: -52145657
+      tilemap 2_144: 1271306999
+      tilemap 2_145: -1773173821
+      tilemap 2_146: -863543640
+      tilemap 2_147: -2038623928
+      tilemap 2_148: 2007517317
+      tilemap 2_149: -1285007705
+      tilemap 2_15: 1466524500
+      tilemap 2_150: -841752241
+      tilemap 2_151: 1711687302
+      tilemap 2_152: -2008897210
+      tilemap 2_153: 1041352239
+      tilemap 2_154: 109549978
+      tilemap 2_155: -938070829
+      tilemap 2_156: 54121499
+      tilemap 2_157: 345032256
+      tilemap 2_158: 714209561
+      tilemap 2_159: 1361638192
+      tilemap 2_16: -1281208579
+      tilemap 2_160: -1768424795
+      tilemap 2_161: 1318041815
+      tilemap 2_162: -1508677267
+      tilemap 2_163: -4719153
+      tilemap 2_164: 1498043415
+      tilemap 2_165: 846867773
+      tilemap 2_166: 396319730
+      tilemap 2_167: 1987105131
+      tilemap 2_168: 1266775087
+      tilemap 2_169: -2134439685
+      tilemap 2_17: -1260242869
+      tilemap 2_170: -210921208
+      tilemap 2_171: 1071696621
+      tilemap 2_172: -1460915664
+      tilemap 2_173: 223215093
+      tilemap 2_174: 436772160
+      tilemap 2_175: -266093525
+      tilemap 2_176: -805364795
+      tilemap 2_177: 1621000907
+      tilemap 2_178: -2032409575
+      tilemap 2_179: -1739671060
+      tilemap 2_18: -109062360
+      tilemap 2_180: -1289826755
+      tilemap 2_181: 816335694
+      tilemap 2_182: 404519872
+      tilemap 2_183: 1130335840
+      tilemap 2_184: 452473364
+      tilemap 2_185: -116803499
+      tilemap 2_186: -1601369301
+      tilemap 2_187: -2051451445
+      tilemap 2_188: -221132034
+      tilemap 2_189: -1250373262
+      tilemap 2_19: -224176293
+      tilemap 2_190: 1685045227
+      tilemap 2_191: -659729643
+      tilemap 2_192: -581046050
+      tilemap 2_193: -1458876968
+      tilemap 2_194: 1537461937
+      tilemap 2_195: 1499706398
+      tilemap 2_196: -184958120
+      tilemap 2_197: -1285328065
+      tilemap 2_198: 1698999480
+      tilemap 2_199: -1480187835
+      tilemap 2_2: -1991629054
+      tilemap 2_20: -642942540
+      tilemap 2_21: -612718308
+      tilemap 2_22: 787331201
+      tilemap 2_23: -2103072373
+      tilemap 2_24: -1587634452
+      tilemap 2_25: 849604625
+      tilemap 2_26: 2078780179
+      tilemap 2_27: 1237357307
+      tilemap 2_28: 1627852882
+      tilemap 2_29: 316182245
+      tilemap 2_3: 532836573
+      tilemap 2_30: -1987251088
+      tilemap 2_31: 121419155
+      tilemap 2_32: 1143412750
+      tilemap 2_33: 730105644
+      tilemap 2_34: -705879745
+      tilemap 2_35: 964091689
+      tilemap 2_36: -1853969650
+      tilemap 2_37: 598882498
+      tilemap 2_38: 1088564225
+      tilemap 2_39: -1978332996
+      tilemap 2_4: -1862340085
+      tilemap 2_40: -1045329402
+      tilemap 2_41: -21043007
+      tilemap 2_42: 206967443
+      tilemap 2_43: -1147886563
+      tilemap 2_44: -545274891
+      tilemap 2_45: 1272508735
+      tilemap 2_46: -578832230
+      tilemap 2_47: -755833459
+      tilemap 2_48: 1223880287
+      tilemap 2_49: -400588950
+      tilemap 2_5: -1734110942
+      tilemap 2_50: 433546391
+      tilemap 2_51: 1060084818
+      tilemap 2_52: 1699911370
+      tilemap 2_53: 501291584
+      tilemap 2_54: 764463055
+      tilemap 2_55: 1859080785
+      tilemap 2_56: 1878999176
+      tilemap 2_57: -1155863120
+      tilemap 2_58: -1701201572
+      tilemap 2_59: 1792453944
+      tilemap 2_6: 2023420843
+      tilemap 2_60: -322127000
+      tilemap 2_61: 494951869
+      tilemap 2_62: 1173846083
+      tilemap 2_63: 1846515818
+      tilemap 2_64: -1882794084
+      tilemap 2_65: 1234819184
+      tilemap 2_66: 904080731
+      tilemap 2_67: 1541275190
+      tilemap 2_68: 101694752
+      tilemap 2_69: -1604642288
+      tilemap 2_7: 1503556651
+      tilemap 2_70: -557114997
+      tilemap 2_71: -1386541791
+      tilemap 2_72: -771848989
+      tilemap 2_73: -1102503633
+      tilemap 2_74: 1652997326
+      tilemap 2_75: 103643476
+      tilemap 2_76: -298073924
+      tilemap 2_77: -1008412697
+      tilemap 2_78: 656201337
+      tilemap 2_79: -176368254
+      tilemap 2_8: 2104487147
+      tilemap 2_80: -502971764
+      tilemap 2_81: 1720849159
+      tilemap 2_82: 2024445906
+      tilemap 2_83: 1601157482
+      tilemap 2_84: 1562815561
+      tilemap 2_85: -1848724474
+      tilemap 2_86: 602748593
+      tilemap 2_87: -1940830779
+      tilemap 2_88: -1689470009
+      tilemap 2_89: -1636674336
+      tilemap 2_9: -1392682478
+      tilemap 2_90: 107660948
+      tilemap 2_91: 1614372195
+      tilemap 2_92: 1762853029
+      tilemap 2_93: 1805670507
+      tilemap 2_94: -223829073
+      tilemap 2_95: 836323455
+      tilemap 2_96: 726025416
+      tilemap 2_97: -1769776162
+      tilemap 2_98: -536704733
+      tilemap 2_99: 1513652364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
