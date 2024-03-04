@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 
 public class KunaiConstraint : MonoBehaviour
@@ -9,16 +10,40 @@ public class KunaiConstraint : MonoBehaviour
     //[SerializeField] private float destroyDelay = 8f;
     [SerializeField] private bool collided = false;
     [SerializeField] private float kunaiMass;
+    public Sprite carga1;
+    public Sprite carga2;
+    public Sprite carga3;
     Rigidbody2D rb2D;
     NumeroDeKunais nmdk;
     SpawnKunai kunsp;
+    SpriteRenderer sr;
+    private GameObject kunai;
     void Start()
     {
+        kunai = GameObject.FindGameObjectWithTag("kunai");
+        sr = kunai.GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
-        kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();  
+        kunsp = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnKunai>();
         nmdk = GameObject.FindGameObjectWithTag("lifeBar").GetComponent<NumeroDeKunais>();
     }
 
+    private void Update()
+    {
+        if (SceneControl.kunaiCount == 1 && kunai != null)
+        {
+            sr.sprite = carga1;
+        }
+
+        if (SceneControl.kunaiCount == 2 && kunai != null)
+        {
+            sr.sprite = carga2;
+        }
+
+        if (SceneControl.kunaiCount == 3 && kunai !=null)
+        {
+            sr.sprite = carga3;
+        }
+    }
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
@@ -38,15 +63,18 @@ public class KunaiConstraint : MonoBehaviour
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("botonAct") ||
            collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
         {
-            //StartCoroutine(Stuck(stuckDuration));
+            collided = true;
             Stuck();
         }   
 
         if (collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))
         {
-            transform.SetParent(collision.transform);
-            rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
-            collided = true;
+            if (!collided)
+            {
+                transform.SetParent(collision.transform);
+                rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
+                collided = true;
+            }           
         }
 
         if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 

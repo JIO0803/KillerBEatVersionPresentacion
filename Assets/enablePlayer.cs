@@ -27,8 +27,7 @@ public class enablePlayer : MonoBehaviour
             mj.enabled = true;
             sp.enabled = true;
             wd.enabled = true;
-            Destroy(gameObject);
-            Debug.Log("Alojomora");
+            Destroy(gameObject);    
         }
     }
 }

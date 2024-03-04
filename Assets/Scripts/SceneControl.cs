@@ -74,8 +74,11 @@ public class SceneControl : MonoBehaviour
     [SerializeField] private float music3PlaybackTime;
     private int languageCounter;
     private int qualityCounter;
-    public int kunaiCount;
+    public static int kunaiCount;
     public static int kunaiMax;
+    public GameObject cursor;
+    public GameObject Lock1;
+    public GameObject Lock2;
 
     private void Awake()
     {
@@ -124,6 +127,8 @@ public class SceneControl : MonoBehaviour
 
     void Update()
     {
+        //mouse.transform.position == cursor.transform.position;
+        //Vector3 worldMousePos = Camera.ScreenToWorldPoint;
         if (Opacity > 0.8f)
         {
             Opacity = 0.8f;
@@ -264,7 +269,7 @@ public class SceneControl : MonoBehaviour
             nah.SetActive(true);
         }
 
-        if (kunaiCount == 1)
+        if (kunaiCount == 1 && UpgradeMenu.kunaiOwnedd)
         {
             kunaiUp1.SetActive(true);
             kunaiUp2.SetActive(false);
@@ -277,9 +282,11 @@ public class SceneControl : MonoBehaviour
             kr3.SetActive(false);
             LeftArrow.SetActive(false);
             RightArrow.SetActive(true);
+            Lock1.SetActive(false);
+            Lock2.SetActive(false);
         }
 
-        if (kunaiCount == 2)
+        if (kunaiCount == 2 && UpgradeMenu.kunaiOwnedd)
         {
             kunaiUp1.SetActive(false);
             kunaiUp2.SetActive(true);
@@ -292,9 +299,11 @@ public class SceneControl : MonoBehaviour
             kr3.SetActive(false);
             LeftArrow.SetActive(true);
             RightArrow.SetActive(true);
+            Lock1.SetActive(false);
+            Lock2.SetActive(false);
         }
 
-        if (kunaiCount == 3)
+        if (kunaiCount == 3 && UpgradeMenu.kunaiOwnedd)
         {
             kunaiUp1.SetActive(false);
             kunaiUp2.SetActive(false);
@@ -307,6 +316,25 @@ public class SceneControl : MonoBehaviour
             kr3.SetActive(true);
             LeftArrow.SetActive(true);
             RightArrow.SetActive(false);
+            Lock1.SetActive(false);
+            Lock2.SetActive(false);
+        }
+
+        if (!UpgradeMenu.kunaiOwnedd)
+        {
+            kunaiUp1.SetActive(false);
+            kunaiUp2.SetActive(false);
+            kunaiUp3.SetActive(false);
+            kunailvl1.SetActive(false);
+            kunailvl2.SetActive(false);
+            kunailvl3.SetActive(false);
+            kr1.SetActive(true);
+            kr2.SetActive(false);
+            kr3.SetActive(false);
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);
+            Lock1.SetActive(true);
+            Lock2.SetActive(true);
         }
 
         if (qualityCounter < 0)
@@ -327,7 +355,6 @@ public class SceneControl : MonoBehaviour
         {
             kunaiCount = 3;
         }
-
     }
     public void AltButton()
     {
@@ -356,8 +383,8 @@ public class SceneControl : MonoBehaviour
         PlayerPrefs.SetFloat("Music1PlaybackTime", audSor1.time);
         PlayerPrefs.SetFloat("Music2PlaybackTime", audSor2.time);
         PlayerPrefs.SetFloat("Music3PlaybackTime", audSor3.time);
-        PlayerPrefs.GetInt("kunaiMax", kunaiMax);
-        PlayerPrefs.GetInt("kunaiCount", kunaiCount);
+        PlayerPrefs.SetInt("kunaiMax", kunaiMax);
+        PlayerPrefs.SetInt("kunaiCount", kunaiCount);
         PlayerPrefs.Save();
     }
 

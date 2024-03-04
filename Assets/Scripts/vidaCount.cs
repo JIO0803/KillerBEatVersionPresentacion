@@ -10,11 +10,21 @@ public class vidaCount : MonoBehaviour
     public bool canDie;
     public Image healthBar;
 
+    SpawnKunai sp;
+    MovJugador mj;
+    wallDetect wd;
+
     // Start is called before the first frame update
     void Start()
     {
         vida = GetComponent<TMP_Text>();
         canDie = true;
+        sp = GetComponent<SpawnKunai>();
+        mj = GetComponent<MovJugador>();
+        wd = GetComponent<wallDetect>();
+        mj.enabled = false;
+        sp.enabled = false;
+        wd.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,10 +32,12 @@ public class vidaCount : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.I))
         {
+            lifesValue = 100;
             canDie = false;
         }
         if (Input.GetKey(KeyCode.M))
         {
+            lifesValue = 1;
             canDie = true;
         }
         if (Input.GetKey(KeyCode.K))
@@ -51,6 +63,13 @@ public class vidaCount : MonoBehaviour
         if (collision.gameObject.tag == "tramp")
         {
             lifesValue = 0;
+        }       
+        
+        if (collision.gameObject.tag == "pared" || collision.gameObject.tag == "ground")
+        {
+            mj.enabled = true;
+            sp.enabled = true;
+            wd.enabled = true;
         }
     }
 }

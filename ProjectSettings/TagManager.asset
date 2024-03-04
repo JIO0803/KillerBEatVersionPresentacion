@@ -37,6 +37,7 @@ TagManager:
   - lifeBar
   - botonAct
   - tramp
+  - screen
   layers:
   - Default
   - TransparentFX

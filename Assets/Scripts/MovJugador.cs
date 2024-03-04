@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class MovJugador : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float Velocidad = 5f;
     public float salto;
     public int saltos = 1;
     //[SerializeField] private int wallJumpForce = 10;
     public LayerMask capaPared;
 
-    public Animator animator;
+    Animator animator;
     public bool isWallSliding;
     public bool grounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
         isWallSliding = false;
     }
 
@@ -42,15 +42,27 @@ public class MovJugador : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
+        }        
+        
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("IsRunning", false);
         }
-
         if (Input.GetKey(KeyCode.D) && !isWallSliding)
         {
-            transform.localScale = new Vector2(1, transform.localScale.y);
+            transform.localScale = new Vector2(1, transform.localScale.y);          
         }
         if (Input.GetKey(KeyCode.A) && !isWallSliding)
         {
             transform.localScale = new Vector2(-1, transform.localScale.y);
+        }
+        if (Input.GetKey(KeyCode.A) && !isWallSliding && grounded && !Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.D) && !isWallSliding && grounded && !Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
         }
     }
 
@@ -59,6 +71,8 @@ public class MovJugador : MonoBehaviour
         if (grounded)
         {
             saltos = 1;
+            animator.SetBool("IsSliding", false);
+            animator.SetBool("IsSlidingKunai", false);
         }
 
         if (saltos > 1)
@@ -75,8 +89,11 @@ public class MovJugador : MonoBehaviour
     {
         if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared") || !collision.isTrigger && collision.CompareTag("botonAct"))
         {
-            grounded = true;
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            if (gameObject != null)
+            {
+                grounded = true;
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
     }
 

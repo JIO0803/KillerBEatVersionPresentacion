@@ -12,9 +12,12 @@ public class wallDetect : MonoBehaviour
     public float newSaltoImpr;
     MovJugador mj;
     Rigidbody2D rb;
-
+    Animator animator;
+    SpawnKunai sp;
     private void Start()
     {
+        sp = GetComponent<SpawnKunai>();
+        animator = GetComponent<Animator>();
         mj = gameObject.GetComponent<MovJugador>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
@@ -33,6 +36,16 @@ public class wallDetect : MonoBehaviour
 
         isWallOnLeft = hitLeft.collider != null;
         isWallOnRight = hitRight.collider != null;
+
+        if (rb.velocity.y > 0 && !mj.grounded && !mj.isWallSliding)
+        {
+            animator.SetBool("IsJumping", true);
+            //animator.SetBool("IsFalling", true);
+        }
+        else if (rb.velocity.y < 0 || mj.grounded || mj.isWallSliding)
+        {
+            animator.SetBool("IsJumping", false);
+        }
     }
 
     private void FixedUpdate()
@@ -46,12 +59,36 @@ public class wallDetect : MonoBehaviour
         else
         {
             mj.isWallSliding = false;
-        }   
+        }  
+        
+        if (mj.isWallSliding)
+        {
+            if (sp == null)
+            {
+                animator.SetBool("IsSliding", true);
+            }
+            if (sp != null)
+            {
+                animator.SetBool("IsSlidingKunai", true);
+            }
+        }
+
+        if (!mj.isWallSliding)
+        {
+            if (sp == null)
+            {
+                animator.SetBool("IsSliding", false);
+            }
+            if (sp != null)
+            {
+                animator.SetBool("IsSlidingKunai", false);
+            }
+        }
     }
 
     private void Salto()
     {
-        if (mj.isWallSliding && isWallOnRight)
+        if (mj.isWallSliding && isWallOnRight && !mj.grounded)
         {
             rb.AddForce(new Vector2(-10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
         }
@@ -60,7 +97,7 @@ public class wallDetect : MonoBehaviour
             rb.AddForce(new Vector2(10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
         }
         else
-        {
+        {                             
             rb.velocity = new Vector2(rb.velocity.x, mj.salto);
         }
     }

@@ -172,11 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81204a4571598624d9b343f58219ffcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stuckDuration: 0
-  waitingTime: 0
-  destroyDelay: 6
   collided: 0
   kunaiMass: 2
+  carga1: {fileID: -817379769, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
+  carga2: {fileID: -1536907126, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
+  carga3: {fileID: 670802087, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
 --- !u!95 &-2096129257655734207
 Animator:
   serializedVersion: 5

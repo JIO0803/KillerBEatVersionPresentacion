@@ -14,12 +14,10 @@ public class UpgradeMenu : MonoBehaviour
     public static bool tpOwnedd;
     public GameObject blockedTP;
     public GameObject availabelTP;
-    SceneControl sc;
     public TextMeshProUGUI pointsText;
 
     private void Start()
     {
-        sc = GetComponent<SceneControl>();
         LoadPlayerPrefs();
         UpdateUI();
     }
@@ -115,7 +113,7 @@ public class UpgradeMenu : MonoBehaviour
         tpOwned.SetActive(false);
         kunaiOwned.SetActive(false);
         SceneControl.kunaiMax = 1;
-        sc.kunaiCount = 1;
+        SceneControl.kunaiCount = 1;
         UpdateUI();
         SavePlayerPrefs();
     }
