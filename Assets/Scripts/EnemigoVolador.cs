@@ -8,7 +8,7 @@ public class EnemigoVolador : MonoBehaviour
     [SerializeField] private float retreatDistance;
     [SerializeField] private float startTimeBtwShots;
     [SerializeField] private float detectDist;
-    [SerializeField] private LayerMask obstacleLayer; // Capa para detectar obstáculos
+    [SerializeField] private LayerMask obstacleLayer; 
     public GameObject missilePrefab;
     public Transform player;
     private Rigidbody2D rb2D;
@@ -18,24 +18,22 @@ public class EnemigoVolador : MonoBehaviour
     public bool canShoot;
     private float timeBtwShots;
     private Vector2 moveDirection = Vector2.zero;
-    SpawnKunai spkn;
     public int lifes;
-    NumeroDeKunais nmdk;
     pointManager pm;
     vidaCount vc;
+    Animator animator;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         vc = FindObjectOfType<vidaCount>();
         pm = FindObjectOfType<pointManager>();
         canShoot = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb2D = GetComponent<Rigidbody2D>();
-        canShoot = true;
         lifes = 1;
-        spkn = player.GetComponent<SpawnKunai>();
-        nmdk = kunaiText.GetComponent<NumeroDeKunais>();
+        animator.SetBool("IsDead", false);
     }
 
     private void Update()
@@ -69,19 +67,18 @@ public class EnemigoVolador : MonoBehaviour
             moveDirection = (transform.position - player.position).normalized;
         }
 
-        // Evitar obstáculos
         RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, moveDirection, 1f, obstacleLayer);
         if (obstacleHit.collider != null)
         {
-            // Si hay un obstáculo, girar en otra dirección
             moveDirection = Quaternion.AngleAxis(90, Vector3.forward) * moveDirection;
         }
 
         rb2D.velocity = moveDirection * charSpeed;
 
-        if (timeBtwShots <= 0 && canShoot ==true)
+        if (timeBtwShots <= 0 && canShoot == true)
         {
             DisparoDeBala();
+            timeBtwShots = startTimeBtwShots; 
         }
         else
         {
@@ -105,8 +102,6 @@ public class EnemigoVolador : MonoBehaviour
         GameObject kunaiInst = Instantiate(missilePrefab, transform.position, Quaternion.identity);
 
         kunaiInst.GetComponent<Rigidbody2D>().velocity = direction * charSpeed;
-        timeBtwShots = startTimeBtwShots;
-        canShoot = true;
     }
 
     private void FlipSprite()
@@ -141,6 +136,7 @@ public class EnemigoVolador : MonoBehaviour
 
     private void receiveDamage2()
     {
+        animator.SetBool("IsDead", true);
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10; 
         pm.Invoke("AddPoints", 0f);

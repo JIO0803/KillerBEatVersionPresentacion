@@ -9,6 +9,7 @@ public class MisilDirigido : MonoBehaviour
     [SerializeField] private float changingSpeed;
     [SerializeField] private bool Stop;
     [SerializeField] private bool canCollide = false;
+    [SerializeField] private float rotationSpeed;
 
     public float startTimeBtwShots;
     public GameObject volador;
@@ -29,6 +30,11 @@ public class MisilDirigido : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized * changingSpeed;
             transform.Translate(direction * speed * Time.deltaTime, Space.World);
             rb2D.velocity = Vector2.zero;
+
+            Vector2 directionToPlayer = player.position - transform.position;
+            float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
         else
         {
@@ -44,6 +50,7 @@ public class MisilDirigido : MonoBehaviour
             {
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
+                Debug.Log("Pared");
             }
         }
         if (other.CompareTag("Player"))
@@ -60,6 +67,7 @@ public class MisilDirigido : MonoBehaviour
                 other.GetComponent<EnemigoRodante>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
+                Debug.Log("Rod");
             }
                 
         }
@@ -71,6 +79,7 @@ public class MisilDirigido : MonoBehaviour
                 other.GetComponent<EnemigoSoldado>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
+                Debug.Log("Sold");
             }             
         }
     }
