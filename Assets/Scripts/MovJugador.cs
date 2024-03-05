@@ -12,9 +12,10 @@ public class MovJugador : MonoBehaviour
     Animator animator;
     public bool isWallSliding;
     public bool grounded;
-
+    wallDetect wd;
     void Start()
     {
+        wd = GetComponent<wallDetect>();
         rb = GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         isWallSliding = false;
@@ -23,15 +24,6 @@ public class MovJugador : MonoBehaviour
     void Update()
     {
         Movimiento();
-       /* if (grounded == true || isWallSliding == true)
-        {
-            animator.SetBool("IsGrounded", true);
-        }
-        if (grounded == false || isWallSliding == false)
-        {
-            animator.SetBool("IsGrounded", false);
-        }
-       */
     }
 
     public void Movimiento()
@@ -39,15 +31,11 @@ public class MovJugador : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         //animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         RaycastHit2D raycastSuelo = Physics2D.Linecast(transform.position, transform.position + Vector3.down * 0.25f, capaPared);
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D) && !wd.isWallOnRight|| Input.GetKey(KeyCode.A) && !wd.isWallOnLeft)
         {
             rb.velocity = new Vector2(horizontalInput * Velocidad, rb.velocity.y);
         }        
-        
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
-        {
-            animator.SetBool("IsRunning", false);
-        }
+       
         if (Input.GetKey(KeyCode.D) && !isWallSliding)
         {
             transform.localScale = new Vector2(1, transform.localScale.y);          

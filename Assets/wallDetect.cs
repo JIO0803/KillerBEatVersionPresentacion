@@ -8,6 +8,7 @@ public class wallDetect : MonoBehaviour
     public bool isWallOnRight { get; private set; }
     public float wallSlidingSpeed = 0.5f;
     public float wallJumpForce;
+    //public float wallJumpForce2;
     public float forceSumm;
     public float newSaltoImpr;
     MovJugador mj;
@@ -40,11 +41,17 @@ public class wallDetect : MonoBehaviour
         if (rb.velocity.y > 0 && !mj.grounded && !mj.isWallSliding)
         {
             animator.SetBool("IsJumping", true);
-            //animator.SetBool("IsFalling", true);
-        }
-        else if (rb.velocity.y < 0 || mj.grounded || mj.isWallSliding)
+            animator.SetBool("IsFalling", false);
+        }          
+        if (rb.velocity.y < 0 && !mj.grounded && !mj.isWallSliding)
         {
             animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", true);
+        }        
+        else if (mj.grounded || mj.isWallSliding)
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", false);
         }
     }
 
@@ -88,19 +95,19 @@ public class wallDetect : MonoBehaviour
 
     private void Salto()
     {
-        if (mj.isWallSliding && isWallOnRight && !mj.grounded)
+        if (mj.isWallSliding && !mj.grounded)
         {
-            rb.AddForce(new Vector2(-10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
-        }
-        if  (mj.isWallSliding && isWallOnLeft)
-        {
-            rb.AddForce(new Vector2(10 * forceSumm * Mathf.Sqrt(2) / 2, mj.salto * newSaltoImpr * Mathf.Sqrt(2) / 2) * wallJumpForce, ForceMode2D.Impulse);
+            int direction = isWallOnRight ? -1 : 1;
+
+            rb.velocity = new Vector2(direction * wallJumpForce, forceSumm);
+            mj.saltos -= 1;
         }
         else
-        {                             
+        {
             rb.velocity = new Vector2(rb.velocity.x, mj.salto);
         }
     }
+
 
     private void WallSlider()
     {
