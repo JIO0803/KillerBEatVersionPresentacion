@@ -10,18 +10,21 @@ public class SpawnKunai : MonoBehaviour
     Rigidbody2D rb2D;
     private List<GameObject> kunaiList = new List<GameObject>();
     public int kunaiCount;
-
+    SpawnKunai sk;
     NumeroDeKunais nmdk;
     [SerializeField] private float kunaiTpSpeed;
-
     private void Start()
     {
+        sk = GetComponent<SpawnKunai>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         kunaiCount = SceneControl.kunaiMax;
         nmdk = kunaiText.GetComponent<NumeroDeKunais>();
+        if (UpgradeMenu.kunaiOwnedd == false)
+        {
+            sk.enabled = false;
+        }
     }
-
-    private void Update()
+        private void Update()
     {
         if (kunaiCount < 0)
         {

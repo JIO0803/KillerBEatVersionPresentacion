@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class vidaCount : MonoBehaviour
 {
     public float lifesValue = 1;
-    TMP_Text vida;
     public bool canDie;
-    public Image healthBar;
 
     SpawnKunai sp;
     MovJugador mj;
@@ -17,7 +15,6 @@ public class vidaCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vida = GetComponent<TMP_Text>();
         canDie = true;
         sp = GetComponent<SpawnKunai>();
         mj = GetComponent<MovJugador>();
@@ -32,7 +29,7 @@ public class vidaCount : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.I))
         {
-            lifesValue = 100;
+            lifesValue = 1000;
             canDie = false;
         }
         if (Input.GetKey(KeyCode.M))
@@ -51,11 +48,10 @@ public class vidaCount : MonoBehaviour
             lifesValue = 0;
         }
 
-        if (lifesValue <= 0.1f && canDie == true)
+        if (lifesValue <= 0 && canDie == true)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Game");
         }
-        healthBar.fillAmount = lifesValue;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

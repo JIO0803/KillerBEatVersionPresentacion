@@ -75,7 +75,8 @@ public class MovJugador : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared") || !collision.isTrigger && collision.CompareTag("botonAct"))
+        if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
+        || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
         {
             if (gameObject != null)
             {
@@ -87,7 +88,8 @@ public class MovJugador : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("ground") || !collision.isTrigger && collision.CompareTag("pared") || !collision.isTrigger && collision.CompareTag("botonAct"))
+        if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
+        || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
         {
             grounded = true;
             rb.velocity = new Vector2(0, rb.velocity.y);

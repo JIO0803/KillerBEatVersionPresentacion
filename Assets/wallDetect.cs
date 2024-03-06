@@ -15,8 +15,11 @@ public class wallDetect : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpawnKunai sp;
+    NumeroDeKunais nk;
+    public GameObject numeroDeKunais;
     private void Start()
     {
+        nk = numeroDeKunais.GetComponent<NumeroDeKunais>();
         sp = GetComponent<SpawnKunai>();
         animator = GetComponent<Animator>();
         mj = gameObject.GetComponent<MovJugador>();
@@ -53,6 +56,30 @@ public class wallDetect : MonoBehaviour
             animator.SetBool("IsJumping", false);
             animator.SetBool("IsFalling", false);
         }
+
+        if (mj.isWallSliding)
+        {
+            if (!sp.enabled || !nk.hasKunai)
+            {
+                animator.SetBool("IsSliding", true);
+            }
+            if (sp.enabled || nk.hasKunai)
+            {
+                animator.SetBool("IsSlidingKunai", true);
+            }
+        }
+
+        if (!mj.isWallSliding)
+        {
+            if (!sp.enabled || !nk.hasKunai)
+            {
+                animator.SetBool("IsSliding", false);
+            }
+            if (sp.enabled || nk.hasKunai)
+            {
+                animator.SetBool("IsSlidingKunai", false);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -68,29 +95,7 @@ public class wallDetect : MonoBehaviour
             mj.isWallSliding = false;
         }  
         
-        if (mj.isWallSliding)
-        {
-            if (sp == null)
-            {
-                animator.SetBool("IsSliding", true);
-            }
-            if (sp != null)
-            {
-                animator.SetBool("IsSlidingKunai", true);
-            }
-        }
 
-        if (!mj.isWallSliding)
-        {
-            if (sp == null)
-            {
-                animator.SetBool("IsSliding", false);
-            }
-            if (sp != null)
-            {
-                animator.SetBool("IsSlidingKunai", false);
-            }
-        }
     }
 
     private void Salto()

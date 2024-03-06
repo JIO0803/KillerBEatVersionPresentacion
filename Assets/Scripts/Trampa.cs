@@ -13,7 +13,7 @@ public class Trampa : MonoBehaviour
     {
         if (collision.gameObject.tag == ("Player"))
         {
-            vc.lifesValue -= 20;
+            vc.lifesValue -= 1;
         }
     }
 }

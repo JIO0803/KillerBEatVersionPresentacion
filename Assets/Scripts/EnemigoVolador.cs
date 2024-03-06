@@ -12,7 +12,6 @@ public class EnemigoVolador : MonoBehaviour
     public GameObject missilePrefab;
     public Transform player;
     private Rigidbody2D rb2D;
-    public GameObject kunaiText;
     private const float DefaultGravityScale = 3f;
     private bool canDealDamage;
     public bool canShoot;
@@ -22,9 +21,12 @@ public class EnemigoVolador : MonoBehaviour
     pointManager pm;
     vidaCount vc;
     Animator animator;
+    public float rotationSpeed;
+    Quaternion initialRotation = Quaternion.identity;
 
     private void Start()
     {
+        initialRotation = transform.rotation;
         animator = GetComponent<Animator>();
         vc = FindObjectOfType<vidaCount>();
         pm = FindObjectOfType<pointManager>();
@@ -57,13 +59,32 @@ public class EnemigoVolador : MonoBehaviour
         if (distanceToPlayer > stoppingDistance)
         {
             moveDirection = (player.position - transform.position).normalized;
+
+            Quaternion targetRotation = Quaternion.identity;
+
+            if (rb2D.velocity.x < 0)
+            {
+                targetRotation = Quaternion.Euler(0, 0, 60);
+            }
+            else if (rb2D.velocity.x > 0)
+            {
+                targetRotation = Quaternion.Euler(0, 0, -60);
+            }
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
+        if (rb2D.velocity.x == 0)   
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, initialRotation, Time.deltaTime * rotationSpeed);
+        }
+
         else if (distanceToPlayer < stoppingDistance && distanceToPlayer > retreatDistance)
         {
             moveDirection = Vector2.zero;
         }
         else if (distanceToPlayer < retreatDistance)
         {
+
             moveDirection = (transform.position - player.position).normalized;
         }
 
@@ -113,7 +134,7 @@ public class EnemigoVolador : MonoBehaviour
     {
         if (canDealDamage)
         {
-            vc.lifesValue -= 0.2f;
+            vc.lifesValue -= 1f;
         }
     }
 
@@ -142,6 +163,6 @@ public class EnemigoVolador : MonoBehaviour
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
-        gameObject.layer = LayerMask.NameToLayer("deadEnemy");
+        rb2D.mass = 10;
     }
 }

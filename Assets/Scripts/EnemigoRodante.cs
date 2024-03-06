@@ -68,7 +68,7 @@ public class EnemigoRodante : MonoBehaviour
     {
         if (canDealDamage)
         {
-            vc.lifesValue -= 0.2f;
+            vc.lifesValue -= 1f;
         }
     }
 
@@ -95,6 +95,6 @@ public class EnemigoRodante : MonoBehaviour
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
-        gameObject.layer = LayerMask.NameToLayer("deadEnemy");
+        rb2D.mass = 13;
     }
 }

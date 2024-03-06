@@ -136,10 +136,10 @@ public class EnemigoSoldado : MonoBehaviour
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
-        gameObject.layer = LayerMask.NameToLayer("deadEnemy");
         transform.Rotate(0, 0, 90);
         headShot.transform.Rotate(0, 0, 90);
         hs.headShotxOffset = newheadShotxOffset;
         hs.headShotyOffset = newheadShotyOffset;
+        rb2D.mass = 13;
     }
 }

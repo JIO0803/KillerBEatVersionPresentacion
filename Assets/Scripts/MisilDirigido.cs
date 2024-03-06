@@ -50,7 +50,6 @@ public class MisilDirigido : MonoBehaviour
             {
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
-                Debug.Log("Pared");
             }
         }
         if (other.CompareTag("Player"))
@@ -67,7 +66,6 @@ public class MisilDirigido : MonoBehaviour
                 other.GetComponent<EnemigoRodante>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
-                Debug.Log("Rod");
             }
                 
         }
@@ -79,7 +77,6 @@ public class MisilDirigido : MonoBehaviour
                 other.GetComponent<EnemigoSoldado>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
                 DestroyProjectile();
-                Debug.Log("Sold");
             }             
         }
     }
@@ -100,6 +97,6 @@ public class MisilDirigido : MonoBehaviour
 
     void DealDamage()
     {
-        vc.lifesValue -= 0.2f;
+        vc.lifesValue -= 1f;
     }
 }

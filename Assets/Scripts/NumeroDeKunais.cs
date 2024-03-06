@@ -10,7 +10,16 @@ public class NumeroDeKunais : MonoBehaviour
     public GameObject kunaiCharge1;
     public GameObject kunaiCharge2;
     public GameObject kunaiCharge3;
+    public bool hasKunai;
 
+    private void Start()
+    {
+        if (!UpgradeMenu.kunaiOwnedd)
+        {
+            kunaiCounts = 0;
+        }        
+
+    }
     void Update()
     {
         if (kunaiCounts > 3)
@@ -28,12 +37,14 @@ public class NumeroDeKunais : MonoBehaviour
         }
         if (kunaiCounts == 0)
         {
+            hasKunai = false;
             kunaiCharge1.SetActive(false);
             kunaiCharge2.SetActive(false);
             kunaiCharge3.SetActive(false);
         }
         if (kunaiCounts == 1)
         {
+            hasKunai = true;
             kunaiCharge1.SetActive(true);
             kunaiCharge2.SetActive(false);
             kunaiCharge3.SetActive(false);
@@ -41,6 +52,7 @@ public class NumeroDeKunais : MonoBehaviour
         
         if (kunaiCounts == 2)
         {
+            hasKunai = true;
             kunaiCharge1.SetActive(true);
             kunaiCharge2.SetActive(true);
             kunaiCharge3.SetActive(false);
@@ -48,6 +60,7 @@ public class NumeroDeKunais : MonoBehaviour
         
         if (kunaiCounts == 3)
         {
+            hasKunai = true;
             kunaiCharge1.SetActive(true);
             kunaiCharge2.SetActive(true);
             kunaiCharge3.SetActive(true);

@@ -78,6 +78,6 @@ public class DisparosShooter : MonoBehaviour
 
     void DealDamage()
     {
-        vc.lifesValue -= 0.2f;
+        vc.lifesValue -= 1f;
     }
 }
