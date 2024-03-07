@@ -51,19 +51,30 @@ public class KunaiConstraint : MonoBehaviour
         {
             if (collision.GetComponent<Rigidbody2D>() != null)
             {
-                transform.SetParent(collision.transform);
-                rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
-                collided = true;
+
+                Stuck();
+            }
+        }
+    }  /*  
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
+        || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
+        {
+            if (collision.GetComponent<Rigidbody2D>() != null)
+            {
+                rb2D.gravityScale = 5;    
             }
         }
     }
-
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("botonAct") ||
            collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
         {
-            collided = true;
+            rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
+            transform.SetParent(collision.transform);
             Stuck();
         }   
 
@@ -73,7 +84,7 @@ public class KunaiConstraint : MonoBehaviour
             {
                 transform.SetParent(collision.transform);
                 rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
-                collided = true;
+                Stuck();
             }           
         }
 
@@ -90,7 +101,7 @@ public class KunaiConstraint : MonoBehaviour
         {
             AddKunai();
             Destroy(gameObject);
-            collided = true;
+            Stuck();
         }
     }
 
