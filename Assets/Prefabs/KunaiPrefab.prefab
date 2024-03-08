@@ -174,9 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collided: 0
   kunaiMass: 2
-  carga1: {fileID: -817379769, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
-  carga2: {fileID: -1536907126, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
-  carga3: {fileID: 670802087, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
+  carga1: {fileID: 338626784, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
+  carga2: {fileID: -1243084308, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
+  carga3: {fileID: -2022988374, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
 --- !u!95 &-2096129257655734207
 Animator:
   serializedVersion: 5
