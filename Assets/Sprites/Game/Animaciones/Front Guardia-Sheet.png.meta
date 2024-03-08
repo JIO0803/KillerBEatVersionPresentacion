@@ -106,32 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5466e7e07f6ba940a5de2569bbac73e
-      internalID: -270810689
+      spriteID: 2c6aa4b27738049478fb1a7693f797d9
+      internalID: 1956948559
       vertices: []
       indices: 
       edges: []
@@ -171,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 512f6cf9341c4744297dd954553d6da7
-      internalID: -27668851
+      spriteID: ddc780a9712f4da438f778180ab0fbe5
+      internalID: -393578895
       vertices: []
       indices: 
       edges: []
@@ -192,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a64647af2e2308743b795af370d0bc67
-      internalID: 1246015248
+      spriteID: ea277ab37f74b024c97d5ea5b02efb93
+      internalID: -1635142538
       vertices: []
       indices: 
       edges: []
@@ -213,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1585c1768d8f815489281e529b849f4d
-      internalID: -1860615172
+      spriteID: 32f34fb6b30fe1a4c91ce6e74301fc96
+      internalID: -247617884
       vertices: []
       indices: 
       edges: []
@@ -234,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1a690c8ec236924196fa0787cdea2ff
-      internalID: 1931298466
+      spriteID: 397bb56879436c444abf4c8edcecd754
+      internalID: 712125625
       vertices: []
       indices: 
       edges: []
@@ -255,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5f29ccae78792c438182f332900dadc
-      internalID: -1190086870
+      spriteID: 20bd06cb7cd288f459144865897f4cef
+      internalID: -1679930460
       vertices: []
       indices: 
       edges: []
@@ -276,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5d67d6905235c340a658a89f6997796
-      internalID: -461406115
+      spriteID: 8d6d91515773de24d8d69a50f142b0aa
+      internalID: -18358325
       vertices: []
       indices: 
       edges: []
@@ -297,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ab20ea09e48f9c479a94b818018fc82
-      internalID: 368193147
+      spriteID: 02d85a7cd3775f2468b5077724eba679
+      internalID: 227735601
       vertices: []
       indices: 
       edges: []
@@ -318,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 186b66bb4b9197341a0560525c6b4644
-      internalID: -1242210127
+      spriteID: 3ae909096332ca244865701e2940de7f
+      internalID: 674937079
       vertices: []
       indices: 
       edges: []
@@ -335,15 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Front Guardia-Sheet_0: -270810689
-      Front Guardia-Sheet_1: -27668851
-      Front Guardia-Sheet_2: 1246015248
-      Front Guardia-Sheet_3: -1860615172
-      Front Guardia-Sheet_4: 1931298466
-      Front Guardia-Sheet_5: -1190086870
-      Front Guardia-Sheet_6: -461406115
-      Front Guardia-Sheet_7: 368193147
-      Front Guardia-Sheet_8: -1242210127
+      Front Guardia-Sheet_0: 1956948559
+      Front Guardia-Sheet_1: -393578895
+      Front Guardia-Sheet_2: -1635142538
+      Front Guardia-Sheet_3: -247617884
+      Front Guardia-Sheet_4: 712125625
+      Front Guardia-Sheet_5: -1679930460
+      Front Guardia-Sheet_6: -18358325
+      Front Guardia-Sheet_7: 227735601
+      Front Guardia-Sheet_8: 674937079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

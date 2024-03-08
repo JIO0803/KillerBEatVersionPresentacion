@@ -16,6 +16,7 @@ public class EnemigoRodante : MonoBehaviour
     public int lifes;
     pointManager pm;
     vidaCount vc;
+    Animator animator;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class EnemigoRodante : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         canDealDamage = true;
         lifes = 2;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -96,5 +98,6 @@ public class EnemigoRodante : MonoBehaviour
         canDealDamage = false;
         enabled = false;
         rb2D.mass = 13;
+        animator.SetBool("isDead", true);
     }
 }

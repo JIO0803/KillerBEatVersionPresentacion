@@ -106,32 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2275458e593e61947994daca0643436b
-      internalID: -1859266428
+      spriteID: 8844b1b7a705314459eac2cbd4d528fa
+      internalID: -1714013122
       vertices: []
       indices: 
       edges: []
@@ -171,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86d98c2711bffa24380ae2716e2835bc
-      internalID: -30164952
+      spriteID: d8f8f0a38b98a4047b5d354e371dab09
+      internalID: 1037035665
       vertices: []
       indices: 
       edges: []
@@ -192,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260a15b7ee19c4c469a3afaecf60f283
-      internalID: 761736086
+      spriteID: ab37d219b44f0b143ab48791f8c4bcb4
+      internalID: -1569743999
       vertices: []
       indices: 
       edges: []
@@ -213,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 312f8c9b4dafb5e47a03c652ad6349a5
-      internalID: -1702124742
+      spriteID: 35073d14716c3fc408109c8e3f22d0ed
+      internalID: 92774867
       vertices: []
       indices: 
       edges: []
@@ -234,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f88f0fd506cef479bf4f6f331738a3
-      internalID: 313128917
+      spriteID: 889a8fb6dd20ae3408bfe17c1533c2a5
+      internalID: -1007367892
       vertices: []
       indices: 
       edges: []
@@ -255,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90216e5b7f48e474fa0068cee2c98650
-      internalID: -1384958305
+      spriteID: a473f021d74641340a3c1eda149fae7b
+      internalID: -1456635722
       vertices: []
       indices: 
       edges: []
@@ -276,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a27a6d687619e5243be29fa49edc8e42
-      internalID: -2045432861
+      spriteID: 94cacbf4a42ce11479a9e317d024232f
+      internalID: 1700050457
       vertices: []
       indices: 
       edges: []
@@ -293,13 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DeslizamientoConKunaiAnimation_0: -1859266428
-      DeslizamientoConKunaiAnimation_1: -30164952
-      DeslizamientoConKunaiAnimation_2: 761736086
-      DeslizamientoConKunaiAnimation_3: -1702124742
-      DeslizamientoConKunaiAnimation_4: 313128917
-      DeslizamientoConKunaiAnimation_5: -1384958305
-      DeslizamientoConKunaiAnimation_6: -2045432861
+      DeslizamientoConKunaiAnimation_0: -1714013122
+      DeslizamientoConKunaiAnimation_1: 1037035665
+      DeslizamientoConKunaiAnimation_2: -1569743999
+      DeslizamientoConKunaiAnimation_3: 92774867
+      DeslizamientoConKunaiAnimation_4: -1007367892
+      DeslizamientoConKunaiAnimation_5: -1456635722
+      DeslizamientoConKunaiAnimation_6: 1700050457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

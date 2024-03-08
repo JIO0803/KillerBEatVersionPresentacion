@@ -106,32 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1a293c8ba0351c4ca071dab784aff2a
-      internalID: -1290048270
+      spriteID: 7edd2fdb1130e2e4caaf4953ad7fd4c5
+      internalID: -789368596
       vertices: []
       indices: 
       edges: []
@@ -171,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cf6b680bca5452459016dfaf8091281
-      internalID: 1626025825
+      spriteID: 4b28e1599e3a2d6458b71db87be4bf03
+      internalID: -1169809973
       vertices: []
       indices: 
       edges: []
@@ -188,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      caida de verdaz-Sheet_0: -1290048270
-      caida de verdaz-Sheet_1: 1626025825
+      caida de verdaz-Sheet_0: -789368596
+      caida de verdaz-Sheet_1: -1169809973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

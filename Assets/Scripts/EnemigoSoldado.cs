@@ -25,7 +25,7 @@ public class EnemigoSoldado : MonoBehaviour
     pointManager pm;
     Rigidbody2D rb2D;
     vidaCount vc;
-
+    Animator animator;
     private void Start()
     {
         vc = FindObjectOfType<vidaCount>();
@@ -35,6 +35,7 @@ public class EnemigoSoldado : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
         rb2D = projectile.GetComponent<Rigidbody2D>();
         lifes = 2;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -58,15 +59,18 @@ public class EnemigoSoldado : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, charSpeed * Time.deltaTime);
+            animator.SetBool("isRobotRunning", true);
         }
 
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
             transform.position = this.transform.position;
+            animator.SetBool("isRobotRunning", false);
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -charSpeed * Time.deltaTime);
+            animator.SetBool("isRobotRunning", true);
         }
 
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
@@ -141,5 +145,6 @@ public class EnemigoSoldado : MonoBehaviour
         hs.headShotxOffset = newheadShotxOffset;
         hs.headShotyOffset = newheadShotyOffset;
         rb2D.mass = 13;
+        animator.SetBool("isRobotDead", true);
     }
 }

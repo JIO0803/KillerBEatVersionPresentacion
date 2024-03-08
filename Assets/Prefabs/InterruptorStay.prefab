@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Muro: {fileID: 0}
-  activatedSprite: {fileID: 0}
-  notactivatedSprite: {fileID: 0}
+  activatedSprite: {fileID: 21300000, guid: 4951fccb68ef2e142800038f51e38cee, type: 3}
+  notactivatedSprite: {fileID: 21300000, guid: 07f4562c9488f2147a2fef3c991ec990, type: 3}
 --- !u!50 &-6498876106736256919
 Rigidbody2D:
   serializedVersion: 4

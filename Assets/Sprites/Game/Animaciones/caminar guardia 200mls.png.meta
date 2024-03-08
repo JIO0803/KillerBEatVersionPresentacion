@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d351d70c14da3a4ea0c222bbf16a1f2
+guid: 5d117b04a251e004baac651478052a7d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,43 +106,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laser_0
+      name: caminar guardia 200mls_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7
-        height: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0728c718412a12f42bef9d1be49ca79e
-      internalID: -1960404768
+      spriteID: 45ef419e2763f8541aecf91d86b51cba
+      internalID: 621592699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laser_1
+      name: caminar guardia 200mls_1
       rect:
         serializedVersion: 2
-        x: 7
+        x: 32
         y: 0
-        width: 7
-        height: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5f762940d99882419c543764c6c3954
-      internalID: 389371147
+      spriteID: c87f96aca5f799c47a0cff6b5b290ea5
+      internalID: -1038099424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laser_2
+      name: caminar guardia 200mls_2
       rect:
         serializedVersion: 2
-        x: 14
+        x: 64
         y: 0
-        width: 7
-        height: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ea893164322a7048bf44439e2e7647e
-      internalID: 353918225
+      spriteID: 70ac38e7957dfcd43a92d94422df080d
+      internalID: -2110384057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laser_3
+      name: caminar guardia 200mls_3
       rect:
         serializedVersion: 2
-        x: 21
+        x: 96
         y: 0
-        width: 7
-        height: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +187,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ddba1333bcffec49a94bc672d9df3b9
-      internalID: -1656646296
+      spriteID: c66ac16cebe7eaf4784265ba8eae6c1c
+      internalID: 2107222481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caminar guardia 200mls_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67bc9d1a4efb284f9db5b33e23bb620
+      internalID: 1309731589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caminar guardia 200mls_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49581aeac22bee47b24863f0aea38a2
+      internalID: 406570335
       vertices: []
       indices: 
       edges: []
@@ -230,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      laser_0: -1960404768
-      laser_1: 389371147
-      laser_2: 353918225
-      laser_3: -1656646296
+      caminar guardia 200mls_0: 621592699
+      caminar guardia 200mls_1: -1038099424
+      caminar guardia 200mls_2: -2110384057
+      caminar guardia 200mls_3: 2107222481
+      caminar guardia 200mls_4: 1309731589
+      caminar guardia 200mls_5: 406570335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

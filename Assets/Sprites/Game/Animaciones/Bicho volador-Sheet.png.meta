@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c6b28430b4ccd4592ac1012311078c
-      internalID: 1111952428
+      spriteID: f3e7e40cab7a56a4bb79155e4080c4d0
+      internalID: 467051250
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e50521026883b41a65230016fc5943
-      internalID: -232007575
+      spriteID: 13a2083c359348c4ab88ac8824f19c50
+      internalID: -1886506178
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a521afefa1523b42b5ae0679aed1325
-      internalID: 503850973
+      spriteID: e626059f93b758e45a69cd7bc047b706
+      internalID: -1521261822
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa66268b0c18f642a2e38ada253aa8f
-      internalID: 1656274767
+      spriteID: f20f0ca91ae2a8f4c8f078f01a07297e
+      internalID: -697668993
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0f9c989029029b4ea45f040c2f9d9dc
-      internalID: 1734761622
+      spriteID: 997a51ab50a5c8049a45db2fc9129d06
+      internalID: -1177554999
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c01081f79592c0f4da54642439e9278e
-      internalID: -1280182097
+      spriteID: f2aa173234feaae47a37ec438b181036
+      internalID: 1590399715
       vertices: []
       indices: 
       edges: []
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f27bcfc9f3d9540a17cf1167aa64db
-      internalID: 1149989115
+      spriteID: e15bfe0eb6bba264aaf148980a46308e
+      internalID: -1605875993
       vertices: []
       indices: 
       edges: []
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56e54b1c25d707d4cbe6194ec1693e60
-      internalID: 1306153203
+      spriteID: 0f18caee6c5203941a302e2ae397aa25
+      internalID: -1243907347
       vertices: []
       indices: 
       edges: []
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8059d2db80aaf2b43a85bc8463fdac16
-      internalID: 1406508497
+      spriteID: d98b5d95fbffe4a47ae60702813d7d04
+      internalID: -2141341683
       vertices: []
       indices: 
       edges: []
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11737187a48e2d94ba7a6bf120b32dc5
-      internalID: -1963076606
+      spriteID: 60621c4befcdcb647be87063e0d6e1fc
+      internalID: -1865218539
       vertices: []
       indices: 
       edges: []
@@ -334,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12905fb3f08d083478e1a7042c63b90e
-      internalID: 2083366491
+      spriteID: a93b354092d4d1f438573990630d23fc
+      internalID: -2136552518
       vertices: []
       indices: 
       edges: []
@@ -355,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd3542fb3da6e04e929c119668b1ecc
-      internalID: 862288872
+      spriteID: 5f3f3b3c28bf76d49bab72994b36e7f2
+      internalID: -1166792286
       vertices: []
       indices: 
       edges: []
@@ -372,18 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bicho volador-Sheet_0: 1111952428
-      Bicho volador-Sheet_1: -232007575
-      Bicho volador-Sheet_10: 2083366491
-      Bicho volador-Sheet_11: 862288872
-      Bicho volador-Sheet_2: 503850973
-      Bicho volador-Sheet_3: 1656274767
-      Bicho volador-Sheet_4: 1734761622
-      Bicho volador-Sheet_5: -1280182097
-      Bicho volador-Sheet_6: 1149989115
-      Bicho volador-Sheet_7: 1306153203
-      Bicho volador-Sheet_8: 1406508497
-      Bicho volador-Sheet_9: -1963076606
+      Bicho volador-Sheet_0: 467051250
+      Bicho volador-Sheet_1: -1886506178
+      Bicho volador-Sheet_10: -2136552518
+      Bicho volador-Sheet_11: -1166792286
+      Bicho volador-Sheet_2: -1521261822
+      Bicho volador-Sheet_3: -697668993
+      Bicho volador-Sheet_4: -1177554999
+      Bicho volador-Sheet_5: 1590399715
+      Bicho volador-Sheet_6: -1605875993
+      Bicho volador-Sheet_7: -1243907347
+      Bicho volador-Sheet_8: -2141341683
+      Bicho volador-Sheet_9: -1865218539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

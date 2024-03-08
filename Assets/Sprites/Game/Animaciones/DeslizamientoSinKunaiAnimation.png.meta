@@ -106,32 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 977196c0a552bd6499c6a513190ba37e
-      internalID: -521256845
+      spriteID: 14e149cc4747bb44aabf5df06449eb30
+      internalID: 574544325
       vertices: []
       indices: 
       edges: []
@@ -171,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30c7b3b73b3da1d4eb8e8fbf1cd1c174
-      internalID: -1748046925
+      spriteID: 6f3b68972c921b44abba3200c2b74fd7
+      internalID: -1000897134
       vertices: []
       indices: 
       edges: []
@@ -192,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4735cd69ad4b10840bb2d0725da4705e
-      internalID: -2035819701
+      spriteID: f606ee776597ea149975da26f9143909
+      internalID: -1336646313
       vertices: []
       indices: 
       edges: []
@@ -213,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32debfd4dc14a674ba63543548c03ee0
-      internalID: 817169553
+      spriteID: 0b797f1731db73448907c46cc660248c
+      internalID: 1375648511
       vertices: []
       indices: 
       edges: []
@@ -234,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d508d6aa9245249459561b36d7a8b645
-      internalID: 2013809276
+      spriteID: f1c96901e0e6be64eb7877beae8b7562
+      internalID: -1934617615
       vertices: []
       indices: 
       edges: []
@@ -255,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a394fd7728955294eb05761729e3a24e
-      internalID: -340688092
+      spriteID: e698c878b05cb744d9cdb85a8cfdce98
+      internalID: -1703200420
       vertices: []
       indices: 
       edges: []
@@ -276,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29ea242a0fb6bdb46834ed069fff463e
-      internalID: 1498369981
+      spriteID: 441bcf90e1b836341a6e748f4dd092de
+      internalID: -2086702925
       vertices: []
       indices: 
       edges: []
@@ -293,13 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DeslizamientoSinKunaiAnimation_0: -521256845
-      DeslizamientoSinKunaiAnimation_1: -1748046925
-      DeslizamientoSinKunaiAnimation_2: -2035819701
-      DeslizamientoSinKunaiAnimation_3: 817169553
-      DeslizamientoSinKunaiAnimation_4: 2013809276
-      DeslizamientoSinKunaiAnimation_5: -340688092
-      DeslizamientoSinKunaiAnimation_6: 1498369981
+      DeslizamientoSinKunaiAnimation_0: 574544325
+      DeslizamientoSinKunaiAnimation_1: -1000897134
+      DeslizamientoSinKunaiAnimation_2: -1336646313
+      DeslizamientoSinKunaiAnimation_3: 1375648511
+      DeslizamientoSinKunaiAnimation_4: -1934617615
+      DeslizamientoSinKunaiAnimation_5: -1703200420
+      DeslizamientoSinKunaiAnimation_6: -2086702925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
