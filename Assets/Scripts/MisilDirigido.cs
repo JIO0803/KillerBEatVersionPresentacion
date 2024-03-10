@@ -14,7 +14,7 @@ public class MisilDirigido : MonoBehaviour
     public float startTimeBtwShots;
     public GameObject volador;
     vidaCount vc;
-
+    
     private void Start()
     {
         vc = FindObjectOfType<vidaCount>();
@@ -52,15 +52,15 @@ public class MisilDirigido : MonoBehaviour
                 DestroyProjectile();
             }
         }
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && other != null)
         {
             DealDamage();
             DestroyProjectile();
         }
 
-        if (other.CompareTag("enemRod") && canCollide == true) 
+        if (other.CompareTag("enemRod") && canCollide == true && other != null) 
         {
-            if (volador != null)
+            if (volador != null && other != null)
             {
 
                 other.GetComponent<EnemigoRodante>().lifes -= 1;
@@ -70,9 +70,9 @@ public class MisilDirigido : MonoBehaviour
                 
         }
 
-        if (other.CompareTag("soldado") && canCollide == true)
+        if (other.CompareTag("soldado") && canCollide == true && other != null)
         {
-            if (volador != null)
+            if (volador != null && other != null)
             {
                 other.GetComponent<EnemigoSoldado>().lifes -= 1;
                 volador.GetComponent<EnemigoVolador>().canShoot = true;
@@ -83,7 +83,7 @@ public class MisilDirigido : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("enemRod")|| collision.CompareTag("volador")|| collision.CompareTag("soldado"))
+        if (collision.CompareTag("enemRod") && collision != null || collision.CompareTag("volador") && collision != null || collision.CompareTag("soldado") && collision != null)
         {
             canCollide = true;
             volador = collision.gameObject;

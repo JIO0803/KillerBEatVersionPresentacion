@@ -5,7 +5,7 @@ public class BotonStay : MonoBehaviour
     public GameObject Muro;
     Plataformas plat1;
     Plataformas2 plat2;
-    public static bool act = false;
+    public bool act = false;
     public Sprite activatedSprite;
     public Sprite notactivatedSprite;
     SpriteRenderer currentSprite;

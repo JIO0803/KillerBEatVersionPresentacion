@@ -12,12 +12,17 @@ public class Puntuacion : MonoBehaviour
     void Start()
     {
         score = GetComponent<TMP_Text>();
-        scoreValue = 0;
+        scoreValue = PlayerPrefs.GetInt("totalPoints", 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         score.text = "Gold" + scoreValue;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("totalPoints", 0);
     }
 }

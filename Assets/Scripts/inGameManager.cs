@@ -32,8 +32,12 @@ public class inGameManager : MonoBehaviour
     public GameObject italiano;
     public GameObject frances;
     public GameObject portugues;
+
+    public GameObject slider;
+    Slider sli;
     void Start()
     {
+        sli = slider.GetComponent<Slider>();
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
         mj = Player.GetComponent<MovJugador>();
@@ -45,9 +49,11 @@ public class inGameManager : MonoBehaviour
         qualityCounter = PlayerPrefs.GetInt("QualityCounter", 0);
         languageCounter = 0;
         audioSource = musicManager.GetComponent<AudioSource>();
-        PlayerPrefs.GetInt("TotalPointsGame", 0);
         PlayerPrefs.GetInt("KunaiUnlocked", 0);
         PlayerPrefs.GetInt("TPUnlocked", 0);
+        audioSource.volume = 0.05f;
+        sli.value = 0.05f;
+        sli.value = audioSource.volume;
     }
 
     void Update()

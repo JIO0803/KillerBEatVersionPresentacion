@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class pointManager : MonoBehaviour
 {
     private int addGained = 10;
-    [SerializeField] private int totalPointsGame;
-    [HideInInspector] public float currentMoney; // Ocultar en el Inspector
+    public int totalPointsGame;
+    public float currentMoney;
 
     public TextMeshProUGUI pointsText;
     public float displayDuration = 2f;
@@ -15,36 +15,33 @@ public class pointManager : MonoBehaviour
 
     private void Awake()
     {
+        totalPointsGame = PlayerPrefs.GetInt("totalPoints", 0);
+        currentMoney = totalPointsGame; 
         pointsText.gameObject.SetActive(false);
-        totalPointsGame = PlayerPrefs.GetInt("TotalPointsGame", 0);
-    }
-
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetInt("TotalPointsGame", totalPointsGame);
-        PlayerPrefs.Save();
+        UpdatePointsText();
     }
 
     private void Update()
     {
-        if (displayTimer > 0f)
-        {
-            displayTimer -= Time.deltaTime;
-            if (displayTimer <= 0f)
-            {
-                pointsText.gameObject.SetActive(false);
-            }
-        }
+        UpdatePointsText();
+    }
+
+    private void UpdatePointsText()
+    {
+        pointsText.text = totalPointsGame.ToString() + "$";
     }
 
     public void AddPoints()
     {
         totalPointsGame += addGained;
-
-        pointsText.text = totalPointsGame.ToString() + "$";
-
         pointsText.gameObject.SetActive(true);
         displayTimer = displayDuration;
         currentMoney = totalPointsGame;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("totalPoints", totalPointsGame); // Guardar el totalPointsGame al destruir el objeto
+        PlayerPrefs.Save();
     }
 }

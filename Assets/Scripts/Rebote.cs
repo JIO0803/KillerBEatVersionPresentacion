@@ -9,9 +9,9 @@ public class Rebote : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();   
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Transp"))
+        if (collision.gameObject.tag == "tramp")
         {
             transform.position = dispensador.transform.position;
             rb.velocity = new Vector2(0, 0);

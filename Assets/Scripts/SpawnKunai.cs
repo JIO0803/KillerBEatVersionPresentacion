@@ -13,11 +13,14 @@ public class SpawnKunai : MonoBehaviour
     SpawnKunai sk;
     NumeroDeKunais nmdk;
     [SerializeField] private float kunaiTpSpeed;
+    public float rotationBreak;
+    public float rotationBreak2;
     private void Start()
     {
         sk = GetComponent<SpawnKunai>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         kunaiCount = SceneControl.kunaiMax;
+        kunaiCount = 3;
         nmdk = kunaiText.GetComponent<NumeroDeKunais>();
         if (UpgradeMenu.kunaiOwnedd == false)
         {
@@ -99,7 +102,19 @@ public class SpawnKunai : MonoBehaviour
 
         if (closestKunai != null)
         {
-            PlayerLocation.transform.position = closestKunai.transform.position;
+            if (closestKunai.transform.localRotation.z > 0 && closestKunai.transform.localRotation.z < 180)
+            {
+                PlayerLocation.transform.position = closestKunai.transform.position - new Vector3(0, 1, 0);
+            }
+            if (closestKunai.transform.localRotation.z < 0 && closestKunai.transform.localRotation.z > -180)
+            {
+                PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, 1, 0);
+            }
+            else
+            {
+                PlayerLocation.transform.position = closestKunai.transform.position;
+            }
+
             Destroy(closestKunai);
             kunaiList.Remove(closestKunai);
 

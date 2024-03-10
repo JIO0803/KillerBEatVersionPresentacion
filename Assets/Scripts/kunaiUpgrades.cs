@@ -7,27 +7,37 @@ public class UpgradeMenu : MonoBehaviour
     public int upgradeCost = 30;
     public int unlockCost = 10;
     public int TPCost = 20;
-    [SerializeField] private int totalPointsMenu;
+    public static int totalPointsMenu;
     public GameObject kunaiOwned;
     public static bool kunaiOwnedd;
     public GameObject tpOwned;
     public static bool tpOwnedd;
+    public float money;
     public GameObject blockedTP;
     public GameObject availabelTP;
     public TextMeshProUGUI pointsText;
+    SceneControl sc;
 
+    private void Awake()
+    {
+        kunaiOwnedd = false;
+        tpOwnedd = false;
+        money = 0;
+        totalPointsMenu = 0;
+    }
     private void Start()
     {
+        sc = GetComponent<SceneControl>();
         LoadPlayerPrefs();
         UpdateUI();
     }
 
     private void LoadPlayerPrefs()
     {
-        totalPointsMenu = PlayerPrefs.GetInt("TotalPointsGame", 0);
         kunaiOwnedd = PlayerPrefs.GetInt("KunaiUnlocked", 0) == 1;
+        totalPointsMenu = PlayerPrefs.GetInt("totalPoints", totalPointsMenu);
         tpOwnedd = PlayerPrefs.GetInt("TPUnlocked", 0) == 1;
-
+        money = totalPointsMenu;
         blockedTP.SetActive(!kunaiOwnedd);
         availabelTP.SetActive(kunaiOwnedd && !tpOwnedd);
     }
@@ -39,9 +49,9 @@ public class UpgradeMenu : MonoBehaviour
 
     private void SavePlayerPrefs()
     {
-        PlayerPrefs.SetInt("TotalPointsGame", totalPointsMenu);
         PlayerPrefs.SetInt("KunaiUnlocked", kunaiOwnedd ? 1 : 0);
         PlayerPrefs.SetInt("TPUnlocked", tpOwnedd ? 1 : 0);
+        PlayerPrefs.SetInt("totalPoints", totalPointsMenu);
         PlayerPrefs.Save();
     }
 
@@ -66,10 +76,11 @@ public class UpgradeMenu : MonoBehaviour
 
     public void AddKunai()
     {
-        if (totalPointsMenu >= upgradeCost)
+        if (kunaiOwnedd && tpOwnedd && totalPointsMenu >= upgradeCost)
         {
             totalPointsMenu -= upgradeCost;
             UpdateUI();
+            SceneControl.kunaiCount++;
         }
     }
 
@@ -77,6 +88,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         totalPointsMenu += upgradeCost;
         UpdateUI();
+        SceneControl.kunaiCount--;
     }
 
     public void UnlockKunai()

@@ -44,48 +44,45 @@ public class KunaiConstraint : MonoBehaviour
             sr.sprite = carga3;
         }
     }
+
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
         || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
         {
-            if (collision.GetComponent<Rigidbody2D>() != null)
+            if (collision.GetComponent<Rigidbody2D>() != null && !collided)
             {
-
-                Stuck();
+                collided = true;
             }
         }
-    }  /*  
+    }    
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || (collision.CompareTag("enemRod") || collision.CompareTag("botonAct")
         || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("enemy") || collision.CompareTag("headShot")))
         {
-            if (collision.GetComponent<Rigidbody2D>() != null)
+            if (collision.GetComponent<Rigidbody2D>() != null && !collided)
             {
-                rb2D.gravityScale = 5;    
+                rb2D.gravityScale = 2;    
             }
         }
     }
-    */
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("botonAct") ||
-           collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
-        {
-            rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
-            transform.SetParent(collision.transform);
-            Stuck();
-        }   
-
-        if (collision.CompareTag("enemRod") || collision.CompareTag("volador") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))
+           collision.CompareTag("enemRod") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
         {
             if (!collided)
             {
+                rb2D.velocity = Vector2.zero;
                 transform.SetParent(collision.transform);
-                rb2D.velocity = collision.GetComponent<Rigidbody2D>().velocity;
-                Stuck();
-            }           
+                collided = true;
+            }     
+        }
+        if (collision.CompareTag("volador"))
+        {
+            rb2D.gravityScale = 3;
         }
 
         if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
@@ -99,9 +96,12 @@ public class KunaiConstraint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
         {
-            AddKunai();
-            Destroy(gameObject);
-            Stuck();
+            if (!collided)
+            {
+                AddKunai();
+                Destroy(gameObject);
+                collided = true;
+            }
         }
     }
 
@@ -113,10 +113,6 @@ public class KunaiConstraint : MonoBehaviour
         collided = true;
     }
     */
-    private void Stuck()
-    {
-        collided = true;
-    }
 
     public void AddKunai()
     {

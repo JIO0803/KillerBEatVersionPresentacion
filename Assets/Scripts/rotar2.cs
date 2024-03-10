@@ -3,20 +3,16 @@ using UnityEngine;
 public class Rotar2 : MonoBehaviour
 {
     public bool canRotate = false;
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 500;
     [SerializeField] private Transform[] _Rotador;
 
     private void Update()
     {
         if (canRotate)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 RotateObjects(-rotationSpeed * Time.deltaTime);
-            }
-            else if (Input.GetKey(KeyCode.Q))
-            {
-                RotateObjects(rotationSpeed * Time.deltaTime);
             }
         }
     }
@@ -27,7 +23,7 @@ public class Rotar2 : MonoBehaviour
         {
             rotador.Rotate(Vector3.forward * angle);
         }
-        if (canRotate == true && Input.GetKey(KeyCode.Q) || canRotate == true && Input.GetKey(KeyCode.E))
+        if (canRotate == true && Input.GetKey(KeyCode.LeftShift))
         {
             this.gameObject.transform.Rotate(Vector3.forward * angle);
         }

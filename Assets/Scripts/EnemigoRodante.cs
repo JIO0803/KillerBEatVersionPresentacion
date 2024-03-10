@@ -24,7 +24,7 @@ public class EnemigoRodante : MonoBehaviour
         pm = FindObjectOfType<pointManager>();
         rb2D = GetComponent<Rigidbody2D>();
         canDealDamage = true;
-        lifes = 2;
+        lifes = 1;
         animator = GetComponent<Animator>();
     }
 

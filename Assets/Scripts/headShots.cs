@@ -8,8 +8,8 @@ public class headShots : MonoBehaviour
     EnemigoSoldado enemigoSoldado;
     public GameObject enemy;
     public Vector3 loli;
-    public float headShotxOffset = 0.21f;
-    public float headShotyOffset = 0.85f;
+    public float headShotxOffset;
+    public float headShotyOffset;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class headShots : MonoBehaviour
     private void Update()
     {
         transform.position = loli;
-        loli = new Vector3(enemy.transform.position.x - headShotxOffset, enemy.transform.position.y + headShotyOffset, 0);
+        loli = new Vector3(enemy.transform.position.x + headShotxOffset, enemy.transform.position.y + headShotyOffset, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

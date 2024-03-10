@@ -5,37 +5,23 @@ public class Rotar : MonoBehaviour
     public bool canRotate = false;
     public float rotationSpeed = 10f;
     public float rotationSpeed2 = 10f;
-    [SerializeField] private Transform[] _Rotador;
+    public GameObject Plat;
 
     private void Update()
     {
-        if (canRotate)
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                RotateObjects(-rotationSpeed * Time.deltaTime);
-            }
-            else if (Input.GetKey(KeyCode.Q))
-            {
-                RotateObjects(rotationSpeed * Time.deltaTime);
-            }
-        }
-        if (!Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E))
-        {
-            RotateObjects(rotationSpeed2 * Time.deltaTime);
-        }
+        RotateObjects();
     }
 
-    private void RotateObjects(float angle)
-    {
-        foreach (Transform rotador in _Rotador)
+    private void RotateObjects()
+    {   
+        if (canRotate == true && Input.GetKey(KeyCode.LeftShift))
         {
-            rotador.Rotate(Vector3.forward * angle);
+            Plat.transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime * 2);
+            this.gameObject.transform.Rotate(Vector3.forward * 0.5f);
         }
-
-        if (canRotate== true && Input.GetKey(KeyCode.Q) || canRotate == true && Input.GetKey(KeyCode.E))
+        else
         {
-            this.gameObject.transform.Rotate(Vector3.forward * angle);
+            Plat.transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime * 2);
         }
     }
 
@@ -49,6 +35,9 @@ public class Rotar : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canRotate = false;
+        if (collision.CompareTag("Player"))
+        {
+            canRotate = false;
+        }
     }
 }

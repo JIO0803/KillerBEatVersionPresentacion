@@ -14,6 +14,7 @@ public class EnemigoSoldado : MonoBehaviour
     public int lifes;
     public float newheadShotxOffset;
     public float newheadShotyOffset;
+    public bool isDead;
 
     public bool canDealDamage;
     [SerializeField] LayerMask Enviroment;
@@ -24,85 +25,111 @@ public class EnemigoSoldado : MonoBehaviour
     public Transform player;
     pointManager pm;
     Rigidbody2D rb2D;
+    Rigidbody2D soldadoRigidBody2d;
     vidaCount vc;
     Animator animator;
+    BoxCollider2D boxCollider2d;
+    CapsuleCollider2D capsuleCollider2d;
     private void Start()
     {
+        boxCollider2d = GetComponent<BoxCollider2D>();
+        capsuleCollider2d = GetComponent<CapsuleCollider2D>();
         vc = FindObjectOfType<vidaCount>();
         pm = FindObjectOfType<pointManager>();
         hs = headShot.GetComponent<headShots>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb2D = projectile.GetComponent<Rigidbody2D>();
-        lifes = 2;
+        lifes = 1;
         animator = GetComponent<Animator>();
+        isDead = false;
+        boxCollider2d.enabled = false;
+        soldadoRigidBody2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 0.25f, Enviroment);
-        if (Vector2.Distance(transform.position, player.position) < detectDist)
+        if (Vector2.Distance(transform.position, player.position) < detectDist && lifes >= 0)
         {
             Movimiento();
         }
         FlipSprite();
 
-        if (lifes <= 0)
+        if (lifes <= 0 && !isDead)
         {
             receiveDamage();
+            Debug.Log("Disabled");
         }
     }
 
     void Movimiento()
     {
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        // Verificar si el enemigo está vivo
+        if (lifes > 0 && !isDead)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, charSpeed * Time.deltaTime);
-            animator.SetBool("isRobotRunning", true);
-        }
+            if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, charSpeed * Time.deltaTime);
+                animator.SetBool("isRobotRunning", true);
+            }
 
-        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-            animator.SetBool("isRobotRunning", false);
-        }
-        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -charSpeed * Time.deltaTime);
-            animator.SetBool("isRobotRunning", true);
-        }
+            else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+            {
+                transform.position = this.transform.position;
+                animator.SetBool("isRobotRunning", false);
+            }
+            else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, -charSpeed * Time.deltaTime);
+                animator.SetBool("isRobotRunning", true);
+            }
 
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, charSpeed * Time.deltaTime);
-        }
-
-        if (timeBtwShots <= 0)
-        {
-            DisparoDeBala();
+            if (timeBtwShots <= 0)
+            {
+                DisparoDeBala();
+            }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
+            }
         }
         else
         {
-            timeBtwShots -= Time.deltaTime;
+            animator.SetBool("isRobotRunning", false); 
         }
     }
 
     void DisparoDeBala()
     {
-        Vector3 obj = player.transform.position;
-        Vector2 direction = (Vector2)(obj - transform.position);
-        direction.Normalize();
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        GameObject bala = Instantiate(projectile, transform.position, Quaternion.identity);
-        if (speed != 0.0f)
+        if (lifes > 0)
         {
-            bala.GetComponent<Rigidbody2D>().velocity = direction * speed;
+            Vector3 obj = player.transform.position;
+            Vector2 direction = (Vector2)(obj - transform.position);
+            direction.Normalize();
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            if (gameObject.transform.localScale.x == 1) 
+            {
+                GameObject bala = Instantiate(projectile, transform.position + new Vector3(0.5f, 0, 0), Quaternion.identity);
+                if (speed != 0.0f)
+                {
+                    bala.GetComponent<Rigidbody2D>().velocity = direction * speed;
+                }
+            }            
+            
+            if (gameObject.transform.localScale.x == -1) 
+            {
+                GameObject bala = Instantiate(projectile, transform.position + new Vector3(-0.5f, 0, 0), Quaternion.identity);
+                if (speed != 0.0f)
+                {
+                    bala.GetComponent<Rigidbody2D>().velocity = direction * speed;
+                }
+            }        
+            timeBtwShots = startTimeBtwShots;
         }
-        timeBtwShots = startTimeBtwShots;
+        
     }
 
     private void FlipSprite()
@@ -135,16 +162,22 @@ public class EnemigoSoldado : MonoBehaviour
 
     private void receiveDamage()
     {
+        soldadoRigidBody2d.velocity = new Vector2 (0,0); 
         rb2D.gravityScale = DefaultGravityScale;
         Puntuacion.scoreValue += 10;
         pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
-        enabled = false;
-        transform.Rotate(0, 0, 90);
+        capsuleCollider2d.enabled = false;
+        boxCollider2d.enabled = true;  
         headShot.transform.Rotate(0, 0, 90);
         hs.headShotxOffset = newheadShotxOffset;
         hs.headShotyOffset = newheadShotyOffset;
-        rb2D.mass = 13;
+        soldadoRigidBody2d.mass = 13;
+        isDead = true;
         animator.SetBool("isRobotDead", true);
+        animator.SetBool("isRobotRunning", false);
+        speed = 0;
+        charSpeed = 0;
+        enabled = false;
     }
 }
