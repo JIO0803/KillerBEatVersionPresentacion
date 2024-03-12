@@ -179,5 +179,6 @@ public class EnemigoSoldado : MonoBehaviour
         speed = 0;
         charSpeed = 0;
         enabled = false;
+        Destroy(gameObject, 2);
     }
 }

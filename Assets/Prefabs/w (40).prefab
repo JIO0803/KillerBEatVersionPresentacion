@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waypoints:
   - {fileID: 0}
-  _speed: 4
+  _speed: 2
   _chechDistance: 0.05
 --- !u!114 &7512326971537444676
 MonoBehaviour:

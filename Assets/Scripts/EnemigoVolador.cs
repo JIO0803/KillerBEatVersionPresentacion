@@ -88,11 +88,11 @@ public class EnemigoVolador : MonoBehaviour
             moveDirection = (transform.position - player.position).normalized;
         }
 
-        RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, moveDirection, 1f, obstacleLayer);
+        /*RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, moveDirection, 1f, obstacleLayer);
         if (obstacleHit.collider != null)
         {
             moveDirection = Quaternion.AngleAxis(90, Vector3.forward) * moveDirection;
-        }
+        }*/
 
         rb2D.velocity = moveDirection * charSpeed;
 
@@ -164,5 +164,6 @@ public class EnemigoVolador : MonoBehaviour
         canDealDamage = false;
         enabled = false;
         rb2D.mass = 10;
+        Destroy(gameObject, 2);
     }
 }

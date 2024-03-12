@@ -51,6 +51,7 @@ public class SceneControl : MonoBehaviour
     public GameObject RightArrow;
 
     public Image toggleImage;
+    public GameObject levels;
 
     //Alt+F4
     public GameObject Alt;
@@ -206,15 +207,35 @@ public class SceneControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            NextLevel.startingLevel = 0;
+            NextLevel.startingLevel = 1;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            NextLevel.startingLevel = 1;
+            NextLevel.startingLevel = 2;
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            NextLevel.startingLevel = 2;
+            NextLevel.startingLevel = 3;
+        }        
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            NextLevel.startingLevel = 4;
+        }       
+        if (Input.GetKey(KeyCode.Alpha5))
+        {
+            NextLevel.startingLevel = 5;
+        }
+        if (Input.GetKey(KeyCode.Alpha6))
+        {
+            NextLevel.startingLevel = 6;
+        }
+        if (Input.GetKey(KeyCode.Alpha7))
+        {
+            NextLevel.startingLevel = 7;
+        }        
+        if (Input.GetKey(KeyCode.Alpha8))
+        {
+            NextLevel.startingLevel = 8;
         }
 
         if (MusicCount == 1 && canPlay)
@@ -250,12 +271,11 @@ public class SceneControl : MonoBehaviour
             sli.value = 0.6f;
         }
 
-        if (audSor1.volume <= 0.0000001f || audSor2.volume <= 0.0000001f || audSor3.volume <= 0.0000001f || sli.value <= 0.0000001f)
+        if (audSor1.volume <= 0 || audSor2.volume <= 0 || audSor3.volume <= 0 || sli.value <= 0)
         {
-            audSor1.volume = 0.0000001f;
-            audSor2.volume = 0.0000001f;
-            audSor3.volume = 0.0000001f;
-            sli.value = 0.0000001f;
+            audSor1.volume = 0;
+            audSor2.volume = 0;
+            audSor3.volume = 0;
         }
 
         if (languageCounter == 0)
@@ -463,10 +483,19 @@ public class SceneControl : MonoBehaviour
 
     void OnDestroy()
     {
+        if (audSor1 != null)
+        {
+            PlayerPrefs.SetFloat("Music1PlaybackTime", audSor1.time);
+        }
+        if (audSor2 != null)
+        {
+            PlayerPrefs.SetFloat("Music2PlaybackTime", audSor2.time);
+        }
+        if (audSor3 != null)
+        {
+            PlayerPrefs.SetFloat("Music3PlaybackTime", audSor3.time);
+        }
         PlayerPrefs.SetInt("LastMusicSet", MusicCount);
-        PlayerPrefs.SetFloat("Music1PlaybackTime", audSor1.time);
-        PlayerPrefs.SetFloat("Music2PlaybackTime", audSor2.time);
-        PlayerPrefs.SetFloat("Music3PlaybackTime", audSor3.time);
         PlayerPrefs.SetInt("kunaiMax", kunaiMax);
         PlayerPrefs.SetInt("kunaiCount", kunaiCount);
         changeMenu = false;
@@ -517,9 +546,60 @@ public class SceneControl : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        mainMenu.SetActive(false);
+        levels.SetActive(true);
+    }
+    public void LevelsBack()
+    {
+        levels.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
+    public void Level1()
+    {
+        NextLevel.startingLevel = 1;
+        SceneManager.LoadScene("Game");
+    }    
+    
+    public void Level2()
+    {
+        NextLevel.startingLevel = 2;
+        SceneManager.LoadScene("Game");
+    }   
+    
+    public void Level3()
+    {
+        NextLevel.startingLevel = 3;
+        SceneManager.LoadScene("Game");
+    }    
+    public void Level4()
+    {
+        NextLevel.startingLevel = 4;
+        SceneManager.LoadScene("Game");
+    }    
+    
+    public void Level5()
+    {
+        NextLevel.startingLevel = 5;
+        SceneManager.LoadScene("Game");
+    }   
+    
+    public void Level6()
+    {
+        NextLevel.startingLevel = 6;
+        SceneManager.LoadScene("Game");
+    }    
+    public void Level7()
+    {
+        NextLevel.startingLevel = 7;
+        SceneManager.LoadScene("Game");
+    }   
+    
+    public void Level8()
+    {
+        NextLevel.startingLevel = 8;
+        SceneManager.LoadScene("Game");
+    }
     public void QuitGame()
     {
         Application.Quit();

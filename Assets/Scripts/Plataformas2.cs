@@ -67,6 +67,5 @@ public class Plataformas2 : MonoBehaviour
         {
             collision.transform.SetParent(null);
         }
-
     }
 }

@@ -99,5 +99,6 @@ public class EnemigoRodante : MonoBehaviour
         enabled = false;
         rb2D.mass = 13;
         animator.SetBool("isDead", true);
+        Destroy(gameObject, 2);
     }
 }

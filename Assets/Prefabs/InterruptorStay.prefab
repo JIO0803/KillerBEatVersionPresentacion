@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02734375, y: -0.0014343262}
+  m_Offset: {x: -0.032318115, y: -0.0014343262}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.677124, y: 0.76660156}
+  m_Size: {x: 1.6870728, y: 0.76660156}
   m_EdgeRadius: 0
 --- !u!114 &954065698376534161
 MonoBehaviour:
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Muro: {fileID: 0}
+  act: 0
   activatedSprite: {fileID: 21300000, guid: 4951fccb68ef2e142800038f51e38cee, type: 3}
   notactivatedSprite: {fileID: 21300000, guid: 07f4562c9488f2147a2fef3c991ec990, type: 3}
 --- !u!50 &-6498876106736256919
