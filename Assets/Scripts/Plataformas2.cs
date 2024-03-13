@@ -18,6 +18,10 @@ public class Plataformas2 : MonoBehaviour
     private void Start()
     {
         _targetWaypoint = _waypoints[0];
+        if (gameObject.CompareTag("BolaActivadora"))
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 
     // Update is called once per frame
