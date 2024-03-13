@@ -9,7 +9,7 @@ public class MovJugador : MonoBehaviour
     //[SerializeField] private int wallJumpForce = 10;
     public LayerMask capaPared;
 
-    Animator animator;
+    public Animator animator;
     public bool isWallSliding;
     public bool grounded;
     wallDetect wd;

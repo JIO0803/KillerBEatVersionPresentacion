@@ -37,7 +37,7 @@ public class SpawnKunai : MonoBehaviour
         {
             kunaiCount = SceneControl.kunaiMax;
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && UpgradeMenu.tpOwnedd)
         {
             Minato();
         }

@@ -1,40 +1,64 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 using System.Collections;
 
 public class ColliderTextoGenerador : MonoBehaviour
 {
     public TextMeshProUGUI textoGenerado; // Asigna el TextMeshProUGUI del Canvas desde el Inspector
     public string textoAGenerar = "Texto Generado";
-    public float velocidadGeneracion = 0.2f; // Velocidad de generación del texto
-    private static bool generandoTexto = false; // Variable estática para rastrear si se está generando texto en algún otro GameObject
+    public float velocidadGeneracion = 0.05f; // Velocidad de generación del texto
+
+    private bool generandoTexto = false; // Bandera para verificar si se está generando texto
+    private bool textoGeneradoPrevio = false; // Bandera para verificar si el texto ha sido generado previamente
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && !generandoTexto)
+        if (other.gameObject.CompareTag("Player"))
         {
-            GenerarTexto();
+            // Si se está generando texto o el texto ya ha sido generado previamente, salir
+            if (generandoTexto || textoGeneradoPrevio)
+                return;
+
+            // Detiene las corrutinas y borra el texto de todos los ColliderTextoGenerador
+            ColliderTextoGenerador[] scripts = FindObjectsOfType<ColliderTextoGenerador>();
+            foreach (ColliderTextoGenerador ctg in scripts)
+            {
+                ctg.StopAllCoroutines();
+                ctg.BorrarTexto();
+                ctg.textoGeneradoPrevio = false; // Restablece la bandera para permitir que se genere texto nuevamente
+            }
+
+            // Genera el texto si no se está generando actualmente
+            if (!generandoTexto)
+            {
+                textoGenerado.text = "";
+                GenerarTexto();
+            }
         }
     }
 
     private void GenerarTexto()
     {
-        generandoTexto = true; // Marcar que se está generando texto
+        generandoTexto = true; // Establece la bandera en true para indicar que se está generando texto
         StartCoroutine(GenerarTextoProgresivo());
     }
 
     private IEnumerator GenerarTextoProgresivo()
     {
-        textoGenerado.text = ""; // Reiniciar el texto antes de comenzar
-
         string textoTemporal = ""; // Texto temporal para evitar la duplicación
         for (int i = 0; i < textoAGenerar.Length; i++)
         {
             textoTemporal += textoAGenerar[i]; // Agregar el nuevo carácter al texto temporal
             textoGenerado.text = textoTemporal; // Asignar el texto temporal al texto generado
-            yield return new WaitForSeconds(velocidadGeneracion);
+            yield return new WaitForSecondsRealtime(velocidadGeneracion);
         }
+        generandoTexto = false; // Establece la bandera en false cuando la generación de texto ha terminado
+        textoGeneradoPrevio = true; // Establece la bandera en true cuando el texto ha sido generado
+    }
 
-        generandoTexto = false; // Restablecer la variable cuando se haya terminado de generar el texto
+    private void BorrarTexto()
+    {
+        textoGenerado.text = ""; // Borra el texto
     }
 }

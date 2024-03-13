@@ -13,6 +13,8 @@ public class BolasGoGo : MonoBehaviour
     public int doorCount;
     //public Sprite tick;
     // Start is called before the first frame update
+    BotonStay bs;
+    public GameObject botonStay;
     void Start()
     {
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
@@ -20,12 +22,13 @@ public class BolasGoGo : MonoBehaviour
         doorCount = 0;
         pl = door.GetComponent<Plataformas>();
         pl.enabled = false;
+        bs = botonStay.GetComponent<BotonStay>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canPress && Input.GetKeyDown(KeyCode.LeftShift))
+        if (canPress && Input.GetKeyDown(KeyCode.LeftShift) && bs.touching)
         {
             doorCount++;
             Debug.Log("plus");

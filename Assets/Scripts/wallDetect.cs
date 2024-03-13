@@ -59,7 +59,7 @@ public class wallDetect : MonoBehaviour
 
         if (mj.isWallSliding)
         {
-            if (!sp.enabled || !nk.hasKunai)
+            if (!sp.enabled && !mj.grounded|| !nk.hasKunai && !mj.grounded)
             {
                 animator.SetBool("IsSliding", true);
             }
@@ -120,11 +120,19 @@ public class wallDetect : MonoBehaviour
         {
             mj.isWallSliding = true;
             transform.localScale = new Vector2(1, transform.localScale.y);
+            mj.animator.SetBool("IsRunning", false);
         }
         else if (isWallOnRight && !mj.grounded)
         {
             mj.isWallSliding = true;
             transform.localScale = new Vector2(-1, transform.localScale.y);
+            mj.animator.SetBool("IsRunning", false);
+        }
+        if (isWallOnLeft && mj.grounded || isWallOnRight && mj.grounded)
+        {
+            mj.isWallSliding = false;
+            transform.localScale = transform.localScale;
+            mj.animator.SetBool("IsRunning", false);
         }
     }
 }
