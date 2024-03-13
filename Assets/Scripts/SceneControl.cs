@@ -478,9 +478,9 @@ public class SceneControl : MonoBehaviour
             mainMenu.SetActive(false);
             optionsWindow.SetActive(false);
             kunaiUpgradesWindow.SetActive(true);
+            levels.SetActive(false);
         }
     }
-
     void OnDestroy()
     {
         if (audSor1 != null)
