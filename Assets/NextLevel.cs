@@ -89,31 +89,31 @@ public class NextLevel : MonoBehaviour
         
         if (startingLevel == 4)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn3.position;
-            transform.position = gameObjectSpawn3.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn4.position;
+            transform.position = gameObjectSpawn4.position;
         }          
         
         if (startingLevel == 5)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn1.position;
-            transform.position = gameObjectSpawn1.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn5.position;
+            transform.position = gameObjectSpawn5.position;
         }
         if (startingLevel == 6)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn2.position;
-            transform.position = gameObjectSpawn2.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn6.position;
+            transform.position = gameObjectSpawn6.position;
         }        
         
         if (startingLevel == 7)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn3.position;
-            transform.position = gameObjectSpawn3.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn7.position;
+            transform.position = gameObjectSpawn7.position;
         }         
         
         if (startingLevel == 8)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn3.position;
-            transform.position = gameObjectSpawn3.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn8.position;
+            transform.position = gameObjectSpawn8.position;
         }           
     }
     void GoToMenu()

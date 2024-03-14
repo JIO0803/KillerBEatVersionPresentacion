@@ -9,6 +9,7 @@ public class BolasGoGo : MonoBehaviour
     //public GameObject check;
     public GameObject ball;
     Plataformas pl;
+    Plataformas2 pl2;
     //SpriteRenderer sr;
     public int doorCount;
     //public Sprite tick;
@@ -22,6 +23,7 @@ public class BolasGoGo : MonoBehaviour
         doorCount = 0;
         pl = door.GetComponent<Plataformas>();
         pl.enabled = false;
+        pl2 = door.GetComponent<Plataformas2>();
         bs = botonStay.GetComponent<BotonStay>();
     }
 
@@ -37,15 +39,23 @@ public class BolasGoGo : MonoBehaviour
         if (doorCount >= 1)
         {
             pl.enabled = true;
+            if (pl2 != null)
+            {
+                pl2.enabled = false;
+            }
+
             //sr.sprite = tick;
             //sr.color = Color.green;
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             Destroy(ball);
-
         }
         else
         {
             pl.enabled = false;
+            if (pl2 != null)
+            {
+                pl2.enabled = true;
+            }
         }
     }
 

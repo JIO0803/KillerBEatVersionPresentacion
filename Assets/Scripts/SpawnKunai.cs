@@ -104,15 +104,11 @@ public class SpawnKunai : MonoBehaviour
         {
             if (closestKunai.transform.localRotation.z > 0 && closestKunai.transform.localRotation.z < 180)
             {
-                PlayerLocation.transform.position = closestKunai.transform.position - new Vector3(0, 1, 0);
+                PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, -1, 0);
             }
             if (closestKunai.transform.localRotation.z < 0 && closestKunai.transform.localRotation.z > -180)
             {
                 PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, 1, 0);
-            }
-            else
-            {
-                PlayerLocation.transform.position = closestKunai.transform.position;
             }
 
             Destroy(closestKunai);
