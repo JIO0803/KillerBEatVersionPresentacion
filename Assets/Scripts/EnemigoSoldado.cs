@@ -61,6 +61,11 @@ public class EnemigoSoldado : MonoBehaviour
             receiveDamage();
             Debug.Log("Disabled");
         }
+
+        if (rb2D.velocity.x < 0 || rb2D.velocity.y < 0)
+        {
+            animator.SetBool("isRobotRunning", false);
+        }
     }
 
     void Movimiento()

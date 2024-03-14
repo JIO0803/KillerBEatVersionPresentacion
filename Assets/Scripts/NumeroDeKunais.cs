@@ -10,11 +10,13 @@ public class NumeroDeKunais : MonoBehaviour
     public GameObject kunaiCharge1;
     public GameObject kunaiCharge2;
     public GameObject kunaiCharge3;
+    public GameObject player;
     public bool hasKunai;
-
+    SpawnKunai sk;
     private void Start()
     {
-        if (!UpgradeMenu.kunaiOwnedd)
+        sk = player.GetComponent<SpawnKunai>();
+        if (!UpgradeMenu.kunaiOwnedd || !sk.enabled)
         {
             kunaiCounts = 0;
         }        

@@ -8,7 +8,6 @@ public class wallDetect : MonoBehaviour
     public bool isWallOnRight { get; private set; }
     public float wallSlidingSpeed = 0.5f;
     public float wallJumpForce;
-    //public float wallJumpForce2;
     public float forceSumm;
     public float newSaltoImpr;
     MovJugador mj;
@@ -16,9 +15,16 @@ public class wallDetect : MonoBehaviour
     Animator animator;
     SpawnKunai sp;
     NumeroDeKunais nk;
+    vidaCount vc;
     public GameObject numeroDeKunais;
+
+    // Tiempo de desactivación del script del jugador después de saltar desde la pared
+    public float tiempoDesactivacion = 1f;
+    private bool desactivarMovimiento = false;
+
     private void Start()
     {
+        vc = GetComponent<vidaCount>();
         nk = numeroDeKunais.GetComponent<NumeroDeKunais>();
         sp = GetComponent<SpawnKunai>();
         animator = GetComponent<Animator>();
@@ -28,7 +34,17 @@ public class wallDetect : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) && mj.saltos > 0 || Input.GetKeyDown(KeyCode.W)) && mj.saltos > 0)
+        if (desactivarMovimiento)
+        {
+            mj.enabled = false;
+        }   
+        
+        if (!desactivarMovimiento && vc.free)
+        {
+            mj.enabled = true;
+        }
+
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && mj.saltos > 0)
         {
             Salto();
             mj.saltos -= 1;
@@ -45,13 +61,15 @@ public class wallDetect : MonoBehaviour
         {
             animator.SetBool("IsJumping", true);
             animator.SetBool("IsFalling", false);
-        }          
+        }
         if (rb.velocity.y < 0 && !mj.grounded && !mj.isWallSliding)
         {
             animator.SetBool("IsJumping", false);
             animator.SetBool("IsFalling", true);
-        }        
-        else if (mj.grounded || mj.isWallSliding)
+            animator.SetBool("IsSliding", false);
+            animator.SetBool("IsSlidingKunai", false);
+        }
+        if (mj.grounded || mj.isWallSliding)
         {
             animator.SetBool("IsJumping", false);
             animator.SetBool("IsFalling", false);
@@ -59,11 +77,11 @@ public class wallDetect : MonoBehaviour
 
         if (mj.isWallSliding)
         {
-            if (!sp.enabled && !mj.grounded|| !nk.hasKunai && !mj.grounded)
+            if (!sp.enabled && !mj.grounded || !nk.hasKunai && !mj.grounded)
             {
                 animator.SetBool("IsSliding", true);
             }
-            if (sp.enabled || nk.hasKunai)
+            if (sp.enabled && !mj.grounded || nk.hasKunai && !mj.grounded)
             {
                 animator.SetBool("IsSlidingKunai", true);
             }
@@ -71,14 +89,8 @@ public class wallDetect : MonoBehaviour
 
         if (!mj.isWallSliding)
         {
-            if (!sp.enabled || !nk.hasKunai)
-            {
-                animator.SetBool("IsSliding", false);
-            }
-            if (sp.enabled || nk.hasKunai)
-            {
-                animator.SetBool("IsSlidingKunai", false);
-            }
+            animator.SetBool("IsSliding", false);
+            animator.SetBool("IsSlidingKunai", false);
         }
     }
 
@@ -93,17 +105,16 @@ public class wallDetect : MonoBehaviour
         else
         {
             mj.isWallSliding = false;
-        }  
-        
-
+        }
     }
 
     private void Salto()
     {
         if (mj.isWallSliding && !mj.grounded)
         {
+            desactivarMovimiento = true;
+            Invoke("ActivarMovimiento", tiempoDesactivacion);
             int direction = isWallOnRight ? -1 : 1;
-
             rb.velocity = new Vector2(direction * wallJumpForce, forceSumm);
             mj.saltos -= 1;
         }
@@ -112,7 +123,6 @@ public class wallDetect : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, mj.salto);
         }
     }
-
 
     private void WallSlider()
     {
@@ -134,5 +144,20 @@ public class wallDetect : MonoBehaviour
             transform.localScale = transform.localScale;
             mj.animator.SetBool("IsRunning", false);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "pared")
+        {
+            CancelInvoke("ActivarMovimiento");
+            Invoke("ActivarMovimiento", 0);
+        }
+    }
+
+    // Método para activar el movimiento del jugador después de un tiempo específico
+    private void ActivarMovimiento()
+    {
+        desactivarMovimiento = false;
     }
 }

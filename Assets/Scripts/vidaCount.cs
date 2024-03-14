@@ -7,6 +7,7 @@ public class vidaCount : MonoBehaviour
 {
     public float lifesValue = 1;
     public bool canDie;
+    public bool free;
 
     SpawnKunai sp;
     MovJugador mj;
@@ -16,6 +17,7 @@ public class vidaCount : MonoBehaviour
     void Start()
     {
         canDie = true;
+        free = false;
         sp = GetComponent<SpawnKunai>();
         mj = GetComponent<MovJugador>();
         wd = GetComponent<wallDetect>();
@@ -66,6 +68,7 @@ public class vidaCount : MonoBehaviour
             mj.enabled = true;
             sp.enabled = true;
             wd.enabled = true;
+            free = true;
         }
     }
 }

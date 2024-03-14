@@ -22,7 +22,7 @@ public class SpawnKunai : MonoBehaviour
         kunaiCount = SceneControl.kunaiMax;
         kunaiCount = 3;
         nmdk = kunaiText.GetComponent<NumeroDeKunais>();
-        if (UpgradeMenu.kunaiOwnedd == false)
+        if (!UpgradeMenu.kunaiOwnedd)
         {
             sk.enabled = false;
         }
