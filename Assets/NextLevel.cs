@@ -45,8 +45,12 @@ public class NextLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Puntuacion.scoreValue += 50;
-            pm.totalPointsGame += 50;
+            if (startingLevel == 2 || startingLevel == 4)
+            {
+                Puntuacion.scoreValue += 50;
+                pm.totalPointsGame += 50;
+            }
+
             startingLevel += 1;
 
             if (startingLevel > 8)

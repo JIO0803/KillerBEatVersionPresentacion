@@ -77,11 +77,11 @@ public class wallDetect : MonoBehaviour
 
         if (mj.isWallSliding)
         {
-            if (!sp.enabled && !mj.grounded || !nk.hasKunai && !mj.grounded)
+            if (!sp.enabled && !mj.grounded && rb.velocity.y <= 0 || !nk.hasKunai && !mj.grounded && rb.velocity.y <= 0)
             {
                 animator.SetBool("IsSliding", true);
             }
-            if (sp.enabled && !mj.grounded || nk.hasKunai && !mj.grounded)
+            if (sp.enabled && !mj.grounded && rb.velocity.y <= 0 || nk.hasKunai && !mj.grounded && rb.velocity.y <= 0)
             {
                 animator.SetBool("IsSlidingKunai", true);
             }

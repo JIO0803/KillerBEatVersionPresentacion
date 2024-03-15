@@ -38,6 +38,7 @@ TagManager:
   - botonAct
   - tramp
   - screen
+  - plat
   layers:
   - Default
   - TransparentFX

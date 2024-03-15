@@ -17,6 +17,7 @@ public class KunaiConstraint : MonoBehaviour
     NumeroDeKunais nmdk;
     SpawnKunai kunsp;
     SpriteRenderer sr;
+    public bool platCol;
     private GameObject kunai;
     void Start()
     {
@@ -82,9 +83,14 @@ public class KunaiConstraint : MonoBehaviour
         }
         if (collision.CompareTag("volador"))
         {
+            if (!collided)
+            {
+                rb2D.velocity = Vector2.zero;
+                transform.SetParent(collision.transform);
+                collided = true;
+            }
             rb2D.gravityScale = 3;
         }
-
         if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
         {
             AddKunai();

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpawnKunai : MonoBehaviour
@@ -15,8 +16,10 @@ public class SpawnKunai : MonoBehaviour
     [SerializeField] private float kunaiTpSpeed;
     public float rotationBreak;
     public float rotationBreak2;
+    KunaiConstraint kc;
     private void Start()
     {
+        kc = GetComponent<KunaiConstraint>();
         sk = GetComponent<SpawnKunai>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         kunaiCount = SceneControl.kunaiMax;
@@ -102,13 +105,22 @@ public class SpawnKunai : MonoBehaviour
 
         if (closestKunai != null)
         {
-            if (closestKunai.transform.localRotation.z > 0 && closestKunai.transform.localRotation.z < 180)
+            if (closestKunai.transform.localRotation.z > 0 && closestKunai.transform.localRotation.z < 180 && closestKunai.GetComponent<KunaiConstraint>().platCol != true)
             {
                 PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, -1, 0);
             }
-            if (closestKunai.transform.localRotation.z < 0 && closestKunai.transform.localRotation.z > -180)
+            else
+            {
+                PlayerLocation.transform.position = closestKunai.transform.position;
+            }
+
+            if (closestKunai.transform.localRotation.z < 0 && closestKunai.transform.localRotation.z > -180 && closestKunai.GetComponent<KunaiConstraint>().platCol != true)
             {
                 PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, 1, 0);
+            }
+            else
+            {
+                PlayerLocation.transform.position = closestKunai.transform.position;
             }
 
             Destroy(closestKunai);
