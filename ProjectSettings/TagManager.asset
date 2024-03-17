@@ -39,6 +39,8 @@ TagManager:
   - tramp
   - screen
   - plat
+  - cameraChange
+  - cameraChange2
   layers:
   - Default
   - TransparentFX

@@ -27,6 +27,9 @@ public class SceneControl : MonoBehaviour
     public GameObject unckeckedToggle;
     public GameObject ckeckedToggle;
     public static bool changeMenu;
+
+    public GameObject tartaPoster;
+    public GameObject enemigoSoldado;
     //Languages
     public GameObject ingles;
     public GameObject español;
@@ -86,6 +89,7 @@ public class SceneControl : MonoBehaviour
     UpgradeMenu up;
     public GameObject slider;
     Slider sli;
+
     private void Awake()
     {
         Opacity = PlayerPrefs.GetFloat("Brillo", 1f);
@@ -114,6 +118,23 @@ public class SceneControl : MonoBehaviour
             kunaiUpgradesWindow.SetActive(true);
         }
 
+        if (Tarta.tarta == true)
+        {
+            tartaPoster.SetActive(true) ;
+        }
+        else
+        {
+            tartaPoster.SetActive(false);
+        }       
+        
+        if (SoldadoSalvado.salvado == true)
+        {
+            enemigoSoldado.SetActive(true);
+        }
+        else
+        {
+            enemigoSoldado.SetActive(false);
+        }
         int level = PlayerPrefs.GetInt("Level", 1);
 
         float playerPosX = PlayerPrefs.GetFloat("PlayerPosX", defaultPlayerPosition.x);
@@ -558,46 +579,54 @@ public class SceneControl : MonoBehaviour
     public void Level1()
     {
         NextLevel.startingLevel = 1;
+        nextLevel.startingLevel = 1;
         SceneManager.LoadScene("Game");
     }    
     
     public void Level2()
     {
         NextLevel.startingLevel = 2;
+        nextLevel.startingLevel = 2;
         SceneManager.LoadScene("Game");
     }   
     
     public void Level3()
     {
         NextLevel.startingLevel = 3;
+        nextLevel.startingLevel = 3;
         SceneManager.LoadScene("Game");
     }    
     public void Level4()
     {
         NextLevel.startingLevel = 4;
+        nextLevel.startingLevel = 4;
         SceneManager.LoadScene("Game");
     }    
     
     public void Level5()
     {
         NextLevel.startingLevel = 5;
+        nextLevel.startingLevel = 5;
         SceneManager.LoadScene("Game");
     }   
     
     public void Level6()
     {
         NextLevel.startingLevel = 6;
+        nextLevel.startingLevel = 6;
         SceneManager.LoadScene("Game");
     }    
     public void Level7()
     {
         NextLevel.startingLevel = 7;
+        nextLevel.startingLevel = 7;
         SceneManager.LoadScene("Game");
     }   
     
     public void Level8()
     {
         NextLevel.startingLevel = 8;
+        nextLevel.startingLevel = 8;
         SceneManager.LoadScene("Game");
     }
     public void QuitGame()

@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,12 @@ public class NextLevel : MonoBehaviour
 
     pointManager pm;
 
+    void Start()
+    {
+        PlayerPrefs.GetInt("totalPointsGame", 0);
+        pm = FindObjectOfType<pointManager>();
+        SetInitialPositions();
+    }
     private void Update()
     {
         currentLevel = startingLevel;
@@ -39,6 +46,26 @@ public class NextLevel : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha3))
         {
             startingLevel = 3;
+        }        
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            startingLevel = 4;
+        }        
+        if (Input.GetKey(KeyCode.Alpha5))
+        {
+            startingLevel = 5;
+        }               
+        if (Input.GetKey(KeyCode.Alpha6))
+        {
+            startingLevel = 6;
+        }        
+        if (Input.GetKey(KeyCode.Alpha7))
+        {
+            startingLevel = 7;
+        }        
+        if (Input.GetKey(KeyCode.Alpha8))
+        {
+            startingLevel = 8;
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -47,8 +74,8 @@ public class NextLevel : MonoBehaviour
         {
             if (startingLevel == 2 || startingLevel == 4)
             {
-                Puntuacion.scoreValue += 50;
-                pm.totalPointsGame += 50;
+                Puntuacion.scoreValue += 20;
+                pm.totalPointsGame += 20;
             }
 
             startingLevel += 1;
@@ -66,11 +93,6 @@ public class NextLevel : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        pm = FindObjectOfType<pointManager>();
-        SetInitialPositions();
-    }
 
     void SetInitialPositions()
     {
@@ -122,9 +144,9 @@ public class NextLevel : MonoBehaviour
     }
     void GoToMenu()
     {
-        SceneControl.changeMenu = true;
-        Destroy(gameObject);
-        SceneManager.LoadScene("Menu");
+        PlayerPrefs.SetInt("totalPointsGame", 0);
         PlayerPrefs.Save();
+        SceneControl.changeMenu = true;
+        SceneManager.LoadScene("Menu");
     }
 }

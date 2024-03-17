@@ -14,7 +14,6 @@ public class Rebote : MonoBehaviour
         if (collision.gameObject.tag == "tramp")
         {
             transform.position = dispensador.transform.position;
-            rb.velocity = new Vector2(0, 0);
         }
     }
 }

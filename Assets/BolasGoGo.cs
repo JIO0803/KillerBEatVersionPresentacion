@@ -44,7 +44,11 @@ public class BolasGoGo : MonoBehaviour
                 doorCount++;
                 Debug.Log("usu");
             }
-
+            if (bg.doorCount >= 1)
+            {
+                Destroy(bg.ball);
+                number2.GetComponent<SpriteRenderer>().color = Color.green;
+            }
             if (doorCount >= 1 && bg.doorCount >= 1)
             {
                 pl.enabled = true;

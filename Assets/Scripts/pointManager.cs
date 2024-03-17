@@ -15,8 +15,8 @@ public class pointManager : MonoBehaviour
 
     private void Awake()
     {
-        totalPointsGame = PlayerPrefs.GetInt("totalPoints", 0);
-        currentMoney = totalPointsGame; 
+        totalPointsGame = PlayerPrefs.GetInt("totalPointsGame", 0);
+        currentMoney = totalPointsGame;
         pointsText.gameObject.SetActive(false);
         UpdatePointsText();
     }
@@ -41,7 +41,8 @@ public class pointManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerPrefs.SetInt("totalPoints", totalPointsGame); // Guardar el totalPointsGame al destruir el objeto
+        PlayerPrefs.SetInt("totalPointsGame", totalPointsGame);
         PlayerPrefs.Save();
     }
+
 }

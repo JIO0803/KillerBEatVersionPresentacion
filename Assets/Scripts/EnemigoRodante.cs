@@ -102,7 +102,7 @@ public class EnemigoRodante : MonoBehaviour
             // Si el hijo no es el Kunai, actualizamos su capa
             if (!child.CompareTag("kunai"))
             {
-                child.gameObject.layer = LayerMask.NameToLayer("deadEnemies");
+                child.gameObject.layer = LayerMask.NameToLayer("deadEnemy");
             }
         }
     }

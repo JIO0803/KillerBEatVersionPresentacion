@@ -1,4 +1,7 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.VFX;
 
 public class CambiarPosCamera : MonoBehaviour
 {
@@ -22,6 +25,20 @@ public class CambiarPosCamera : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Cmara.transform.position = gameObject.transform.position;
+        }
+
+        if (gameObject.tag == "cameraChange" && collision.CompareTag("Player"))
+        {
+            Cmara.GetComponent<Camera>().orthographicSize = 3f;
+        }
+
+        if (gameObject.tag == "cameraChange2" && collision.CompareTag("Player"))
+        {
+            Cmara.GetComponent<Camera>().orthographicSize = 7.4f;
+        }
+        if (gameObject.tag == "PosCam" && collision.CompareTag("Player"))
+        {
+            Cmara.GetComponent<Camera>().orthographicSize = 9.27f;
         }
     }
 }

@@ -16,18 +16,17 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject blockedTP;
     public GameObject availabelTP;
     public TextMeshProUGUI pointsText;
-    SceneControl sc;
 
     private void Awake()
     {
         kunaiOwnedd = false;
         tpOwnedd = false;
         money = 0;
-        totalPointsMenu = 0;
+        totalPointsMenu = PlayerPrefs.GetInt("totalPointsGame", 0);
     }
+
     private void Start()
     {
-        sc = GetComponent<SceneControl>();
         LoadPlayerPrefs();
         UpdateUI();
     }
@@ -35,23 +34,18 @@ public class UpgradeMenu : MonoBehaviour
     private void LoadPlayerPrefs()
     {
         kunaiOwnedd = PlayerPrefs.GetInt("KunaiUnlocked", 0) == 1;
-        totalPointsMenu = PlayerPrefs.GetInt("totalPoints", totalPointsMenu);
+        PlayerPrefs.GetInt("totalPointsGame", totalPointsMenu);
         tpOwnedd = PlayerPrefs.GetInt("TPUnlocked", 0) == 1;
         money = totalPointsMenu;
         blockedTP.SetActive(!kunaiOwnedd);
         availabelTP.SetActive(kunaiOwnedd && !tpOwnedd);
     }
 
-    private void OnDestroy()
-    {
-        SavePlayerPrefs();
-    }
-
     private void SavePlayerPrefs()
     {
         PlayerPrefs.SetInt("KunaiUnlocked", kunaiOwnedd ? 1 : 0);
         PlayerPrefs.SetInt("TPUnlocked", tpOwnedd ? 1 : 0);
-        PlayerPrefs.SetInt("totalPoints", totalPointsMenu);
+        PlayerPrefs.SetInt("totalPointsGame", totalPointsMenu);
         PlayerPrefs.Save();
     }
 
@@ -137,5 +131,11 @@ public class UpgradeMenu : MonoBehaviour
 
         blockedTP.SetActive(!kunaiOwnedd);
         availabelTP.SetActive(kunaiOwnedd && !tpOwnedd);
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("totalPointsGame", totalPointsMenu);
+        PlayerPrefs.Save();
     }
 }

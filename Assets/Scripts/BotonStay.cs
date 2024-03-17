@@ -25,7 +25,14 @@ public class BotonStay : MonoBehaviour
 
         currentSprite.sprite = notactivatedSprite;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("BolaActivadora"))
+        {
+            act = true;
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -37,14 +44,13 @@ public class BotonStay : MonoBehaviour
             act = true;
         }
 
-        if (touching && !Input.GetKey(KeyCode.LeftShift) || !touching && !collision.gameObject.CompareTag("kunai"))
+        if (touching && !Input.GetKey(KeyCode.LeftShift) || !touching && !collision.gameObject.CompareTag("kunai") && !collision.gameObject.CompareTag("BolaActivadora"))
         {
             act = false;
         }
         if (collision.gameObject.CompareTag("BolaActivadora"))
         {
             act = true;
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }    
     

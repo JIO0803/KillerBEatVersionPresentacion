@@ -18,9 +18,19 @@ public class LightDots : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bg.doorCount >= 1)
+        if (bg.number2 == null)
         {
-            sr.color = Color.green;
+            if (bg.doorCount >= 1)
+            {
+                sr.color = Color.green;
+            }
+        }
+        if (bg.number2 != null)
+        {
+            if (bg.doorCount >= 1 && bg.number2.GetComponent<BolasGoGo>().doorCount >= 1)
+            {
+                sr.color = Color.green;
+            }
         }
     }
 }
