@@ -6,6 +6,7 @@ public class BolasGoGo : MonoBehaviour
 {
     public bool canPress;
     public GameObject door;
+    public GameObject number2;
     //public GameObject check;
     public GameObject ball;
     Plataformas pl;
@@ -16,8 +17,13 @@ public class BolasGoGo : MonoBehaviour
     // Start is called before the first frame update
     BotonStay bs;
     public GameObject botonStay;
+    BolasGoGo bg;
     void Start()
     {
+        if (number2 != null)
+        {
+            bg = number2.GetComponent<BolasGoGo>();
+        }
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         //sr = check.GetComponent<SpriteRenderer>();
         doorCount = 0;
@@ -30,33 +36,42 @@ public class BolasGoGo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canPress && Input.GetKeyDown(KeyCode.LeftShift) && bs.touching)
+        if (number2 != null)
         {
-            doorCount++;
-            Debug.Log("plus");
-        }
-
-        if (doorCount >= 1)
-        {
-            pl.enabled = true;
-            if (pl2 != null)
+            bg = number2.GetComponent<BolasGoGo>();
+            if (canPress && Input.GetKeyDown(KeyCode.LeftShift) && bs.touching)
             {
+                doorCount++;
+                Debug.Log("usu");
+            }
+
+            if (doorCount >= 1 && bg.doorCount >= 1)
+            {
+                pl.enabled = true;
                 pl2.enabled = false;
+                //sr.sprite = tick;
+                //sr.color = Color.green;
+                this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                Destroy(ball);
+            }
+        }
+        if (number2 == null)
+        {
+            if (canPress && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                doorCount++;
+                Debug.Log("plus");
             }
 
-            //sr.sprite = tick;
-            //sr.color = Color.green;
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-            Destroy(ball);
-        }
-        else
-        {
-            pl.enabled = false;
-            if (pl2 != null)
+            if (doorCount >= 1)
             {
-                pl2.enabled = true;
+                pl.enabled = true;
+                //sr.sprite = tick;
+                //sr.color = Color.green;
+                this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                Destroy(ball);
             }
-        }
+        }       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

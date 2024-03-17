@@ -28,15 +28,16 @@ public class BotonStay : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.LeftShift) || collision.gameObject.CompareTag("kunai"))
-        {
-            act = true;
-        }
         if (collision.gameObject.CompareTag("Player"))
         {
             touching = true;
         }
-        if (collision.gameObject.CompareTag("Player") && !Input.GetKey(KeyCode.LeftShift))
+        if (touching && Input.GetKey(KeyCode.LeftShift) || collision.gameObject.CompareTag("kunai"))
+        {
+            act = true;
+        }
+
+        if (touching && !Input.GetKey(KeyCode.LeftShift) || !touching && !collision.gameObject.CompareTag("kunai"))
         {
             act = false;
         }
@@ -55,36 +56,7 @@ public class BotonStay : MonoBehaviour
             touching = false;
         }
     }
-    /*
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.LeftShift) || collision.gameObject.CompareTag("kunai"))
-        {
-            act = true;
-        }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            touching = true;
-        }
-        if (collision.gameObject.CompareTag("Player") && !Input.GetKey(KeyCode.LeftShift))
-        {
-            act = false;
-        }
-        if (collision.gameObject.CompareTag("BolaActivadora"))
-        {
-            act = true;
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("kunai") || collision.gameObject.CompareTag("BolaActivadora"))
-        {
-            act = false;
-            touching = false;
-        }
-    }
-    */
+
     private void Update()
     {
         if (gameObject.GetComponentInChildren<KunaiConstraint>())
@@ -96,15 +68,17 @@ public class BotonStay : MonoBehaviour
         {
             if (Muro != null)
             {
+                Debug.Log("Si");
                 plat1.enabled = true;
                 plat2.enabled = false;
             }
             currentSprite.sprite = activatedSprite;
         }
-        else
+        if (!act)
         {
             if (Muro != null)
             {
+                Debug.Log("No");
                 plat1.enabled = false;
                 plat2.enabled = true;
             }

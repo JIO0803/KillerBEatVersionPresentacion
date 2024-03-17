@@ -152,10 +152,26 @@ public class EnemigoVolador : MonoBehaviour
         {
             lifes -= 1;
             receiveDamage2();
+            if (collision.CompareTag("kunai"))
+            {
+                UpdateChildLayersExceptKunai(collision.gameObject.transform.parent.gameObject);
+            }
         }
     }
+        private void UpdateChildLayersExceptKunai(GameObject enemy)
+        {
+            // Recorremos todos los hijos del enemigo
+            foreach (Transform child in enemy.transform)
+            {
+                // Si el hijo no es el Kunai, actualizamos su capa
+                if (!child.CompareTag("kunai"))
+                {
+                    child.gameObject.layer = LayerMask.NameToLayer("deadEnemies");
+                }
+            }
+        }
 
-    private void receiveDamage2()
+        private void receiveDamage2()
     {
         animator.SetBool("IsDead", true);
         rb2D.gravityScale = DefaultGravityScale;
@@ -165,5 +181,6 @@ public class EnemigoVolador : MonoBehaviour
         enabled = false;
         rb2D.mass = 10;
         Destroy(gameObject, 2);
+        gameObject.layer = LayerMask.NameToLayer("deadEnemy");
     }
 }
