@@ -59,7 +59,6 @@ public class EnemigoSoldado : MonoBehaviour
         if (lifes <= 0 && !isDead)
         {
             receiveDamage();
-            Debug.Log("Disabled");
         }
 
         if (rb2D.velocity.x < 0 || rb2D.velocity.y < 0)
@@ -184,8 +183,6 @@ public class EnemigoSoldado : MonoBehaviour
     {
         soldadoRigidBody2d.velocity = new Vector2 (0,0); 
         rb2D.gravityScale = DefaultGravityScale;
-        Puntuacion.scoreValue += 10;
-        pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         capsuleCollider2d.enabled = false;
         boxCollider2d.enabled = true;  

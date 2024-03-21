@@ -89,7 +89,6 @@ public class nextLevel : MonoBehaviour
                 startingLevel = 1;
             }
             Invoke("GoToMenu", 0f);
-            Debug.Log("Next");
         }
     }
 

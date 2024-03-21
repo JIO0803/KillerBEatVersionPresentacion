@@ -100,7 +100,7 @@ public class KunaiConstraint : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser") || collision.gameObject.tag == ("tramp"))
         {
             if (!collided)
             {

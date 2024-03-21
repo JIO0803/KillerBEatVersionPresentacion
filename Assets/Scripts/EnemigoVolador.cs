@@ -158,29 +158,28 @@ public class EnemigoVolador : MonoBehaviour
             }
         }
     }
-        private void UpdateChildLayersExceptKunai(GameObject enemy)
+    private void UpdateChildLayersExceptKunai(GameObject enemy)
+    {
+        // Recorremos todos los hijos del enemigo
+        foreach (Transform child in enemy.transform)
         {
-            // Recorremos todos los hijos del enemigo
-            foreach (Transform child in enemy.transform)
+            // Si el hijo no es el Kunai, actualizamos su capa
+            if (!child.CompareTag("kunai"))
             {
-                // Si el hijo no es el Kunai, actualizamos su capa
-                if (!child.CompareTag("kunai"))
-                {
-                    child.gameObject.layer = LayerMask.NameToLayer("deadEnemy");
-                }
+                child.gameObject.layer = LayerMask.NameToLayer("deadEnemy");
             }
         }
+    }
 
-        private void receiveDamage2()
+    private void receiveDamage2()
     {
         animator.SetBool("IsDead", true);
         rb2D.gravityScale = DefaultGravityScale;
-        Puntuacion.scoreValue += 10; 
-        pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
         rb2D.mass = 10;
         Destroy(gameObject, 2);
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
     }
+
 }

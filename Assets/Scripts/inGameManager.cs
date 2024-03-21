@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class inGameManager : MonoBehaviour
 {
@@ -12,11 +13,11 @@ public class inGameManager : MonoBehaviour
     public Sprite checkedToggle;
     public Sprite uncheckedToggle;
     public Image toggleImage;
-    public GameObject musicManager;
+
     public GameObject Player;
     public GameObject unckeckedToggle;
     public GameObject ckeckedToggle;
-    AudioSource audioSource;
+
     SpawnKunai sp;
     MovJugador mj;
     private int qualityCounter;
@@ -33,11 +34,24 @@ public class inGameManager : MonoBehaviour
     public GameObject frances;
     public GameObject portugues;
 
+
+
+    AudioSource audioSource;
     public GameObject slider;
     Slider sli;
+    GameObject musicManager;
+    AudioSource aud;
+
     void Start()
     {
+        musicManager = GameObject.FindGameObjectWithTag("MusicMan");
+        aud = musicManager.GetComponent<AudioSource>();
         sli = slider.GetComponent<Slider>();
+        audioSource = musicManager.GetComponent<AudioSource>();
+        audioSource.volume = 0.05f;
+        sli.value = 0.05f;
+        sli.value = audioSource.volume;
+
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
         mj = Player.GetComponent<MovJugador>();
@@ -48,16 +62,14 @@ public class inGameManager : MonoBehaviour
         languageCounter = PlayerPrefs.GetFloat("LanguageCounter", 0f);
         qualityCounter = PlayerPrefs.GetInt("QualityCounter", 0);
         languageCounter = 0;
-        audioSource = musicManager.GetComponent<AudioSource>();
+
         PlayerPrefs.GetInt("KunaiUnlocked", 0);
         PlayerPrefs.GetInt("TPUnlocked", 0);
-        audioSource.volume = 0.05f;
-        sli.value = 0.05f;
-        sli.value = audioSource.volume;
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuIsActive)
@@ -216,7 +228,7 @@ public class inGameManager : MonoBehaviour
 
     public void OpenMenu()
     {
-        audioSource.volume = 0.005f;
+        aud.volume = 0.005f;
         menuIsActive = true;
         menu.SetActive(true);
         Time.timeScale = 0;
@@ -227,7 +239,7 @@ public class inGameManager : MonoBehaviour
     public void CloseMenu()
     {
         Time.timeScale = 0.5f;
-        audioSource.volume = 0.03f;
+        aud.volume = 0.03f;
         menuIsActive = false;
         menu.SetActive(false);
         sp.enabled = true;

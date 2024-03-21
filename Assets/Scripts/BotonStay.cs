@@ -74,7 +74,6 @@ public class BotonStay : MonoBehaviour
         {
             if (Muro != null)
             {
-                Debug.Log("Si");
                 plat1.enabled = true;
                 plat2.enabled = false;
             }
@@ -84,7 +83,6 @@ public class BotonStay : MonoBehaviour
         {
             if (Muro != null)
             {
-                Debug.Log("No");
                 plat1.enabled = false;
                 plat2.enabled = true;
             }

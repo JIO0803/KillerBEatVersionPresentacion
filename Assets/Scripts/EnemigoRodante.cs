@@ -109,8 +109,6 @@ public class EnemigoRodante : MonoBehaviour
     private void receiveDamage3()
     {
         rb2D.gravityScale = DefaultGravityScale;
-        Puntuacion.scoreValue += 10;
-        pm.Invoke("AddPoints", 0f);
         canDealDamage = false;
         enabled = false;
         rb2D.mass = 13;

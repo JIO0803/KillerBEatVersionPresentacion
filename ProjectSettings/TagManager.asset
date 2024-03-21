@@ -41,6 +41,7 @@ TagManager:
   - plat
   - cameraChange
   - cameraChange2
+  - MusicMan
   layers:
   - Default
   - TransparentFX
