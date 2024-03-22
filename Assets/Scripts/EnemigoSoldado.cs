@@ -170,7 +170,6 @@ public class EnemigoSoldado : MonoBehaviour
 
     private void UpdateChildLayersExceptKunai(GameObject enemy)
     {
-        // Recorremos todos los hijos del enemigo
         foreach (Transform child in enemy.transform)
         {
             if (!child.CompareTag("kunai"))

@@ -96,10 +96,8 @@ public class EnemigoRodante : MonoBehaviour
 
     private void UpdateChildLayersExceptKunai(GameObject enemy)
     {
-        // Recorremos todos los hijos del enemigo
         foreach (Transform child in enemy.transform)
         {
-            // Si el hijo no es el Kunai, actualizamos su capa
             if (!child.CompareTag("kunai"))
             {
                 child.gameObject.layer = LayerMask.NameToLayer("deadEnemy");

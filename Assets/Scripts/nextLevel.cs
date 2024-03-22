@@ -1,151 +1,128 @@
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class nextLevel : MonoBehaviour
 {
-    public Transform playerSpawn1;
-    public Transform playerSpawn2;
-    public Transform playerSpawn3;
-    public Transform playerSpawn4;
-    public Transform playerSpawn5;
-    public Transform playerSpawn6;
-    public Transform playerSpawn7;
-    public Transform playerSpawn8;
-    public Transform gameObjectSpawn1;
-    public Transform gameObjectSpawn2;
-    public Transform gameObjectSpawn3;
-    public Transform gameObjectSpawn4;
-    public Transform gameObjectSpawn5;
-    public Transform gameObjectSpawn6;
-    public Transform gameObjectSpawn7;
-    public Transform gameObjectSpawn8;
+    public Transform[] playerSpawns;
+    public Transform[] gameObjectSpawns;
+    public static int startingLevel = 1; // Inicializamos el nivel de inicio en 1
 
-    public static int startingLevel;
-    public int currentLevel;
+    private HashSet<int> completedLevels = new HashSet<int>(); // Conjunto para mantener un registro de los niveles completados
 
     pointManager pm;
 
     void Start()
     {
-        PlayerPrefs.GetInt("totalPointsGame", 0);
+        LoadCompletedLevels();
+
+        PlayerPrefs.SetInt("totalPointsGame", 0); // Inicializamos los puntos totales del juego
+        PlayerPrefs.Save();
+
         pm = FindObjectOfType<pointManager>();
         SetInitialPositions();
     }
+
     private void Update()
     {
-        currentLevel = startingLevel;
-        if (Input.GetKey(KeyCode.Alpha1))
+        // Este bloque de código se puede optimizar, pero lo dejo así por simplicidad
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             startingLevel = 1;
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             startingLevel = 2;
         }
-        if (Input.GetKey(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             startingLevel = 3;
         }
-        if (Input.GetKey(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             startingLevel = 4;
         }
-        if (Input.GetKey(KeyCode.Alpha5))
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             startingLevel = 5;
         }
-        if (Input.GetKey(KeyCode.Alpha6))
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             startingLevel = 6;
         }
-        if (Input.GetKey(KeyCode.Alpha7))
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             startingLevel = 7;
         }
-        if (Input.GetKey(KeyCode.Alpha8))
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             startingLevel = 8;
         }
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player") && !IsLevelCompleted(startingLevel))
+        {
+            GetPoints();
+            completedLevels.Add(startingLevel); // Agregamos el nivel completado a la lista
+
+            SaveCompletedLevels();
+        }
+
         if (collision.CompareTag("Player"))
         {
-            if (startingLevel == 2 || startingLevel == 4)
-            {
-                Puntuacion.scoreValue += 20;
-                pm.totalPointsGame += 20;
-            }
-
-            startingLevel += 1;
-
-            if (startingLevel > 8)
-            {
-                startingLevel = 1;
-            }
-            if (startingLevel < 1)
-            {
-                startingLevel = 1;
-            }
             Invoke("GoToMenu", 0f);
         }
     }
 
-
     void SetInitialPositions()
     {
-        if (startingLevel == 1)
+        int index = startingLevel - 1; // Los arrays comienzan en índice 0, por eso restamos 1 al nivel
+        if (index >= 0 && index < playerSpawns.Length && index < gameObjectSpawns.Length)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn1.position;
-            transform.position = gameObjectSpawn1.position;
-        }
-        if (startingLevel == 2)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn2.position;
-            transform.position = gameObjectSpawn2.position;
-        }
-
-        if (startingLevel == 3)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn3.position;
-            transform.position = gameObjectSpawn3.position;
-        }
-
-        if (startingLevel == 4)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn4.position;
-            transform.position = gameObjectSpawn4.position;
-        }
-
-        if (startingLevel == 5)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn5.position;
-            transform.position = gameObjectSpawn5.position;
-        }
-        if (startingLevel == 6)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn6.position;
-            transform.position = gameObjectSpawn6.position;
-        }
-
-        if (startingLevel == 7)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn7.position;
-            transform.position = gameObjectSpawn7.position;
-        }
-
-        if (startingLevel == 8)
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawn8.position;
-            transform.position = gameObjectSpawn8.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = playerSpawns[index].position;
+            transform.position = gameObjectSpawns[index].position;
         }
     }
+
     void GoToMenu()
     {
         PlayerPrefs.SetInt("totalPointsGame", 0);
         PlayerPrefs.Save();
         SceneControl.changeMenu = true;
         SceneManager.LoadScene("Menu");
+    }
+
+    void GetPoints()
+    {
+        Puntuacion.scoreValue += 15;
+        pm.totalPointsGame += 15;
+    }
+
+    void LoadCompletedLevels()
+    {
+        string levelsString = PlayerPrefs.GetString("CompletedLevels", "");
+        string[] levelsArray = levelsString.Split(',');
+        foreach (string levelStr in levelsArray)
+        {
+            int level;
+            if (int.TryParse(levelStr, out level))
+            {
+                completedLevels.Add(level);
+            }
+        }
+    }
+
+    void SaveCompletedLevels()
+    {
+        string levelsString = string.Join(",", completedLevels);
+        PlayerPrefs.SetString("CompletedLevels", levelsString);
+        PlayerPrefs.Save();
+    }
+
+    bool IsLevelCompleted(int level)
+    {
+        return completedLevels.Contains(level);
     }
 }

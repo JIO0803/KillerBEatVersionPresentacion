@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UpgradeMenu : MonoBehaviour
 {
     public int upgradeCost = 30;
-    public int unlockCost = 10;
+    public int unlockCost = 20;
     public int TPCost = 20;
     public static int totalPointsMenu;
     public GameObject kunaiOwned;
@@ -120,6 +120,8 @@ public class UpgradeMenu : MonoBehaviour
         kunaiOwned.SetActive(false);
         SceneControl.kunaiMax = 1;
         SceneControl.kunaiCount = 1;
+        PlayerPrefs.SetInt("Level", NextLevel.startingLevel); 
+        PlayerPrefs.DeleteKey("CompletedLevels");
         UpdateUI();
         SavePlayerPrefs();
     }

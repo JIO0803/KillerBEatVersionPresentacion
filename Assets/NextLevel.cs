@@ -21,6 +21,7 @@ public class NextLevel : MonoBehaviour
     public Transform gameObjectSpawn7;
     public Transform gameObjectSpawn8;
 
+    private bool pointsAwarded = false;
     public static int startingLevel;
     public int currentLevel;
 
@@ -30,6 +31,7 @@ public class NextLevel : MonoBehaviour
     {
         PlayerPrefs.GetInt("totalPointsGame", 0);
         pm = FindObjectOfType<pointManager>();
+        pointsAwarded = PlayerPrefs.GetInt("PointsAwarded_" + SceneManager.GetActiveScene().name, 0) == 1;
         SetInitialPositions();
     }
     private void Update()
@@ -70,13 +72,14 @@ public class NextLevel : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !pointsAwarded)
         {
-            if (startingLevel == 2 || startingLevel == 4)
-            {
-                Puntuacion.scoreValue += 20;
-                pm.totalPointsGame += 20;
-            }
+            GetPoints();
+            pointsAwarded = true; // Marcamos que los puntos han sido otorgados para este nivel
+
+            // Guardamos el estado de pointsAwarded en PlayerPrefs
+            PlayerPrefs.SetInt("PointsAwarded_" + SceneManager.GetActiveScene().name, pointsAwarded ? 1 : 0);
+            PlayerPrefs.Save();
 
             startingLevel += 1;
 
@@ -148,5 +151,11 @@ public class NextLevel : MonoBehaviour
         PlayerPrefs.Save();
         SceneControl.changeMenu = true;
         SceneManager.LoadScene("Menu");
+    }
+
+    void GetPoints()
+    {
+        Puntuacion.scoreValue += 15;
+        pm.totalPointsGame += 15;
     }
 }
