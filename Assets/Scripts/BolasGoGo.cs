@@ -61,7 +61,7 @@ public class BolasGoGo : MonoBehaviour
         }
         if (number2 == null)
         {
-            if (canPress && Input.GetKeyDown(KeyCode.LeftShift))
+            if (bs.touching && canPress && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 doorCount++;
                 Debug.Log("plus");

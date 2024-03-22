@@ -91,7 +91,7 @@ public class KunaiConstraint : MonoBehaviour
             }
             rb2D.gravityScale = 3;
         }
-        if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser")) 
+        if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser") || collision.gameObject.tag == ("tramp")) 
         {
             AddKunai();
             Destroy(gameObject);
@@ -100,7 +100,7 @@ public class KunaiConstraint : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser") || collision.gameObject.tag == ("tramp"))
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == ("bala") || collision.gameObject.tag == ("misilTeled") || collision.gameObject.tag == ("laser"))
         {
             if (!collided)
             {
