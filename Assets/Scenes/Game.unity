@@ -2301,6 +2301,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8712302698601249109, guid: a510d3f4e1c888b4d9e07d121b8b760d, type: 3}
   m_PrefabInstance: {fileID: 106584217}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &106584219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3775795139920818803, guid: a510d3f4e1c888b4d9e07d121b8b760d, type: 3}
+  m_PrefabInstance: {fileID: 106584217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115534554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2393,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.5
+  m_fontSize: 50.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -37864,23 +37869,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dc0940d3740f848836c0877120e03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawn1: {fileID: 1906111659}
-  playerSpawn2: {fileID: 644212913}
-  playerSpawn3: {fileID: 809026961}
-  playerSpawn4: {fileID: 430369203}
-  playerSpawn5: {fileID: 1672370428}
-  playerSpawn6: {fileID: 103754943}
-  playerSpawn7: {fileID: 1343612367}
-  playerSpawn8: {fileID: 281892852}
-  gameObjectSpawn1: {fileID: 594850141}
-  gameObjectSpawn2: {fileID: 781478906}
-  gameObjectSpawn3: {fileID: 923885708}
-  gameObjectSpawn4: {fileID: 1164185617}
-  gameObjectSpawn5: {fileID: 1146243038}
-  gameObjectSpawn6: {fileID: 47728653}
-  gameObjectSpawn7: {fileID: 1331909629}
-  gameObjectSpawn8: {fileID: 296878272}
-  currentLevel: 0
+  playerSpawns:
+  - {fileID: 1906111659}
+  - {fileID: 644212913}
+  - {fileID: 809026961}
+  - {fileID: 430369203}
+  - {fileID: 1672370428}
+  - {fileID: 103754943}
+  gameObjectSpawns:
+  - {fileID: 594850141}
+  - {fileID: 781478906}
+  - {fileID: 923885708}
+  - {fileID: 1164185617}
+  - {fileID: 1146243038}
+  - {fileID: 47728653}
 --- !u!61 &676115033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40346,7 +40348,7 @@ MonoBehaviour:
   number2: {fileID: 0}
   ball: {fileID: 1501043776}
   doorCount: 0
-  botonStay: {fileID: 1348271235}
+  botonStay: {fileID: 106584219}
 --- !u!58 &776170825
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -41473,7 +41475,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.9
+  m_fontSize: 41.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -48786,7 +48788,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.9
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -75091,11 +75093,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8712302698601249109, guid: a510d3f4e1c888b4d9e07d121b8b760d, type: 3}
   m_PrefabInstance: {fileID: 1348271233}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1348271235 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3775795139920818803, guid: a510d3f4e1c888b4d9e07d121b8b760d, type: 3}
-  m_PrefabInstance: {fileID: 1348271233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1348705189
 GameObject:
   m_ObjectHideFlags: 0
@@ -87529,7 +87526,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.1
+  m_fontSize: 34.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -88651,7 +88648,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.75
+  m_fontSize: 67.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
