@@ -44,7 +44,7 @@ public class BotonStay : MonoBehaviour
             act = true;
         }
 
-        if (touching && !Input.GetKey(KeyCode.LeftShift) || !touching && !collision.gameObject.CompareTag("kunai") || !touching && !collision.gameObject.CompareTag("kunai") && !collision.gameObject.CompareTag("BolaActivadora"))
+        if (touching && !Input.GetKey(KeyCode.LeftShift) || !touching && !collision.gameObject.CompareTag("kunai") && !collision.gameObject.CompareTag("BolaActivadora"))
         {
             act = false;
         }

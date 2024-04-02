@@ -59,6 +59,9 @@ public class textGen2 : MonoBehaviour
 
     private void BorrarTexto()
     {
-        textoGenerado.text = ""; // Borra el texto
+        if (textoGenerado != null)
+        {
+            textoGenerado.text = ""; // Borra el texto
+        }
     }
 }
