@@ -5,6 +5,8 @@ public class SpawnKunai : MonoBehaviour
 {
     [SerializeField] private float KunaiVelocity;
     public GameObject KunaiPrefab;
+    public GameObject BlackHolePrefab; 
+    public GameObject WhiteHolePrefab; 
     public GameObject kunaiText;
     public GameObject PlayerLocation;
     Rigidbody2D rb2D;
@@ -16,6 +18,7 @@ public class SpawnKunai : MonoBehaviour
     public float rotationBreak;
     public float rotationBreak2;
     KunaiConstraint kc;
+
     private void Start()
     {
         kc = GetComponent<KunaiConstraint>();
@@ -29,7 +32,8 @@ public class SpawnKunai : MonoBehaviour
             sk.enabled = false;
         }
     }
-        private void Update()
+
+    private void Update()
     {
         if (kunaiCount < 0)
         {
@@ -104,23 +108,12 @@ public class SpawnKunai : MonoBehaviour
 
         if (closestKunai != null)
         {
-            if (closestKunai.transform.localRotation.z > 0 && closestKunai.transform.localRotation.z < 180 && closestKunai.GetComponent<KunaiConstraint>().platCol != true)
-            {
-                PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, -1, 0);
-            }
-            else
-            {
-                PlayerLocation.transform.position = closestKunai.transform.position;
-            }
+            GameObject blackHole = Instantiate(BlackHolePrefab, PlayerLocation.transform.position, Quaternion.identity);
+            Destroy(blackHole,0.35f);
+            GameObject whiteHole = Instantiate(WhiteHolePrefab, closestKunai.transform.position, Quaternion.identity);
+            Destroy(whiteHole, 0.35f);
 
-            if (closestKunai.transform.localRotation.z < 0 && closestKunai.transform.localRotation.z > -180 && closestKunai.GetComponent<KunaiConstraint>().platCol != true)
-            {
-                PlayerLocation.transform.position = closestKunai.transform.position + new Vector3(0, 1, 0);
-            }
-            else
-            {
-                PlayerLocation.transform.position = closestKunai.transform.position;
-            }
+            PlayerLocation.transform.position = closestKunai.transform.position;
 
             Destroy(closestKunai);
             kunaiList.Remove(closestKunai);
