@@ -113,7 +113,7 @@ public class SpawnKunai : MonoBehaviour
             GameObject whiteHole = Instantiate(WhiteHolePrefab, closestKunai.transform.position, Quaternion.identity);
             Destroy(whiteHole, 0.35f);
 
-            PlayerLocation.transform.position = closestKunai.transform.position;
+            PlayerLocation.transform.position = closestKunai.transform.position + new Vector3 (0, 0.5f, 0);
 
             Destroy(closestKunai);
             kunaiList.Remove(closestKunai);
