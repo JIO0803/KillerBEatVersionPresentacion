@@ -178,7 +178,6 @@ public class EnemigoVolador : MonoBehaviour
         canDealDamage = false;
         enabled = false;
         rb2D.mass = 10;
-        Destroy(gameObject, 2);
         gameObject.layer = LayerMask.NameToLayer("deadEnemy");
     }
 
