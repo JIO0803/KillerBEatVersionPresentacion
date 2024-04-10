@@ -254,7 +254,7 @@ MonoBehaviour:
   speed: 4
   stoppingDistance: 10
   retreatDistance: 7
-  startTimeBtwShots: 1.5
+  startTimeBtwShots: 2.5
   charSpeed: 4
   detectDist: 15
   lifes: 2

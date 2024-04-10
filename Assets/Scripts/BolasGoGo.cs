@@ -42,7 +42,6 @@ public class BolasGoGo : MonoBehaviour
             if (canPress && Input.GetKeyDown(KeyCode.LeftShift) && bs.touching)
             {
                 doorCount++;
-                Debug.Log("usu");
             }
             if (bg.doorCount >= 1)
             {
@@ -64,7 +63,6 @@ public class BolasGoGo : MonoBehaviour
             if (bs.touching && canPress && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 doorCount++;
-                Debug.Log("plus");
             }
 
             if (doorCount >= 1)

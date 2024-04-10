@@ -7,9 +7,10 @@ public class SoldadoSalvado : MonoBehaviour
     public static bool salvado;
     public bool salvadoCheck;
     public GameObject texto;
+    AudioSource aud;
     // Start is called before the first frame update
     EnemigoSoldado es;
-
+    
     private void Awake()
     {
         if (nextLevel.startingLevel == 4)
@@ -19,6 +20,7 @@ public class SoldadoSalvado : MonoBehaviour
     }
     private void Start()
     {
+        aud = gameObject.GetComponent<AudioSource>();
         if (nextLevel.startingLevel == 4)
         {
             es = gameObject.GetComponent<EnemigoSoldado>();
@@ -39,6 +41,7 @@ public class SoldadoSalvado : MonoBehaviour
             if (es.lifes <= 0)
             {
                 salvado = false;
+                aud.Play();
             }
             else
             {

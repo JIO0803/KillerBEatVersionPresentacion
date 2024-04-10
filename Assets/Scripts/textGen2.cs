@@ -11,7 +11,11 @@ public class textGen2 : MonoBehaviour
 
     private bool generandoTexto = false; // Bandera para verificar si se está generando texto
     private bool textoGeneradoPrevio = false; // Bandera para verificar si el texto ha sido generado previamente
-
+    AudioSource aud;
+    private void Start()
+    {
+        aud = gameObject.GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -34,6 +38,7 @@ public class textGen2 : MonoBehaviour
             {
                 textoGenerado.text = "";
                 GenerarTexto();
+                aud.Play();
             }
         }
     }

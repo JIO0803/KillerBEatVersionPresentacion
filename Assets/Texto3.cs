@@ -10,10 +10,15 @@ public class Texto3 : MonoBehaviour
     public float velocidadGeneracion = 0.05f; // Velocidad de generación del texto
     private bool generandoTexto = false; // Bandera para verificar si se está generando texto
     private bool textoGeneradoPrevio = false; // Bandera para verificar si el texto ha sido generado previamente
-    private bool activar = false; // Booleano que se activará cuando se alcancen 20 segundos
-    private float contadorSegundos = 0f; // Contador de segundos
+    public bool activar = false; // Booleano que se activará cuando se alcancen 20 segundos
+    public float contadorSegundos = 0f; // Contador de segundos
     public float maxSecs;
 
+    AudioSource aud;
+    private void Start()
+    {
+        aud = gameObject.GetComponent<AudioSource>();
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -22,23 +27,28 @@ public class Texto3 : MonoBehaviour
             if (generandoTexto || textoGeneradoPrevio)
                 return;
 
-            // Incrementar el contador de segundos mientras el objeto está en el trigger
-            contadorSegundos += Time.deltaTime;
+            if (!Input.GetKey(KeyCode.LeftShift)) 
+            {
+                contadorSegundos += Time.deltaTime;
+            }
 
             // Verificar si se han alcanzado 20 segundos
             if (contadorSegundos >= maxSecs)
             {
+                aud.Play();
                 activar = true;
-                // Aquí puedes ejecutar cualquier acción que desees cuando se alcancen los 20 segundos
             }
 
             // Detiene las corrutinas y borra el texto de todos los ColliderTextoGenerador
             Texto3[] scripts = FindObjectsOfType<Texto3>();
             foreach (Texto3 ctg in scripts)
             {
-                ctg.StopAllCoroutines();
-                ctg.BorrarTexto();
-                ctg.textoGeneradoPrevio = false; // Restablece la bandera para permitir que se genere texto nuevamente
+                if (activar)
+                {
+                    ctg.StopAllCoroutines();
+                    ctg.BorrarTexto();
+                    ctg.textoGeneradoPrevio = false;
+                }
             }
 
             // Genera el texto si no se está generando actualmente
@@ -71,7 +81,7 @@ public class Texto3 : MonoBehaviour
 
     private void BorrarTexto()
     {
-        if (textoGenerado != null)
+        if (textoGenerado != null && activar)
         {
             textoGenerado.text = ""; // Borra el texto
         }
