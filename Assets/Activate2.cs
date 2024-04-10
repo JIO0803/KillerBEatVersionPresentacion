@@ -6,7 +6,6 @@ using UnityEngine;
 public class activate2 : MonoBehaviour
 {
     public GameObject signs;
-    private bool activar = false; 
     private float contadorSegundos = 0f; // Contador de segundos
     public float maxSecs;
     // Start is called before the first frame update

@@ -30,8 +30,10 @@ public class EnemigoSoldado : MonoBehaviour
     Animator animator;
     BoxCollider2D boxCollider2d;
     CapsuleCollider2D capsuleCollider2d;
+    AudioSource aud;
     private void Start()
     {
+        aud = gameObject.GetComponent<AudioSource>();
         boxCollider2d = GetComponent<BoxCollider2D>();
         capsuleCollider2d = GetComponent<CapsuleCollider2D>();
         vc = FindObjectOfType<vidaCount>();

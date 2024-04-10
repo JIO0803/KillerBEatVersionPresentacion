@@ -38,10 +38,9 @@ public class SoldadoSalvado : MonoBehaviour
         if (nextLevel.startingLevel == 4)
         {
             salvadoCheck = salvado;
-            if (es.lifes <= 0)
+            if (es = null)
             {
                 salvado = false;
-                aud.Play();
             }
             else
             {

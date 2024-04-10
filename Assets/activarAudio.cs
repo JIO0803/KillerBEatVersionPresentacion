@@ -5,23 +5,27 @@ using UnityEngine;
 public class activarAudio : MonoBehaviour
 {
     AudioSource aud;
-    EnemigoSoldado es;
-    public static int times;
+    EnemigoSoldado es1;
+    EnemigoSoldado es2;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public int times;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         times = 0;
         aud = gameObject.GetComponent<AudioSource>();
-        es = gameObject.GetComponent<EnemigoSoldado>();
+        es1 = enemy1.GetComponent<EnemigoSoldado>();
+        es2 = enemy2.GetComponent<EnemigoSoldado>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (es.lifes <= 0 && times == 0)
+        if (es1.lifes <= 0 && times == 0|| es2.lifes <= 0 && times == 0)
         {
             aud.Play();
-            times++;
+            times = 1;
         }
     }
 }
