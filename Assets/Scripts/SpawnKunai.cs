@@ -46,7 +46,15 @@ public class SpawnKunai : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && UpgradeMenu.tpOwnedd)
         {
             Minato();
+        }       
+        
+        if (Input.GetKeyDown(KeyCode.S) && UpgradeMenu.tpOwnedd)
+        {
+            BringKunaiBack();
+            Debug.Log("1");
         }
+
+
         if (Input.GetMouseButtonDown(0) && kunaiCount > 0)
         {
             ThrowKunai();
@@ -84,6 +92,32 @@ public class SpawnKunai : MonoBehaviour
         nmdk.kunaiCounts -= 1;
     }
 
+    public void BringKunaiBack()
+    {
+        kunaiCount++;
+
+        GameObject closestKunai = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject kunai in kunaiList)
+        {
+            if (kunai != null)
+            {
+                float distance = Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), kunai.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestKunai = kunai;
+                    rb2D.velocity = new Vector2(closestKunai.GetComponent<Rigidbody2D>().velocity.x, closestKunai.GetComponent<Rigidbody2D>().velocity.y);
+                }
+            }
+        }
+        Destroy(closestKunai);
+        /* GameObject whiteHole = Instantiate(WhiteHolePrefab, PlayerLocation.transform.position, Quaternion.identity);
+         Destroy(whiteHole, 0.35f);
+         GameObject blackHole = Instantiate(BlackHolePrefab, closestKunai.transform.position, Quaternion.identity);
+         Destroy(blackHole, 0.35f);*/
+    }
     public void Minato()
     {
         if (kunaiList.Count == 0)
