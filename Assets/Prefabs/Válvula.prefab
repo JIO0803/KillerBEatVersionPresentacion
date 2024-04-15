@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 269625631416456966}
   - component: {fileID: 8692896509962457335}
   - component: {fileID: 4127448506359270570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "V\xE1lvula"
   m_TagString: Rotador
   m_Icon: {fileID: 0}
@@ -129,8 +129,7 @@ MonoBehaviour:
   canRotate: 0
   rotationSpeed: 1000
   rotationSpeed2: 500
-  _Rotador:
-  - {fileID: 0}
+  Plat: {fileID: 0}
 --- !u!58 &4127448506359270570
 CircleCollider2D:
   m_ObjectHideFlags: 0

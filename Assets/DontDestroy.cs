@@ -35,9 +35,10 @@ public class DontDestroy : MonoBehaviour
 
     private void Update()
     {
-
         if (SceneManager.sceneCount == 0)
         {
+            gameObject.GetComponent<AudioSource>().enabled = false;
+            Debug.Log("Puro");
             this.gameObject.SetActive(false);
         }        
         if (SceneManager.sceneCount == 1)

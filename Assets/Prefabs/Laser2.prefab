@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9192832270867732304}
   - component: {fileID: 9024981831404706911}
   - component: {fileID: 6915595662702253369}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser2
   m_TagString: laser
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4375, y: 4.5}
+    oldSize: {x: 0.4375, y: 10}
     newSize: {x: 0.4375, y: 10}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

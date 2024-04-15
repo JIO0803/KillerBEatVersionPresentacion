@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9063087832184154369}
   - component: {fileID: 8319560348256514650}
   - component: {fileID: -2096129257655734207}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: KunaiPrefab
   m_TagString: kunai
   m_Icon: {fileID: 0}
@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 30.127802, y: -9.092509, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1121704779460775997}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,6 +178,7 @@ MonoBehaviour:
   carga1: {fileID: 338626784, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
   carga2: {fileID: -1243084308, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
   carga3: {fileID: -2022988374, guid: c44a72a6d628dfd43bee0f5f2519ca02, type: 3}
+  platCol: 0
 --- !u!95 &-2096129257655734207
 Animator:
   serializedVersion: 5
@@ -198,3 +200,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &9057316349978375409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1121704779460775997}
+  m_Layer: 11
+  m_Name: TPSpot
+  m_TagString: Kunaitpspot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1121704779460775997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057316349978375409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.537, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4238720788356316359}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

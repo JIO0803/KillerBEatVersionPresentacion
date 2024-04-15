@@ -27,6 +27,7 @@ public class SceneControl : MonoBehaviour
     public GameObject unckeckedToggle;
     public GameObject ckeckedToggle;
     public static bool changeMenu;
+    public GameObject musica;
 
     public GameObject tartaPoster;
     public GameObject enemigoSoldado;
@@ -89,7 +90,7 @@ public class SceneControl : MonoBehaviour
     UpgradeMenu up;
     public GameObject slider;
     Slider sli;
-
+    AudioSource aud;
     private void Awake()
     {
         Opacity = PlayerPrefs.GetFloat("Brillo", 1f);
@@ -98,6 +99,12 @@ public class SceneControl : MonoBehaviour
     }
     void Start()
     {
+        musica = GameObject.FindGameObjectWithTag("MusicMan");
+        if (musica != null)
+        {
+            aud = musica.GetComponent<AudioSource>();
+        }
+
         if (changeMenu)
         {
             mainMenu.SetActive(false);
@@ -578,54 +585,79 @@ public class SceneControl : MonoBehaviour
 
     public void Level1()
     {
-        NextLevel.startingLevel = 1;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 1;
         SceneManager.LoadScene("Game");
     }    
     
     public void Level2()
     {
-        NextLevel.startingLevel = 2;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
+
         nextLevel.startingLevel = 2;
         SceneManager.LoadScene("Game");
     }   
     
     public void Level3()
     {
-        NextLevel.startingLevel = 3;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 3;
         SceneManager.LoadScene("Game");
     }    
     public void Level4()
     {
-        NextLevel.startingLevel = 4;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 4;
         SceneManager.LoadScene("Game");
     }    
     
     public void Level5()
     {
-        NextLevel.startingLevel = 5;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 5;
         SceneManager.LoadScene("Game");
     }   
     
     public void Level6()
     {
-        NextLevel.startingLevel = 6;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 6;
         SceneManager.LoadScene("Game");
     }    
     public void Level7()
     {
-        NextLevel.startingLevel = 7;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 7;
         SceneManager.LoadScene("Game");
     }   
     
     public void Level8()
     {
-        NextLevel.startingLevel = 8;
+        if (musica != null)
+        {
+            aud.time = 0;
+        }
         nextLevel.startingLevel = 8;
         SceneManager.LoadScene("Game");
     }

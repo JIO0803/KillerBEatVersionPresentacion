@@ -135,28 +135,34 @@ public class SpawnKunai : MonoBehaviour
                 {
                     closestDistance = distance;
                     closestKunai = kunai;
-                    rb2D.velocity = new Vector2(closestKunai.GetComponent<Rigidbody2D>().velocity.x, closestKunai.GetComponent<Rigidbody2D>().velocity.y);
                 }
             }
         }
 
         if (closestKunai != null)
         {
-            GameObject blackHole = Instantiate(BlackHolePrefab, PlayerLocation.transform.position, Quaternion.identity);
-            Destroy(blackHole,0.35f);
-            GameObject whiteHole = Instantiate(WhiteHolePrefab, closestKunai.transform.position, Quaternion.identity);
-            Destroy(whiteHole, 0.35f);
+            Transform tpSpotChild = closestKunai.transform.Find("TPSpot");
 
-            PlayerLocation.transform.position = closestKunai.transform.position + new Vector3 (0, 0.5f, 0);
+            if (tpSpotChild != null)
+            {
+                GameObject blackHole = Instantiate(BlackHolePrefab, PlayerLocation.transform.position, Quaternion.identity);
+                Destroy(blackHole, 0.35f);
+                GameObject whiteHole = Instantiate(WhiteHolePrefab, tpSpotChild.position, Quaternion.identity);
+                Destroy(whiteHole, 0.35f);
 
-            Destroy(closestKunai);
-            kunaiList.Remove(closestKunai);
+                PlayerLocation.transform.position = tpSpotChild.position;
 
-            rb2D.velocity = closestKunai.GetComponent<Rigidbody2D>().velocity * kunaiTpSpeed;
-
-            OnKunaiDestroyed();
+                Destroy(closestKunai);
+                kunaiList.Remove(closestKunai);
+                OnKunaiDestroyed();
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró el empty object hijo 'KunaiTpSpot' del kunai más cercano.");
+            }
         }
     }
+
 
     public void OnKunaiDestroyed()
     {

@@ -42,6 +42,8 @@ TagManager:
   - cameraChange
   - cameraChange2
   - MusicMan
+  - Glados
+  - Kunaitpspot
   layers:
   - Default
   - TransparentFX
@@ -54,8 +56,8 @@ TagManager:
   - Enviroment
   - Wall
   - Pared
-  - 
-  - 
+  - Luces
+  - Camara
   - 
   - 
   - 

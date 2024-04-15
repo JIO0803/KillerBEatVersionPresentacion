@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2805145790913046549}
   - component: {fileID: 7172572298095789028}
   - component: {fileID: 5546939356307171199}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BalaEnem
   m_TagString: bala
   m_Icon: {fileID: 0}

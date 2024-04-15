@@ -34,7 +34,7 @@ public class inGameManager : MonoBehaviour
     public GameObject frances;
     public GameObject portugues;
 
-
+    public float defaultVolume = 0.05f;
 
     AudioSource audioSource;
     public GameObject slider;
@@ -44,13 +44,27 @@ public class inGameManager : MonoBehaviour
 
     void Start()
     {
+
+
         musicManager = GameObject.FindGameObjectWithTag("MusicMan");
+
+        GameObject[] gladosObjects = GameObject.FindGameObjectsWithTag("Glados");
+
+        foreach (GameObject gladosObject in gladosObjects)
+        {
+            AudioSource gladosAudioSource = gladosObject.GetComponent<AudioSource>();
+            if (gladosAudioSource != null)
+            {
+                gladosAudioSource.volume = defaultVolume;
+
+            }
+        }
+
         aud = musicManager.GetComponent<AudioSource>();
         sli = slider.GetComponent<Slider>();
         audioSource = musicManager.GetComponent<AudioSource>();
         audioSource.volume = 0.05f;
         sli.value = 0.05f;
-        sli.value = audioSource.volume;
 
         unckeckedToggle.SetActive(false);
         ckeckedToggle.SetActive(true);
@@ -65,10 +79,22 @@ public class inGameManager : MonoBehaviour
 
         PlayerPrefs.GetInt("KunaiUnlocked", 0);
         PlayerPrefs.GetInt("TPUnlocked", 0);
+        if (PlayerPrefs.HasKey("SliderVolume"))
+        {
+            float savedVolume = PlayerPrefs.GetFloat("SliderVolume");
+            sli.value = savedVolume;
+            SetGladosVolume(savedVolume);
+        }
     }
 
     void Update()
     {
+        if (sli.value != PlayerPrefs.GetFloat("SliderVolume"))
+        {
+            float sliderValue = sli.value;
+            PlayerPrefs.SetFloat("SliderVolume", sliderValue);
+            SetGladosVolume(sliderValue);
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -186,6 +212,19 @@ public class inGameManager : MonoBehaviour
             wow.SetActive(false);
             boff.SetActive(false);
             nah.SetActive(true);
+        }
+    }
+
+    void SetGladosVolume(float volume)
+    {
+        GameObject[] gladosObjects = GameObject.FindGameObjectsWithTag("Glados");
+        foreach (GameObject gladosObject in gladosObjects)
+        {
+            AudioSource gladosAudioSource = gladosObject.GetComponent<AudioSource>();
+            if (gladosAudioSource != null)
+            {
+                gladosAudioSource.volume = volume;
+            }
         }
     }
 

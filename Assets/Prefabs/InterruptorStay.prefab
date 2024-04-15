@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8087663855951825934}
   - component: {fileID: 954065698376534161}
   - component: {fileID: -6498876106736256919}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: InterruptorStay
   m_TagString: pared
   m_Icon: {fileID: 0}
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Muro: {fileID: 0}
   act: 0
+  touching: 0
   activatedSprite: {fileID: 21300000, guid: 4951fccb68ef2e142800038f51e38cee, type: 3}
   notactivatedSprite: {fileID: 21300000, guid: 07f4562c9488f2147a2fef3c991ec990, type: 3}
 --- !u!50 &-6498876106736256919
