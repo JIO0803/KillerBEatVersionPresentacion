@@ -18,9 +18,12 @@ public class SpawnKunai : MonoBehaviour
     public float rotationBreak;
     public float rotationBreak2;
     KunaiConstraint kc;
+    public float raycastSize = 0.5f;
+    Animator animator;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         kc = GetComponent<KunaiConstraint>();
         sk = GetComponent<SpawnKunai>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -77,6 +80,7 @@ public class SpawnKunai : MonoBehaviour
 
     private void ThrowKunai()
     {
+        animator.SetBool("IsThrowingKunai", true);
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (worldMousePos - transform.position).normalized;
 
@@ -150,6 +154,7 @@ public class SpawnKunai : MonoBehaviour
                 GameObject whiteHole = Instantiate(WhiteHolePrefab, tpSpotChild.position, Quaternion.identity);
                 Destroy(whiteHole, 0.35f);
 
+                Physics2D.RaycastAll(tpSpotChild.transform.position, Vector2.down * raycastSize);
                 PlayerLocation.transform.position = tpSpotChild.position;
 
                 Destroy(closestKunai);
