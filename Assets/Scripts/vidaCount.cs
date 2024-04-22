@@ -9,13 +9,17 @@ public class vidaCount : MonoBehaviour
     public bool canDie;
     public bool free;
 
+    public GameObject newSpawner;
+
     SpawnKunai sp;
     MovJugador mj;
     wallDetect wd;
+    newSpawn ns;
 
     // Start is called before the first frame update
     void Start()
     {
+        ns = newSpawner.GetComponent<newSpawn>();
         canDie = true;
         free = false;
         sp = GetComponent<SpawnKunai>();
@@ -50,9 +54,15 @@ public class vidaCount : MonoBehaviour
             lifesValue = 0;
         }
 
-        if (lifesValue <= 0 && canDie == true)
+        if (lifesValue <= 0 && canDie == true && !ns.newSpawnActivated)
         {
             SceneManager.LoadScene("Game");
+        } 
+        
+        if (lifesValue <= 0 && canDie == true && ns.newSpawnActivated)
+        {
+            gameObject.transform.position = newSpawner.transform.position;
+            lifesValue = 1;
         }
     }
 

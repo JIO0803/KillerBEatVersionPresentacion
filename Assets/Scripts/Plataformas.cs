@@ -65,7 +65,10 @@ public class Plataformas : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.transform.SetParent(null);
+            if (collision != null)
+            {
+                collision.transform.SetParent(null);
+            }
         }
     }
 }

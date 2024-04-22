@@ -19,8 +19,10 @@ public class KunaiConstraint : MonoBehaviour
     SpriteRenderer sr;
     public bool platCol;
     private GameObject kunai;
+    BoxCollider2D bx2d;
     void Start()
     {
+        bx2d = GetComponent<BoxCollider2D>();
         kunai = GameObject.FindGameObjectWithTag("kunai");
         sr = kunai.GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
@@ -72,25 +74,18 @@ public class KunaiConstraint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("botonAct") ||
-           collision.CompareTag("enemRod") || collision.CompareTag("soldado") || collision.CompareTag("headShot"))    
+           collision.CompareTag("enemRod") || collision.CompareTag("soldado") || collision.CompareTag("headShot") || (collision.CompareTag("volador")))    
         {
             if (!collided)
             {
                 rb2D.velocity = Vector2.zero;
                 transform.SetParent(collision.transform);
                 collided = true;
-            }     
+                bx2d.isTrigger = false;
+                rb2D.gravityScale = 3;
+            }  
         }
-        if (collision.CompareTag("volador"))
-        {
-            if (!collided)
-            {
-                rb2D.velocity = Vector2.zero;
-                transform.SetParent(collision.transform);
-                collided = true;
-            }
-            rb2D.gravityScale = 3;
-        }
+
         if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser") || collision.gameObject.tag == ("tramp")) 
         {
             AddKunai();
@@ -110,15 +105,6 @@ public class KunaiConstraint : MonoBehaviour
             }
         }
     }
-
-    /*IEnumerator Stuck(float duration)
-    {
-        yield return new WaitForSeconds(waitingTime);
-        Invoke("AddKunai", destroyDelay);
-        Destroy(gameObject, destroyDelay);
-        collided = true;
-    }
-    */
 
     public void AddKunai()
     {
