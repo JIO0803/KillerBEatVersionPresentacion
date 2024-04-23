@@ -44,6 +44,9 @@ TagManager:
   - MusicMan
   - Glados
   - Kunaitpspot
+  - techo
+  - suelo
+  - antiBug
   layers:
   - Default
   - TransparentFX

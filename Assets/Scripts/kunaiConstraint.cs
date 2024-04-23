@@ -73,8 +73,8 @@ public class KunaiConstraint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("pared") || collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("botonAct") ||
-           collision.CompareTag("enemRod") || collision.CompareTag("soldado") || collision.CompareTag("headShot") || (collision.CompareTag("volador")))    
+        if (collision.CompareTag("ground") || collision.CompareTag("enemy") || collision.CompareTag("enemRod") ||
+           collision.CompareTag("soldado") || collision.CompareTag("headShot") || (collision.CompareTag("volador")))    
         {
             if (!collided)
             {
@@ -84,6 +84,13 @@ public class KunaiConstraint : MonoBehaviour
                 bx2d.isTrigger = false;
                 rb2D.gravityScale = 3;
             }  
+        }
+
+        if (collision.CompareTag("pared") || collision.CompareTag("botonAct"))
+        {
+            rb2D.velocity = Vector2.zero;
+            transform.SetParent(collision.transform);
+            collided = true;
         }
 
         if (collision.CompareTag("Player") && collided|| collision.CompareTag("bala") || collision.CompareTag("misilTeled") || collision.CompareTag("laser") || collision.gameObject.tag == ("tramp")) 
